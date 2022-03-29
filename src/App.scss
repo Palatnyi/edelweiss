@@ -2,6 +2,21 @@
     box-sizing: border-box;
 
 }
+
+.edelweiss .donate {
+    height:58px;
+    width: 112px;
+    color: #000;
+    font-size: 17px;
+    margin-top: 33px;
+    background-color: #FAE526;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
 .edelweiss {
     & > .header-mobile,
     & > .mobile-menu {
@@ -35,6 +50,7 @@
                 font-size: 16px;
                 font-weight: 600;
                 margin-left: 32px;
+                cursor: pointer;
             }
         }
     }
@@ -66,7 +82,6 @@
         & > .communication {
             font-size: 64px;
             color: #FFFFFF;
-            font-weight: 900;
             line-height: 96px;
             text-align: center;
             font-style: normal;
@@ -87,20 +102,6 @@
                 font-style: normal;
                 text-align: center;
                 text-transform: none;
-            }
-
-            & > .donate {
-                height:58px;
-                width: 112px;
-                color: #000;
-                font-size: 17px;
-                margin-top: 33px;
-                background-color: #FAE526;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
             }
         }
     }
@@ -173,8 +174,181 @@
     // }
 
     & > .equipment {
+        display: flex;
+        background-color: #343239;
+        justify-content: center;
+        align-items: center;
 
+        & > .text {
+            padding: 64px 72px;
+
+            & > .title {
+                font-size: 32px;
+                font-weight: 900;
+                line-height: 48px;
+                font-style: normal;
+                color: #FFFFFF;
+            }
+
+            & > .subtitle {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 36px;
+                color: #FFFFFF;
+            }
+
+            & > .description {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 26px;
+                color: #FFFFFF;
+                margin-bottom: 64px;
+            }
+        }
+
+        & > .image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 64px 72px;
+        }
+
+        & .donate {
+            display: flex;
+        }
+
+        & .donate-mobile {
+            display: none;
+        }
     }
+
+    & > .help-matters {
+        padding: 64px 72px;
+            & > .title {
+                font-size: 32px;
+                font-weight: 900;
+                line-height: 48px;
+                font-style: normal;
+                color: #222222
+                ;
+            }
+
+            & > .description {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 26px;
+                color: #222222;
+                margin-bottom: 64px;
+            }
+
+            & > .requisities {
+                font-size: 32px;
+                font-weight: 900;
+                line-height: 48px;
+                font-style: normal;
+                color: #222222;
+                margin-bottom: 31px;
+            }
+            
+            & > .donate-requisities {
+                display: flex;
+                justify-content: flex-start;
+
+                & .requisite-holder {
+                    margin-right: 12px;
+                    width: calc(100% / 3);
+                    display:flex;
+                    border: 4px solid #FAE526;
+                    margin-bottom: 5px;
+                    flex-direction: column;
+                    padding: 5px;
+
+                    & .title {
+                        font-size: 24px;
+                        color: #000000;
+                        font-weight: 700;
+                        line-height: 36px;
+                        font-style: normal;
+                        text-transform: capitalize;
+                        margin-bottom: 10px;
+                    }
+
+                    & .requisite {
+                        display: flex;
+                        align-items: flex-start;
+                        & .name {
+                            font-size: 17px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 26px;
+                            letter-spacing: 0em;
+                            text-align: left;
+                            margin-right: 10px;
+                            text-transform: uppercase;
+                        }
+
+                        & .adress {
+                            hyphens: auto;
+                            overflow: hidden;
+                            word-wrap: break-word;
+                            -webkit-hyphens: auto;
+                            overflow-wrap: break-word;
+                        }
+                    }
+                }
+
+            }
+
+            .donate-btn-holder {
+                display: flex;
+                justify-content: center;
+
+                & .donate {
+                    width: auto;
+                    padding: 16px 24px;
+                }
+            }
+    }
+
+    & > .footer {
+        display: flex;
+        color: #fff;
+        padding: 64px 72px;
+        background-color: #343239;
+        justify-content: space-between;
+
+        & .left {
+            & > div {
+                margin-bottom: 16px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #FFFFFF;
+            }
+        }
+
+        & .right {
+            & > div {
+                margin-bottom: 16px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #FFFFFF;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            & > .skip-style {
+                font-weight: normal;
+            }
+        }
+    }
+
 }
 
 
@@ -292,6 +466,136 @@
                     font-style: normal;
                     
                 }
+            }
+        }
+
+        & > .equipment {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-width: 100%;
+
+
+            & .image {
+                padding: 16px;
+                order: 1;
+            }
+
+            & .text {
+                order: 2;
+                padding: 16px;
+                & .description {
+                    margin-bottom: 24px;
+                }
+            }
+
+             & .donate {
+                 display: none;
+             }
+
+             & .donate-mobile {
+                 order: 3;
+                 display: flex;
+                 margin-bottom: 24px;
+             }
+        }
+
+
+        & > .help-matters {
+            padding: 24px 16px 16px 16px;
+                & > .title {
+                    font-size: 32px;
+                    font-weight: 900;
+                    line-height: 48px;
+                    font-style: normal;
+                    color: #222222;
+                }
+    
+                & > .description {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 26px;
+                    color: #222222;
+                    margin-bottom: 24px;
+                }
+    
+                & > .requisities {
+                    font-size: 32px;
+                    font-weight: 900;
+                    line-height: 48px;
+                    font-style: normal;
+                    color: #222222;
+                    margin-bottom: 31px;
+                }
+                
+                & > .donate-requisities {
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: column;
+    
+                    & .requisite-holder {
+                        width: 100%;
+                        display:flex;
+                        border: 4px solid #FAE526;
+                        margin-bottom: 16px;
+                        flex-direction: column;
+                        padding: 5px;
+    
+                        & .title {
+                            font-size: 24px;
+                            color: #000000;
+                            font-weight: 700;
+                            line-height: 36px;
+                            font-style: normal;
+                            text-transform: capitalize;
+                            margin-bottom: 10px;
+                        }
+    
+                        & .requisite {
+                            display: flex;
+                            align-items: flex-start;
+                            & .name {
+                                font-size: 17px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 26px;
+                                letter-spacing: 0em;
+                                text-align: left;
+                                margin-right: 10px;
+                                text-transform: uppercase;
+                            }
+    
+                            & .adress {
+                                hyphens: auto;
+                                overflow: hidden;
+                                word-wrap: break-word;
+                                -webkit-hyphens: auto;
+                                overflow-wrap: break-word;
+                            }
+                        }
+                    }
+    
+                }
+    
+                .donate-btn-holder {
+                    margin-bottom: 32px;
+                }
+        }
+
+        & > .footer {
+            flex-direction: column;
+            padding: 24px 16px 16px 16px;
+            & .right {
+                margin-top: 64px;
+                & > div {
+                    justify-content: flex-start;
+                }
+
+                & > .hidden {
+                    display: none;
+                }
+
             }
         }
     }
