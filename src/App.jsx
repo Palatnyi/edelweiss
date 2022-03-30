@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import Dropdown from 'react-dropdown';
 import { Carousel } from 'react-responsive-carousel';
 
 import close from './images/close.png'
@@ -9,18 +11,13 @@ import sensor3 from './images/jammers.png';
 import sensor4 from './images/disconector.png';
 import sensor5 from './images/acces.png';
 import sensor6 from './images/advance.png';
+import andrey from './images/andrey.jpeg'
+import linkedin from './images/linkedin.png';
+import instagram from './images/instagram.png';
 
 import './App.scss';
+import 'react-dropdown/style.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
-function TeamMember(props) {
-  return (
-    <div className="team-member">
-      <div></div>
-
-    </div>
-  );
-}
 
 function Requisite(props) {
   const { data, title } = props;
@@ -61,6 +58,11 @@ function Header() {
   const [showHamburger, toggleShowHamburger] = useState(true);
   const icon = showHamburger ? hamburger : close;
 
+  const options = [
+    '🇬🇧', '🇪🇸', '🇺🇦'
+  ];
+  const defaultOption = options[0];
+
   return (
     <>
       <div className="header-mobile">
@@ -76,10 +78,41 @@ function Header() {
         !showHamburger && <div className="mobile-menu">
           <div className="empty"></div>
           <div className="menu-holder">
-            <div>About the war</div>
-            <div>Our team</div>
-            <div>our needs</div>
-            <div>Donate</div>
+            <div className="top">
+
+              <div>About the war</div>
+              <div>Our team</div>
+              <div>our needs</div>
+              <div>Donate</div>
+            </div>
+
+            <div className="bottom">
+              <div className="lang-title">Languages:</div>
+              <div className="lang ua">
+                <span>
+                  українська
+                </span>
+                <span>
+                  🇺🇦
+                </span>
+              </div>
+              <div className="lang en">
+                <span>
+                  english
+                </span>
+                <span>
+                  🇬🇧
+                </span>
+              </div>
+              <div className="lang es">
+                <span>
+                  spanish
+                </span>
+                <span>
+                  🇪🇸
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       }
@@ -95,6 +128,7 @@ function Header() {
           <div>Our team</div>
           <div>Our needs</div>
           <div>Donate</div>
+          <Dropdown controlClassName="langSelector" options={options} onChange={() => { }} value={defaultOption} placeholder="Select an option" />;
         </div>
       </div>
     </>
@@ -225,9 +259,96 @@ function Footer() {
         <div className="skip-style">
           ololo@gmail.com
         </div>
-        <div  className="hidden"><br/></div>
+        <div className="hidden"><br /></div>
         <div>Ukraine {new Date().getFullYear()}</div>
       </div>
+    </div>
+  );
+}
+
+function Member({ member }) {
+  return (
+    <div className="member">
+      <div className="imgHolder">
+        <img className="image" src={member.src} alt="" />
+      </div>
+      <div className="name">{member.name} , {member.age}</div>
+      <div className="role">{member.role}</div>
+      <div className="social">
+        <div className="linkedin">
+          <img src={linkedin} />
+        </div>
+        <div className="instagram">
+          <img src={instagram} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TeamMembers({ members = [] }) {
+  return (
+    <div className="members">
+      {members.map(member => <Member member={member} />)}
+    </div>
+  );
+}
+
+function Team(props) {
+  const teamMembers = [{
+    src: andrey,
+    name: 'Аndrii Palatnyi',
+    age: 30,
+    role: 'Frontend engineer'
+  },
+  {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  }, {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  }, {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  }, {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  },
+  {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  }, {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  }, {
+    src: andrey,
+    name: 'Аndrii',
+    age: 30,
+    role: 'Frontend engineer'
+  }];
+
+  return (
+    <div className="team">
+      <div className="title">Out team</div>
+      <div className="description">
+        Generic statement about the team. We all used to be civillians, now we gathered to defent our motherland. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+      </div>
+      {/* <TeamMembers members={teamMembers} /> */}
+      <TeamMembers members={teamMembers.slice(0, teamMembers.length / 2)} />
+      <TeamMembers members={teamMembers.slice(teamMembers.length / 2, teamMembers.length)} />
+
     </div>
   );
 }
@@ -238,6 +359,7 @@ function Edelweiss() {
       <Header />
       <Welcome />
       <AboutWar />
+      <Team />
       <Equipment />
       <HelpMatters />
       <Footer />
