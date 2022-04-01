@@ -4,7 +4,6 @@
 
 .edelweiss .donate {
     height: 58px;
-    width: 112px;
     color: #000;
     font-size: 17px;
     margin-top: 33px;
@@ -14,6 +13,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    min-width: 112px;
+    padding: 10px;
 }
 .edelweiss {
     & > .header-mobile,
@@ -194,6 +195,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 40px;
+            flex-wrap: wrap;
 
             & > .member {
                 overflow: hidden;
@@ -202,6 +204,8 @@
                 & .imgHolder {
                     overflow: hidden;
                     position: relative;
+                    width: 300px;
+                    height: 300px;
 
                     & img {
                         width: 100%;
@@ -235,6 +239,7 @@
                 & .instagram {
                     width: 30px;
                     height: 30px;
+                    cursor: pointer;
                     & > img {
                         width: 30px;
                         height: 30px;
@@ -315,7 +320,7 @@
             font-size: 17px;
             line-height: 26px;
             color: #222222;
-            margin-bottom: 64px;
+            margin-bottom: 24px;
         }
 
         & > .requisities {
@@ -574,14 +579,16 @@
             padding: 24px 16px 16px 16px;
 
             & > .members {
-                flex-direction: column;
                 align-items: center;
+                flex-direction: column;
+                justify-content: center;
 
                 & > .member {
+                    display: flex;
                     margin-right: 0;
-                    margin-bottom: 20px;
                     overflow: hidden;
-                    width: 100%;
+                    margin-bottom: 20px;
+                    flex-direction: column;
                 }
             }
         }

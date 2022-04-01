@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
 import Dropdown from 'react-dropdown';
-import { Carousel } from 'react-responsive-carousel';
-import { useNavigate } from 'react-router-dom';
 import { useTranslations } from './hooks'
+import { useNavigate } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
 
 import close from './images/close.png';
 import sensor5 from './images/acces.png';
-import andrey from './images/andrey.jpeg';
 import sensor1 from './images/sensor1.png';
 import sensor2 from './images/sensor2.png';
 import sensor6 from './images/advance.png';
@@ -16,6 +15,14 @@ import linkedin from './images/linkedin.png';
 import instagram from './images/instagram.png';
 import hamburger from './images/hamburger.png';
 import sensor4 from './images/disconector.png';
+
+import andrey from './images/andrey.jpeg';
+import oleksii from './images/oleksii.jpeg';
+import vlad from "./images/vlad.jpg";
+import mikyta from './images/mikyta.jpeg';
+import maksim from './images/maksim.png';
+import kostya from './images/kostya.jpeg';
+import denys from './images/denys.jpg';
 
 import './App.scss';
 import 'react-dropdown/style.css';
@@ -67,8 +74,26 @@ function Header() {
   };
 
   const options = translate("header.languageSelector.options");
-  const defaultOption = translate("header.languageSelector.defaultValue");
+  const languages = translate("header.languageSelector.languages");
+  const mobileOptions = translate("header.languageSelector.mobileOptions");
   const placeholder = translate("header.languageSelector.placeholder");
+  const defaultOption = translate("header.languageSelector.defaultValue");
+
+  const renderLanguageSelectorMobile = (options) => {
+    return options.map(({ label, value , flag}) => {
+      return (
+        <div className={`lang ${value}`} onClick={() => navigate(`/${value}`)}>
+          <span>
+            {label}
+          </span>
+          <span>
+            🇺{flag}
+          </span>
+        </div>
+      );
+    });
+  }
+
 
   return (
     <>
@@ -86,14 +111,14 @@ function Header() {
           <div className="empty"></div>
           <div className="menu-holder">
             <div className="top">
-              <div onClick={() => toggleShowHamburger(true)}><a href="#about">About the war</a></div>
-              <div onClick={() => toggleShowHamburger(true)}><a href="#team">Our team</a></div>
-              <div onClick={() => toggleShowHamburger(true)}><a href="#needs">Our needs</a></div>
-              <div onClick={() => toggleShowHamburger(true)}><a href="#donate">Donate</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#about">{translate("menu.aboutWar")}</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#team">{translate("menu.ourTeam")}</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#needs">{translate("menu.ourNeeds")}</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#donate">{translate("menu.donate")}</a></div>
             </div>
 
             <div className="bottom">
-              <div className="lang-title">Languages:</div>
+              <div className="lang-title">{languages}</div>
               <div className="lang ua">
                 <span>
                   українська
@@ -110,14 +135,14 @@ function Header() {
                   🇬🇧
                 </span>
               </div>
-              <div className="lang es">
+              {/* <div className="lang es">
                 <span>
                   spanish
                 </span>
                 <span>
                   🇪🇸
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -130,10 +155,10 @@ function Header() {
         </div>
 
         <div className="menu">
-          <div><a href="#about">About the war</a></div>
-          <div><a href="#team">Our team</a></div>
-          <div><a href="#needs">Our needs</a></div>
-          <div><a href="#donate">Donate</a></div>
+          <div><a href="#about">{translate("menu.aboutWar")}</a></div>
+          <div><a href="#team">{translate("menu.ourTeam")}</a></div>
+          <div><a href="#needs">{translate("menu.ourNeeds")}</a></div>
+          <div><a href="#donate">{translate("menu.donate")}</a></div>
           <Dropdown
             options={options}
             onChange={onChange}
@@ -271,10 +296,10 @@ function Footer() {
   return (
     <div className="footer">
       <div className="left">
-          <div><a href="#about">About the war</a></div>
-          <div><a href="#team">Our team</a></div>
-          <div><a href="#needs">Our needs</a></div>
-          <div><a href="#donate">Donate</a></div>
+        <div><a href="#about">{translate("menu.aboutWar")}</a></div>
+        <div><a href="#team">{translate("menu.ourTeam")}</a></div>
+        <div><a href="#needs">{translate("menu.ourNeeds")}</a></div>
+        <div><a href="#donate">{translate("menu.donate")}</a></div>
       </div>
       <div className="right">
         <div>Contact us</div>
@@ -294,15 +319,15 @@ function Member({ member }) {
       <div className="imgHolder">
         <img className="image" src={member.src} alt="" />
       </div>
-      <div className="name">{member.name} , {member.age}</div>
+      <div className="name">{member.name}</div>
       <div className="role">{member.role}</div>
       <div className="social">
-        <div className="linkedin">
-          <img src={linkedin} />
-        </div>
-        <div className="instagram">
+        {member.linkedin && <div className="linkedin">
+          <img src={linkedin} onClick={() => { window.open(member.linkedin, "_blank") }} />
+        </div>}
+        {member.instagram && <div className="instagram">
           <img src={instagram} />
-        </div>
+        </div>}
       </div>
     </div>
   );
@@ -317,51 +342,38 @@ function TeamMembers({ members = [] }) {
 }
 
 function Team(props) {
+  const translate = useTranslations();
+
   const teamMembers = [{
     src: andrey,
-    name: 'Аndrii Palatnyi',
-    age: 30,
-    role: 'Frontend engineer'
+    name: translate("teamMembers.andrii.name"),
+    role: translate("teamMembers.andrii.role"),
+    linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+    instagram: ''
   },
   {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
+    src: oleksii,
+    name: translate("teamMembers.oleksii.name"),
+    role: translate("teamMembers.oleksii.role"),
+    linkedin: 'https://www.linkedin.com/in/oleksii-palatnyi/',
+    instagram: ''
   }, {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
+    src: vlad,
+    name: translate("teamMembers.vlad.name"),
+    role: translate("teamMembers.vlad.role"),
+    linkedin: 'https://www.linkedin.com/in/vladkasianenko/'
   }, {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
+    src: kostya,
+    name: translate("teamMembers.kostya.name"),
+    role: translate("teamMembers.kostya.role"),
+    linkedin: "https://www.linkedin.com/in/%D0%B8%D0%BB%D1%8C%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD-konstantin-ilchenko-1715a05b"
   }, {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
-  },
-  {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
-  }, {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
-  }, {
-    src: andrey,
-    name: 'Аndrii',
-    age: 30,
-    role: 'Frontend engineer'
+    src: maksim,
+    name: translate("teamMembers.maksim.name"),
+    role: translate("teamMembers.maksim.role"),
+    linkedin: 'https://www.linkedin.com/in/maksim-kolomiets/'
   }];
 
-  const translate = useTranslations();
   return (
     <div className="team" id="team">
       <div className="title">
@@ -370,8 +382,7 @@ function Team(props) {
       <div className="description">
         {translate("ourTeam.description")}
       </div>
-      <TeamMembers members={teamMembers.slice(0, teamMembers.length / 2)} />
-      <TeamMembers members={teamMembers.slice(teamMembers.length / 2, teamMembers.length)} />
+      <TeamMembers members={teamMembers} />
 
     </div>
   );

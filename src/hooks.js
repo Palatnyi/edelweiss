@@ -3,15 +3,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import translations from './translations.json';
 
-const LANGUAGES = {'en': 'en', 'es': 'es', 'ua': 'ua', 'fr': 'fr' };
-const DEFAULT_LANG = 'ua';
+const {LANGUAGES, DEFAULT_LANG } = translations;
 
 export function useBrowserLanguage() {
 
     const navigate = useNavigate()
     const getLang = (languages) => {
         const lng = navigator.languages[0].split("-")[0]
-        return languages[lng] || "fr";
+        return languages[lng] || DEFAULT_LANG;
     }
 
     useEffect(() => {
