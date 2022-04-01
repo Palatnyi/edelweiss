@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 
 import Dropdown from 'react-dropdown';
 import { Carousel } from 'react-responsive-carousel';
+import { useNavigate } from 'react-router-dom';
+import { useTranslations } from './hooks'
 
-import close from './images/close.png'
-import hamburger from './images/hamburger.png';
+import close from './images/close.png';
+import sensor5 from './images/acces.png';
+import andrey from './images/andrey.jpeg';
 import sensor1 from './images/sensor1.png';
 import sensor2 from './images/sensor2.png';
-import sensor3 from './images/jammers.png';
-import sensor4 from './images/disconector.png';
-import sensor5 from './images/acces.png';
 import sensor6 from './images/advance.png';
-import andrey from './images/andrey.jpeg'
+import sensor3 from './images/jammers.png';
 import linkedin from './images/linkedin.png';
 import instagram from './images/instagram.png';
+import hamburger from './images/hamburger.png';
+import sensor4 from './images/disconector.png';
 
 import './App.scss';
 import 'react-dropdown/style.css';
@@ -58,10 +60,15 @@ function Header() {
   const [showHamburger, toggleShowHamburger] = useState(true);
   const icon = showHamburger ? hamburger : close;
 
-  const options = [
-    '🇬🇧', '🇪🇸', '🇺🇦'
-  ];
-  const defaultOption = options[0];
+  const navigate = useNavigate();
+  const translate = useTranslations();
+  const onChange = ({ value }) => {
+    navigate(`/${value}`);
+  };
+
+  const options = translate("header.languageSelector.options");
+  const defaultOption = translate("header.languageSelector.defaultValue");
+  const placeholder = translate("header.languageSelector.placeholder");
 
   return (
     <>
@@ -79,11 +86,10 @@ function Header() {
           <div className="empty"></div>
           <div className="menu-holder">
             <div className="top">
-
-              <div>About the war</div>
-              <div>Our team</div>
-              <div>our needs</div>
-              <div>Donate</div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#about">About the war</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#team">Our team</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#needs">Our needs</a></div>
+              <div onClick={() => toggleShowHamburger(true)}><a href="#donate">Donate</a></div>
             </div>
 
             <div className="bottom">
@@ -124,11 +130,17 @@ function Header() {
         </div>
 
         <div className="menu">
-          <div>About the war</div>
-          <div>Our team</div>
-          <div>Our needs</div>
-          <div>Donate</div>
-          <Dropdown controlClassName="langSelector" options={options} onChange={() => { }} value={defaultOption} placeholder="Select an option" />;
+          <div><a href="#about">About the war</a></div>
+          <div><a href="#team">Our team</a></div>
+          <div><a href="#needs">Our needs</a></div>
+          <div><a href="#donate">Donate</a></div>
+          <Dropdown
+            options={options}
+            onChange={onChange}
+            value={defaultOption}
+            placeholder={placeholder}
+            controlClassName="langSelector"
+          />
         </div>
       </div>
     </>
@@ -136,15 +148,18 @@ function Header() {
 }
 
 function Welcome() {
+  const translate = useTranslations();
+
   return (
     <div className="welcome">
       <div className="opacity"></div>
-      <div className="communication">communication matters
+      <div className="communication">
+        {translate("welcome.communication")}
         <div className="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          {translate("welcome.description")}
         </div>
         <div className="donate">
-          Donate
+          {translate("welcome.donate")}
         </div>
       </div>
     </div>
@@ -152,15 +167,17 @@ function Welcome() {
 }
 
 function AboutWar() {
+  const translate = useTranslations();
+
   return (
-    <div className="about-war">
+    <div className="about-war" id="about">
       <div className="image"> </div>
       <div className="text">
         <div className="label">
-          About the war
+          {translate("aboutWar.title")}
         </div>
         <div className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          {translate("aboutWar.description")}
         </div>
       </div>
 
@@ -169,26 +186,28 @@ function AboutWar() {
 }
 
 function Equipment() {
+  const translate = useTranslations();
+
   return (
-    <div className="equipment">
+    <div className="equipment" id="needs">
       <div className="text">
         <div className="title">
-          About the war
+          {translate("equipment.title")}
+        </div>
+        {/* <div className="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div> */}
+        <div className="subtitle">
+          {translate("equipment.whatIsScyCTRL")}
         </div>
         <div className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          {translate("equipment.descriptionSkyCTRL")}
         </div>
         <div className="subtitle">
-          What is it?
+          {translate("equipment.howMuchMoneyTitle")}
         </div>
         <div className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </div>
-        <div className="subtitle">
-          Why do we need it?
-        </div>
-        <div className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          {translate("equipment.howMuchMoneyDescription")}
         </div>
       </div>
       <div className="image">
@@ -212,32 +231,34 @@ function Equipment() {
             <img src={sensor6} />
           </div>
         </Carousel>
-        <div className="donate">Donate</div>
+        <div className="donate">{translate("equipment.donate")}</div>
       </div>
 
-      <div className="donate donate-mobile">Donate</div>
+      <div className="donate donate-mobile">{translate("equipment.donate")}</div>
     </div>
   );
 }
 
 function HelpMatters() {
+  const translate = useTranslations();
+
   return (
-    <div className="help-matters">
+    <div className="help-matters" id="donate">
       <div className="title">
-        Your help matters
+        {translate("requisities.title")}
       </div>
       <div className="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem unde labore reiciendis quisquam ducimus pariatur mollitia soluta minus, ea autem natus quam quis itaque nihil temporibus vitae quas atque nostrum adipisci quod velit illo dolores odio! Sit commodi nihil quaerat?
+        {translate("requisities.description")}
       </div>
       <div className="requisities">
-        Our requisites
+        {translate("requisities.ourRequisites")}
       </div>
 
       <DonateRequisities />
 
       <div className="donate-btn-holder">
         <div className="donate">
-          Donate directly
+          {translate("requisities.donateDirectly")}
         </div>
       </div>
     </div>
@@ -245,14 +266,15 @@ function HelpMatters() {
 }
 
 function Footer() {
+  const translate = useTranslations();
 
   return (
     <div className="footer">
       <div className="left">
-        <div>About the war</div>
-        <div>Our team</div>
-        <div>Our needs</div>
-        <div>Donate</div>
+          <div><a href="#about">About the war</a></div>
+          <div><a href="#team">Our team</a></div>
+          <div><a href="#needs">Our needs</a></div>
+          <div><a href="#donate">Donate</a></div>
       </div>
       <div className="right">
         <div>Contact us</div>
@@ -339,13 +361,15 @@ function Team(props) {
     role: 'Frontend engineer'
   }];
 
+  const translate = useTranslations();
   return (
-    <div className="team">
-      <div className="title">Out team</div>
-      <div className="description">
-        Generic statement about the team. We all used to be civillians, now we gathered to defent our motherland. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+    <div className="team" id="team">
+      <div className="title">
+        {translate("ourTeam.title")}
       </div>
-      {/* <TeamMembers members={teamMembers} /> */}
+      <div className="description">
+        {translate("ourTeam.description")}
+      </div>
       <TeamMembers members={teamMembers.slice(0, teamMembers.length / 2)} />
       <TeamMembers members={teamMembers.slice(teamMembers.length / 2, teamMembers.length)} />
 
@@ -354,6 +378,7 @@ function Team(props) {
 }
 
 function Edelweiss() {
+
   return (
     <div className="edelweiss">
       <Header />
@@ -363,20 +388,6 @@ function Edelweiss() {
       <Equipment />
       <HelpMatters />
       <Footer />
-
-      {/* <div className="team">
-        <div className="title">
-          Our team
-        </div>
-        <div className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam, mollitia exercitationem tempore possimus in velit minima aliquid repellat quae, animi assumenda pariatur fugit aut dolor inventore provident. Voluptatibus voluptates mollitia expedita molestias sequi deleniti maxime impedit voluptas illo distinctio vel similique ut saepe vero perferendis, eveniet ab vitae tempora.
-        </div>
-
-        <div className="team-holder">
-
-
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -23,12 +23,12 @@
 
     & > .header-desktop {
         height: 64px;
-        padding: 0 72px;
+        padding: 0  36px 0 72px;
         background: #343239;
 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
         & > .name,
         & > .menu {
@@ -44,19 +44,29 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            & > div {
+            & > div > a {
                 color: #fff;
                 font-size: 16px;
                 font-weight: 600;
                 margin-left: 32px;
                 cursor: pointer;
+                text-decoration: none;
+                display: flex;
             }
         }
 
         & .langSelector {
+            display: flex;
             color: #fff;
-            background-color: #343239;
             border-color: #343239;
+            background-color: #343239;
+            justify-content: space-between;
+
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 24px;
+            cursor: pointer;
+            text-decoration: none;
 
             & .Dropdown-arrow {
                 display: none;
@@ -135,7 +145,10 @@
         }
 
         & > .text {
-            padding: 72px 0 0 72px;
+            display: flex;
+            padding: 0 0 0 72px;
+            flex-direction: column;
+            justify-content: center;
 
             & > .label {
                 font-size: 32px;
@@ -381,13 +394,14 @@
         justify-content: space-between;
 
         & .left {
-            & > div {
+            & > div > a {
                 margin-bottom: 16px;
                 font-style: normal;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 24px;
                 color: #ffffff;
+                text-decoration: none;
             }
         }
 
@@ -471,12 +485,14 @@
                 flex-direction: column;
                 justify-content: space-between;
 
-                & > .top > div {
+                & > .top > div > a {
                     color: black;
                     font-size: 24px;
                     margin-bottom: 24px;
                     font-weight: 600;
                     cursor: pointer;
+                    text-decoration: none;
+                    display: flex;
                 }
 
                 & > .bottom {
@@ -526,7 +542,7 @@
 
             & > .image {
                 min-width: 100%;
-                min-height: 340px;
+                min-height: 240px;
                 background-position: left;
             }
 

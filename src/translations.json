@@ -1,0 +1,65 @@
+{
+    "en": {
+        "header": {
+            "menu": {
+                "aboutWar": "About the war",
+                "ourTeam": "Our team",
+                "ourNeeds": "Our needs",
+                "donate": "Donate"
+            },
+            "languageSelector": {
+                "options": [
+                    {
+                        "value": "en",
+                        "label": "English 🇬🇧"
+                    },
+                    {
+                        "value": "fr",
+                        "label": "French 🇫🇷"
+                    },
+                    {
+                        "value": "ua",
+                        "label": "Ukrainian 🇺🇦"
+                    }
+                ],
+                "defaultValue": 0,
+                "placeholder": "English  🇬🇧"
+            }
+        },
+        "welcome": {
+            "communication": "Protect our land. We stand!",
+            "description": "On February 24, 2022, at 5 am, Russia shamelessly attacked Ukraine. Cynically calling it a “special operation,” Russian Federation has been committing acts of genocide against the Ukrainian people ever since. Hundreds of thousands of civilians are under fire without access to essential survival means",
+            "donate": "Donate"
+        },
+        "aboutWar": {
+            "title": "About the war",
+            "description" : "Wouldn’t you want to protect your land? On February 24, 2022, at 5 am, Russia shamelessly attacked Ukraine. Cynically calling it a “special operation,” Russian Federation has been committing acts of genocide against the Ukrainian people ever since. Hundreds of thousands of civilians are under fire without access to essential survival means. But Ukraine stands, and its warriors bravely fight for democracy, freedom, and life against the greatest tyranny since The Third Reich."
+        },
+        "ourTeam": {
+            "title": "Our team",
+            "description": "Our goal is to help. We are DOPOMOGA2022, a public organization that supports Ukraine's fight for independence and helps state organizations find and purchase critical resources."
+        },
+        "equipment": {
+            "title": "We need your help to buy a specific equipment",
+            "whatIsScyCTRL": "Help us buy SKYctrl",
+            "descriptionSkyCTRL": "Closing the sky is vital for Ukraine. We need to stop enemies from shooting from the sky. This is essential for protecting civilians and shielding our troops while they’re freeing the country from the invaders. This is why we need to buy the SKYctrl anti-drone system from APS. It automatically detects small to medium drones and disrupts them with the help of electromagnetic interference. But we can’t do this without your help",
+            
+            "howMuchMoneyTitle": "How much money do we need?",
+            "howMuchMoneyDescription": "The SKYctrl system by APS costs 250,000 USD. The sum is significant, and we need your help collecting it. Our public organization collects funds and guarantees they will go toward purchasing the system. SKYctrl is an inventory item that will bring results instantly, without delays. Moreover, the manufacturer supports its soonest delivery, so your contribution will have immediate results.",
+            "donate": "Donate"
+        },
+        "requisities": {
+            "title": "Your help matters",
+            "description": "Please consider donating. It will mean the world to us. Literally.",
+            "ourRequisites": "Our requisites",
+            "donateDirectly": "Donate directly"
+        },
+        "footer": {
+            "aboutWar": "About the war",
+            "ourTeam": "Our team",
+            "ourNeeds": "Our needs",
+            "donate": "Donate"
+        }
+        
+    }
+}
