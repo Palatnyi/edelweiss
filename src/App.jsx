@@ -119,30 +119,7 @@ function Header() {
 
             <div className="bottom">
               <div className="lang-title">{languages}</div>
-              <div className="lang ua">
-                <span>
-                  українська
-                </span>
-                <span>
-                  🇺🇦
-                </span>
-              </div>
-              <div className="lang en">
-                <span>
-                  english
-                </span>
-                <span>
-                  🇬🇧
-                </span>
-              </div>
-              {/* <div className="lang es">
-                <span>
-                  spanish
-                </span>
-                <span>
-                  🇪🇸
-                </span>
-              </div> */}
+              {renderLanguageSelectorMobile(mobileOptions)}
             </div>
           </div>
         </div>
