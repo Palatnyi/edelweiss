@@ -38,7 +38,11 @@
 
         & > .name {
             color: #fff;
+            height: 100%;
             font-size: 24px;
+            & > img {
+                height: 100%;
+            }
         }
 
         & > .menu {
@@ -193,13 +197,14 @@
 
         & > .members {
             display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
             flex-wrap: wrap;
-
+            margin-top: 40px;
+            justify-content: space-around;
+            
             & > .member {
-                overflow: hidden;
                 width: 300px;
+                overflow: hidden;
+                margin-bottom:16px;
 
                 & .imgHolder {
                     overflow: hidden;
@@ -358,24 +363,33 @@
                 & .requisite {
                     display: flex;
                     align-items: flex-start;
-                    & .name {
-                        font-size: 17px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: 26px;
-                        letter-spacing: 0em;
-                        text-align: left;
-                        margin-right: 10px;
-                        text-transform: uppercase;
+                    flex-direction: column;
+
+                    & > .requisite-value {
+                        display: flex;
+                        align-items: flex-start;
+
+                        & > .title {
+                            font-size: 17px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 26px;
+                            letter-spacing: 0em;
+                            text-align: left;
+                            margin-right: 10px;
+                            text-transform: uppercase;
+                        }
+                        
+                        & > .value {
+                            hyphens: auto;
+                            overflow: hidden;
+                            word-wrap: break-word;
+                            -webkit-hyphens: auto;
+                            overflow-wrap: break-word;
+                        }
                     }
 
-                    & .adress {
-                        hyphens: auto;
-                        overflow: hidden;
-                        word-wrap: break-word;
-                        -webkit-hyphens: auto;
-                        overflow-wrap: break-word;
-                    }
+
                 }
             }
         }
@@ -400,13 +414,16 @@
 
         & .left {
             & > div > a {
-                margin-bottom: 16px;
                 font-style: normal;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 24px;
                 color: #ffffff;
                 text-decoration: none;
+            }
+
+            & > div {
+                margin-bottom: 16px;
             }
         }
 
@@ -442,6 +459,7 @@
         }
 
         & > .header-mobile {
+            
             height: 64px;
             padding: 0 16px;
             position: fixed;
@@ -457,6 +475,10 @@
             & > .name {
                 color: #fff;
                 font-size: 16px;
+                height: 100%;
+                & > img {
+                    height: 100%;
+                }
             }
 
             & > .icon {
@@ -659,10 +681,11 @@
                 & .requisite-holder {
                     width: 100%;
                     display: flex;
-                    border: 4px solid #fae526;
+                    padding: 5px;
+                    overflow: scroll;
                     margin-bottom: 16px;
                     flex-direction: column;
-                    padding: 5px;
+                    border: 4px solid #fae526;
 
                     & .title {
                         font-size: 24px;
@@ -677,7 +700,9 @@
                     & .requisite {
                         display: flex;
                         align-items: flex-start;
-                        & .name {
+                        flex-direction: column;
+
+                        & .title {
                             font-size: 17px;
                             font-style: normal;
                             font-weight: 700;
@@ -688,7 +713,7 @@
                             text-transform: uppercase;
                         }
 
-                        & .adress {
+                        & .value {
                             hyphens: auto;
                             overflow: hidden;
                             word-wrap: break-word;
@@ -716,6 +741,10 @@
                 & > .hidden {
                     display: none;
                 }
+            }
+
+            & > .left > div {
+                margin-bottom: 16px;
             }
         }
     }

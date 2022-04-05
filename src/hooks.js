@@ -15,12 +15,12 @@ export function useBrowserLanguage() {
 
     useEffect(() => {
         let url = getLang(LANGUAGES);
-        navigate(url);
+        url && navigate(url);
     }, []);
 }
 
 export function useTranslations() {
-    let { lang } = useParams();
+    let { lang = DEFAULT_LANG } = useParams();
 
     return (key) => {
         const keyAsArray = key.split(".");

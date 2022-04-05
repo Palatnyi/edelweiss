@@ -6,23 +6,20 @@ import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 
 import close from './images/close.png';
-import sensor5 from './images/acces.png';
-import sensor1 from './images/sensor1.png';
-import sensor2 from './images/sensor2.png';
-import sensor6 from './images/advance.png';
-import sensor3 from './images/jammers.png';
+import system from './images/system.jpg';
 import linkedin from './images/linkedin.png';
 import instagram from './images/instagram.png';
 import hamburger from './images/hamburger.png';
-import sensor4 from './images/disconector.png';
 
-import andrey from './images/andrey.jpeg';
-import oleksii from './images/oleksii.jpeg';
+import dima from './images/dima.jpg';
 import vlad from "./images/vlad.jpg";
-import mikyta from './images/mikyta.jpeg';
+import logo from './images/logo.png';
+import youra from './images/youra.JPG';
 import maksim from './images/maksim.png';
 import kostya from './images/kostya.jpeg';
-import denys from './images/denys.jpg';
+import andrey from './images/andrey.jpeg';
+import oleksii from './images/oleksii.jpeg';
+import shatilov from './images/shatilov.JPG';
 
 import './App.scss';
 import 'react-dropdown/style.css';
@@ -37,10 +34,10 @@ function Requisite(props) {
       <div className="requisite">
         {data.map(item => {
           return (
-            <>
-              <div className="name">{item.name + ':'}</div>
-              <div className="adress">{item.requisite}</div>
-            </>
+            <div className="requisite-value">
+              <div className="title">{item.label}</div>
+              <div className="value">{item.value}</div>
+            </div>
           );
         })}
       </div>
@@ -49,16 +46,22 @@ function Requisite(props) {
 }
 
 function DonateRequisities() {
-  const otherWaysData = [{
-    name: 'Paypal',
-    requisite: 'ololo@paypal.com;ALSKDNFAS,MND;AS,DN;AS,/MDNAS/,MDNAS'
-  }];
+  const translate = useTranslations();
+
+  const ibanUAH = translate("requisities.requisitiesTypes.ibanUAH");
+  const ibanUahTitle = translate("requisities.requisitiesTypes.ibanUahTitle");
+
+  const ibanUSD = translate("requisities.requisitiesTypes.ibanUSD");
+  const ibanUsdTitle = translate("requisities.requisitiesTypes.ibanUsdTitle");
+
+  const otherWays = translate("requisities.requisitiesTypes.otherWays");
+  const otherWaysTitle = translate("requisities.requisitiesTypes.otherWaysTitle");
 
   return (
     <div className="donate-requisities">
-      <Requisite data={otherWaysData} title="other ways" />
-      <Requisite data={otherWaysData} title="IBAN (USD)" />
-      <Requisite data={otherWaysData} title="IBAN (USD)" />
+      <Requisite data={ibanUAH} title={ibanUahTitle} />
+      <Requisite data={ibanUSD} title={ibanUsdTitle} />
+      <Requisite data={otherWays} title={otherWaysTitle} />
     </div>
   );
 }
@@ -80,7 +83,7 @@ function Header() {
   const defaultOption = translate("header.languageSelector.defaultValue");
 
   const renderLanguageSelectorMobile = (options) => {
-    return options.map(({ label, value , flag}) => {
+    return options.map(({ label, value, flag }) => {
       return (
         <div className={`lang ${value}`} onClick={() => navigate(`/${value}`)}>
           <span>
@@ -99,7 +102,7 @@ function Header() {
     <>
       <div className="header-mobile">
         <div className="name">
-          DOPOMOGA2022
+          <img src={logo} alt="logo" />
         </div>
         <div className="icon" onClick={() => toggleShowHamburger(!showHamburger)}>
           <img src={icon} />
@@ -128,7 +131,7 @@ function Header() {
       <div className="header-desktop">
 
         <div className="name">
-          DOPOMOGA2022
+          <img src={logo} alt="logo" />
         </div>
 
         <div className="menu">
@@ -215,22 +218,7 @@ function Equipment() {
       <div className="image">
         <Carousel autoPlay interval={2000} dynamicHeight showIndicators={false} showThumbs={false}>
           <div>
-            <img src={sensor1} />
-          </div>
-          <div>
-            <img src={sensor2} />
-          </div>
-          <div>
-            <img src={sensor3} />
-          </div>
-          <div>
-            <img src={sensor4} />
-          </div>
-          <div>
-            <img src={sensor5} />
-          </div>
-          <div>
-            <img src={sensor6} />
+            <img src={system} />
           </div>
         </Carousel>
         <div className="donate">{translate("equipment.donate")}</div>
@@ -279,12 +267,12 @@ function Footer() {
         <div><a href="#donate">{translate("menu.donate")}</a></div>
       </div>
       <div className="right">
-        <div>Contact us</div>
+        <div>{translate("footer.contactUs")}</div>
         <div className="skip-style">
-          ololo@gmail.com
+          {translate("footer.email")}
         </div>
         <div className="hidden"><br /></div>
-        <div>Ukraine {new Date().getFullYear()}</div>
+        <div>{translate("footer.ukraine")} {new Date().getFullYear()}</div>
       </div>
     </div>
   );
@@ -321,35 +309,55 @@ function TeamMembers({ members = [] }) {
 function Team(props) {
   const translate = useTranslations();
 
-  const teamMembers = [{
-    src: andrey,
-    name: translate("teamMembers.andrii.name"),
-    role: translate("teamMembers.andrii.role"),
-    linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
-    instagram: ''
-  },
-  {
-    src: oleksii,
-    name: translate("teamMembers.oleksii.name"),
-    role: translate("teamMembers.oleksii.role"),
-    linkedin: 'https://www.linkedin.com/in/oleksii-palatnyi/',
-    instagram: ''
-  }, {
-    src: vlad,
-    name: translate("teamMembers.vlad.name"),
-    role: translate("teamMembers.vlad.role"),
-    linkedin: 'https://www.linkedin.com/in/vladkasianenko/'
-  }, {
-    src: kostya,
-    name: translate("teamMembers.kostya.name"),
-    role: translate("teamMembers.kostya.role"),
-    linkedin: "https://www.linkedin.com/in/%D0%B8%D0%BB%D1%8C%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD-konstantin-ilchenko-1715a05b"
-  }, {
-    src: maksim,
-    name: translate("teamMembers.maksim.name"),
-    role: translate("teamMembers.maksim.role"),
-    linkedin: 'https://www.linkedin.com/in/maksim-kolomiets/'
-  }];
+  const teamMembers = [
+    {
+      src: shatilov,
+      name: translate("teamMembers.shatilov.name"),
+      role: translate("teamMembers.shatilov.role"),
+      linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+      instagram: ''
+    },
+    {
+      src: youra,
+      name: translate("teamMembers.youra.name"),
+      role: translate("teamMembers.youra.role"),
+      // linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+      instagram: ''
+    },
+    {
+      src: andrey,
+      name: translate("teamMembers.andrii.name"),
+      role: translate("teamMembers.andrii.role"),
+      linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+      instagram: ''
+    },
+    {
+      src: oleksii,
+      name: translate("teamMembers.oleksii.name"),
+      role: translate("teamMembers.oleksii.role"),
+      linkedin: 'https://www.linkedin.com/in/oleksii-palatnyi/',
+      instagram: ''
+    }, {
+      src: vlad,
+      name: translate("teamMembers.vlad.name"),
+      role: translate("teamMembers.vlad.role"),
+      linkedin: 'https://www.linkedin.com/in/vladkasianenko/'
+    }, {
+      src: kostya,
+      name: translate("teamMembers.kostya.name"),
+      role: translate("teamMembers.kostya.role"),
+      linkedin: "https://www.linkedin.com/in/%D0%B8%D0%BB%D1%8C%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD-konstantin-ilchenko-1715a05b"
+    }, {
+      src: maksim,
+      name: translate("teamMembers.maksim.name"),
+      role: translate("teamMembers.maksim.role"),
+      linkedin: 'https://www.linkedin.com/in/maksim-kolomiets/'
+    }, {
+      src: dima,
+      name: translate("teamMembers.dima.name"),
+      role: translate("teamMembers.dima.role"),
+      linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
+    }];
 
   return (
     <div className="team" id="team">
