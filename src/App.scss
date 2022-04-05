@@ -266,6 +266,7 @@
 
         & > .text {
             padding: 64px 72px;
+            width: 120%;
 
             & > .title {
                 font-size: 32px;
@@ -631,6 +632,10 @@
             & .image {
                 padding: 16px;
                 order: 1;
+            }
+
+            & .title {
+                width: auto;
             }
 
             & .text {
