@@ -19,7 +19,7 @@ import maksim from './images/maksim.png';
 import kostya from './images/kostya.jpeg';
 import andrey from './images/andrey.jpeg';
 import oleksii from './images/oleksii.jpeg';
-import shatilov from './images/shatilov.JPG';
+import shatilov from './images/shatilov.png';
 
 import './App.scss';
 import 'react-dropdown/style.css';
@@ -199,9 +199,6 @@ function Equipment() {
         <div className="title">
           {translate("equipment.title")}
         </div>
-        {/* <div className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </div> */}
         <div className="subtitle">
           {translate("equipment.whatIsScyCTRL")}
         </div>
@@ -216,11 +213,9 @@ function Equipment() {
         </div>
       </div>
       <div className="image">
-        <Carousel autoPlay interval={2000} dynamicHeight showIndicators={false} showThumbs={false}>
-          <div>
-            <img src={system} />
-          </div>
-        </Carousel>
+        <div>
+          <img src={system} />
+        </div>
         <div className="donate">{translate("equipment.donate")}</div>
       </div>
 
@@ -314,14 +309,14 @@ function Team(props) {
       src: shatilov,
       name: translate("teamMembers.shatilov.name"),
       role: translate("teamMembers.shatilov.role"),
-      linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+      linkedin: 'https://www.linkedin.com/in/vadym-shatilov-04b685189',
       instagram: ''
     },
     {
       src: youra,
       name: translate("teamMembers.youra.name"),
       role: translate("teamMembers.youra.role"),
-      // linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+      linkedin: 'https://www.linkedin.com/in/yuriy-shelmuk-52080b70',
       instagram: ''
     },
     {

@@ -24,7 +24,7 @@
 
     & > .header-desktop {
         height: 64px;
-        padding: 0  36px 0 72px;
+        padding: 0 36px 0 72px;
         background: #343239;
 
         display: flex;
@@ -200,11 +200,11 @@
             flex-wrap: wrap;
             margin-top: 40px;
             justify-content: space-around;
-            
+
             & > .member {
                 width: 300px;
                 overflow: hidden;
-                margin-bottom:16px;
+                margin-bottom: 16px;
 
                 & .imgHolder {
                     overflow: hidden;
@@ -298,6 +298,9 @@
             flex-direction: column;
             align-items: center;
             padding: 64px 72px;
+            & img {
+                width: 100%;
+            }
         }
 
         & .donate {
@@ -339,7 +342,7 @@
 
         & > .donate-requisities {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
 
             & .requisite-holder {
                 margin-right: 12px;
@@ -348,7 +351,9 @@
                 border: 4px solid #fae526;
                 margin-bottom: 5px;
                 flex-direction: column;
-                padding: 5px;
+                padding: 10px;
+                white-space: nowrap;
+                overflow: scroll;
 
                 & .title {
                     font-size: 24px;
@@ -357,17 +362,22 @@
                     line-height: 36px;
                     font-style: normal;
                     text-transform: capitalize;
-                    margin-bottom: 10px;
+                    // margin-bottom: 10px;
                 }
 
                 & .requisite {
                     display: flex;
-                    align-items: flex-start;
+                    overflow: scroll;
                     flex-direction: column;
+                    align-items: flex-start;
 
                     & > .requisite-value {
                         display: flex;
-                        align-items: flex-start;
+                        // flex-direction: column;
+                        align-items: center;
+                        overflow: scroll;
+                        margin-top: 20px;
+                        overflow: scroll;
 
                         & > .title {
                             font-size: 17px;
@@ -379,7 +389,7 @@
                             margin-right: 10px;
                             text-transform: uppercase;
                         }
-                        
+
                         & > .value {
                             hyphens: auto;
                             overflow: hidden;
@@ -388,8 +398,6 @@
                             overflow-wrap: break-word;
                         }
                     }
-
-
                 }
             }
         }
@@ -459,7 +467,6 @@
         }
 
         & > .header-mobile {
-            
             height: 64px;
             padding: 0 16px;
             position: fixed;
@@ -542,7 +549,7 @@
                         line-height: 24px;
                         font-style: normal;
                         margin-bottom: 16px;
-                        margin-right:64px;
+                        margin-right: 64px;
                         justify-content: space-between;
                         cursor: pointer;
                     }

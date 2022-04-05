@@ -1,3 +1,4 @@
+
 {
     "DEFAULT_LANG": "ua",
     "LANGUAGES": {
@@ -66,18 +67,17 @@
         },
         "requisities": {
             "title": "Your help matters",
-            "description": "Please consider donating. It will mean the world to us. Literally.",
             "ourRequisites": "Our requisites",
             "donateDirectly": "Donate directly",
             "requisitiesTypes": {
                 "ibanUahTitle": "IBAN UAH",
                 "ibanUAH": [
                     {
-                        "label": "Громадська організація: ",
+                        "label": "Організація: ",
                         "value": "“ДОПОМОГА 2022”"
                     },
                     {
-                        "label": "IBAN  Гривня: ",
+                        "label": "IBAN: ",
                         "value": "UA413052990000026003005029202"
                     },
                     {
@@ -92,11 +92,11 @@
                 "ibanUsdTitle": "IBAN USD",
                 "ibanUSD": [
                     {
-                        "label": "Громадська організація: ",
+                        "label": "Організація: ",
                         "value": "“ДОПОМОГА 2022”"
                     },
                     {
-                        "label": "IBAN долар: ",
+                        "label": "IBAN: ",
                         "value": "USD413052990000026003005029202"
                     },
                     {
@@ -111,16 +111,12 @@
                 "otherWaysTitle": "Інші способи",
                 "otherWays": [
                     {
-                        "label": "Paypal: ",
-                        "value": "paypal@paypal.com"
+                        "label": "ETC(ERC20): ",
+                        "value": "0x11f137a9ce8db11422ca9b11a31e57f821b01343"
                     },
                     {
-                        "label": "ETC: ",
-                        "value": "ethereum-wallet-address"
-                    },
-                    {
-                        "label": "BTC: ",
-                        "value": "bitcoin-wallet-address"
+                        "label": "BTC(bitcoin): ",
+                        "value": "3B7yE3irmBj61Zh3mgY9KzZ2VsFH9akk8o"
                     }
                 ]
             }
@@ -227,17 +223,16 @@
         },
         "requisities": {
             "title": "Реквізити для переказів",
-            "ourRequisites": "Реквізити",
             "donateDirectly": "Допомогти",
             "requisitiesTypes": {
                 "ibanUahTitle": "IBAN UAH",
                 "ibanUAH": [
                     {
-                        "label": "Громадська організація: ",
+                        "label": "Організація: ",
                         "value": "“ДОПОМОГА 2022”"
                     },
                     {
-                        "label": "IBAN  Гривня: ",
+                        "label": "IBAN: ",
                         "value": "UA413052990000026003005029202"
                     },
                     {
@@ -252,11 +247,11 @@
                 "ibanUsdTitle": "IBAN USD",
                 "ibanUSD": [
                     {
-                        "label": "Громадська організація: ",
+                        "label": "Організація: ",
                         "value": "“ДОПОМОГА 2022”"
                     },
                     {
-                        "label": "IBAN долар: ",
+                        "label": "IBAN: ",
                         "value": "USD413052990000026003005029202"
                     },
                     {
@@ -271,16 +266,12 @@
                 "otherWaysTitle": "Інші способи",
                 "otherWays": [
                     {
-                        "label": "Paypal: ",
-                        "value": "paypal@paypal.com"
+                        "label": "ETC(ERC20): ",
+                        "value": "0x11f137a9ce8db11422ca9b11a31e57f821b01343"
                     },
                     {
-                        "label": "ETC: ",
-                        "value": "ethereum-wallet-address"
-                    },
-                    {
-                        "label": "BTC: ",
-                        "value": "bitcoin-wallet-address"
+                        "label": "BTC(bitcoin): ",
+                        "value": "3B7yE3irmBj61Zh3mgY9KzZ2VsFH9akk8o"
                     }
                 ]
             }

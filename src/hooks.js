@@ -32,7 +32,7 @@ export function useTranslations() {
             if(translation[el] !== undefined) {
                 translation = translation[el];
             } else {
-                return 'NO TRANSLATION'
+                return 
             }
         }
 
