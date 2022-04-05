@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Dropdown from 'react-dropdown';
 import { useTranslations } from './hooks'
 import { useNavigate } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
 
 import close from './images/close.png';
 import system from './images/system.jpg';
