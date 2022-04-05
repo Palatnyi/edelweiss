@@ -7,7 +7,7 @@ import App from './App.jsx';
 const supportedLang = { 'en': 'en', 'es': 'es', 'ua': 'ua' };
 
 function EdelweissRouter() {
-    // useBrowserLanguage();
+    useBrowserLanguage();
 
     return (
         <Routes>
