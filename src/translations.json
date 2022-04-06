@@ -73,42 +73,42 @@
                 "ibanUahTitle": "IBAN UAH",
                 "ibanUAH": [
                     {
-                        "label": "Організація: ",
-                        "value": "“ДОПОМОГА 2022”"
+                        "label": "Organisation: ",
+                        "value": "DOPOMOGA 2022"
                     },
                     {
                         "label": "IBAN: ",
                         "value": "UA413052990000026003005029202"
                     },
                     {
-                        "label": "МФО: ",
+                        "label": "Bank Code: ",
                         "value": "305299"
                     },
                     {
-                        "label": "ЄДРПОУ: ",
+                        "label": "USREOU: ",
                         "value": "44681509"
                     }
                 ],
                 "ibanUsdTitle": "IBAN USD",
                 "ibanUSD": [
                     {
-                        "label": "Організація: ",
-                        "value": "“ДОПОМОГА 2022”"
+                        "label": "Organisation: ",
+                        "value": "DOPOMOGA 2022"
                     },
                     {
                         "label": "IBAN: ",
                         "value": "UA973052990000026009035021166"
                     },
                     {
-                        "label": "МФО: ",
+                        "label": "Bank Code: ",
                         "value": "305299"
                     },
                     {
-                        "label": "ЄДРПОУ: ",
+                        "label": "USREOU: ",
                         "value": "44681509"
                     }
                 ],
-                "otherWaysTitle": "Інші способи",
+                "otherWaysTitle": "Other ways",
                 "otherWays": [
                     {
                         "label": "ETC(ERC20): ",
@@ -117,6 +117,10 @@
                     {
                         "label": "BTC(bitcoin): ",
                         "value": "3B7yE3irmBj61Zh3mgY9KzZ2VsFH9akk8o"
+                    },
+                    {
+                        "label": "Paypal: ",
+                        "customComponent": true
                     }
                 ]
             }

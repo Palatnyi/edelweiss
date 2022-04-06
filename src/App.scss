@@ -15,6 +15,7 @@
     cursor: pointer;
     min-width: 112px;
     padding: 10px;
+    border: 0px;
 }
 .edelweiss {
     & > .header-mobile,
@@ -37,8 +38,9 @@
         }
 
         & > .name {
-            color: #fff;
             height: 100%;
+            padding: 7px;
+            color: #fff;
             font-size: 24px;
             & > img {
                 height: 100%;
