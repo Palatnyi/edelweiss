@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import translations from './translations.json';
 
-const {LANGUAGES, DEFAULT_LANG } = translations;
+const { LANGUAGES, DEFAULT_LANG } = translations;
 
 export function useBrowserLanguage() {
 
@@ -24,15 +24,15 @@ export function useTranslations() {
 
     return (key) => {
         const keyAsArray = key.split(".");
-        let translation = {...translations[lang]};
+        let translation = { ...translations[lang] };
 
-        for(let i = 0; i < keyAsArray.length; i += 1) {
+        for (let i = 0; i < keyAsArray.length; i += 1) {
             const el = keyAsArray[i];
 
-            if(translation[el] !== undefined) {
+            if (translation[el] !== undefined) {
                 translation = translation[el];
             } else {
-                return 
+                return
             }
         }
 

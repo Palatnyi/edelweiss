@@ -117,10 +117,6 @@
                     {
                         "label": "BTC(bitcoin): ",
                         "value": "3B7yE3irmBj61Zh3mgY9KzZ2VsFH9akk8o"
-                    },
-                    {
-                        "label": "Paypal: ",
-                        "customComponent": true
                     }
                 ]
             }
@@ -132,7 +128,7 @@
             },
             "kostya": {
                 "name": "Kostiatntyn Ilchenko",
-                "role": "Presale manager at LuxoftI"
+                "role": "Presale manager at Luxoft"
             },
             "vlad": {
                 "name": "Vladyslav Kasianenko",
@@ -276,10 +272,6 @@
                     {
                         "label": "BTC(bitcoin): ",
                         "value": "3B7yE3irmBj61Zh3mgY9KzZ2VsFH9akk8o"
-                    },
-                    {
-                        "label": "Paypal: ",
-                        "customComponent": true
                     }
                 ]
             }
@@ -291,7 +283,7 @@
             },
             "kostya": {
                 "name": "Костянтин Ільченко",
-                "role": "Presale manager at LuxoftI"
+                "role": "Presale manager at Luxoft"
             },
             "vlad": {
                 "name": "Владислав Касьяненко",
