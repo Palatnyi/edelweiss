@@ -11,5 +11,5 @@ ReactDOM.render(
       <EdelweissRouter />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root1')
 );

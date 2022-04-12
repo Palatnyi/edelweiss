@@ -10,7 +10,7 @@ export function useBrowserLanguage() {
     const navigate = useNavigate()
     const getLang = (languages) => {
         const lng = navigator.languages[0].split("-")[0]
-        return languages[lng] || DEFAULT_LANG;
+        return languages[lng] || "/en";
     }
 
     useEffect(() => {
@@ -20,7 +20,8 @@ export function useBrowserLanguage() {
 }
 
 export function useTranslations() {
-    let { lang = DEFAULT_LANG } = useParams();
+    let { lang } = useParams();
+    lang = LANGUAGES[lang] || DEFAULT_LANG;
 
     return (key) => {
         const keyAsArray = key.split(".");

@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { useBrowserLanguage } from './hooks';
-import Payment from './Payment.jsx';
 import App from './App.jsx';
 
 function EdelweissRouter() {
@@ -10,7 +9,6 @@ function EdelweissRouter() {
     return (
         <Routes>
             <Route path=":lang" element={<App />} />
-            {/* <Route path=":lang/paymesnt" element={<Payment />} /> */}
         </Routes>
     );
 }

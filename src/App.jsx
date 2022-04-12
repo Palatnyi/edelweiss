@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 
+import axios from 'axios';
 import Dropdown from 'react-dropdown';
-import { useTranslations } from './hooks'
+import { useTranslations } from './hooks';
 import { useNavigate } from 'react-router-dom';
+import DonationDialog from './DonationDialog.jsx';
+import { BallTriangle } from "react-loader-spinner";
+
 
 import close from './images/close.png';
 import system from './images/system.jpg';
@@ -35,7 +39,7 @@ function Requisite(props) {
           return (
             <div className="requisite-value">
               <div className="title">{item.label}</div>
-              <div className="value">{item.customComponent ? <DonatePaypal/> : item.value}</div>
+              <div className="value">{item.customComponent ? <DonatePaypal /> : item.value}</div>
             </div>
           );
         })}
@@ -151,7 +155,7 @@ function Header() {
   );
 }
 
-function Welcome() {
+function Welcome({ openDonationDialog }) {
   const translate = useTranslations();
 
   return (
@@ -162,7 +166,7 @@ function Welcome() {
         <div className="text">
           {translate("welcome.description")}
         </div>
-        <div className="donate">
+        <div className="donate" onClick={openDonationDialog}>
           {translate("welcome.donate")}
         </div>
       </div>
@@ -189,7 +193,7 @@ function AboutWar() {
   );
 }
 
-function Equipment() {
+function Equipment({ openDonationDialog }) {
   const translate = useTranslations();
 
   return (
@@ -215,15 +219,15 @@ function Equipment() {
         <div>
           <img src={system} />
         </div>
-        <div className="donate">{translate("equipment.donate")}</div>
+        <div className="donate" onClick={openDonationDialog}>{translate("equipment.donate")}</div>
       </div>
 
-      <div className="donate donate-mobile">{translate("equipment.donate")}</div>
+      <div className="donate donate-mobile" onClick={openDonationDialog}>{translate("equipment.donate")}</div>
     </div>
   );
 }
 
-function HelpMatters() {
+function HelpMatters({ openDonationDialog }) {
   const translate = useTranslations();
 
   return (
@@ -237,9 +241,11 @@ function HelpMatters() {
       <div className="requisities">
         {translate("requisities.ourRequisites")}
       </div>
+
       <DonateRequisities />
+
       <div className="donate-btn-holder">
-        <div className="donate">
+        <div className="donate" onClick={openDonationDialog}>
           {translate("requisities.donateDirectly")}
         </div>
       </div>
@@ -377,16 +383,48 @@ function DonatePaypal() {
   );
 }
 
+function Loader() {
+  return (
+    <div className="loader">
+      <div className="loader-holder">
+        <BallTriangle color="#06ace6" radius="5" />
+      </div>
+    </div>
+  );
+}
+
 function Edelweiss() {
+  const [showLoader, toggleLoader] = useState(false);
+  const [showDialog, toggleShowDialog] = useState(false);
+
+  function onDonate(params) {
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/payment' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/payment';
+
+    console.log('LOG 2022:', url);
+
+    toggleShowDialog(false);
+    toggleLoader(true);
+    axios.get(url, {params})
+      .then(response => {
+        window.location.href = response.data.url;
+        toggleLoader(false);
+      })
+      .catch((e) => {
+        console.log(e)
+        toggleLoader(false);
+      });
+  }
 
   return (
     <div className="edelweiss">
+      {showLoader && <Loader />}
+      {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)}/>}
       <Header />
-      <Welcome />
+      <Welcome openDonationDialog={() => toggleShowDialog(true)} />
       <AboutWar />
       <Team />
-      <Equipment />
-      <HelpMatters />
+      <Equipment openDonationDialog={() => toggleShowDialog(true)} />
+      <HelpMatters openDonationDialog={() => toggleShowDialog(true)} />
       <Footer />
     </div>
   );

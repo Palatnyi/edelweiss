@@ -1,9 +1,9 @@
 
 {
-    "DEFAULT_LANG": "ua",
+    "DEFAULT_LANG": "en",
     "LANGUAGES": {
         "en": "en",
-        "ua": "ua"
+        "uk": "uk"
     },
     "en": {
         "menu": {
@@ -17,7 +17,7 @@
             "languageSelector": {
                 "mobileOptions": [
                     {
-                        "value": "ua",
+                        "value": "uk",
                         "label": "Ukrainian",
                         "flag": "🇺🇦"
                     },
@@ -29,7 +29,7 @@
                 ],
                 "options": [
                     {
-                        "value": "ua",
+                        "value": "uk",
                         "label": "Ukrainian 🇺🇦"
                     },
                     {
@@ -159,9 +159,16 @@
             "contactUs": "Contact us",
             "email": "contact@dopomoga2022.com",
             "ukraine": "Ukraine"
+        },
+        "donateDialog": {
+            "title": "Donate",
+            "donate": "Pay",
+            "cancel": "Cancel",
+            "subtitle": "Choose amount",
+            "otherAmount": "Other amount"
         }
     },
-    "ua": {
+    "uk": {
         "menu": {
             "aboutWar": "Війна",
             "ourTeam": "Команда",
@@ -173,7 +180,7 @@
             "languageSelector": {
                 "mobileOptions": [
                     {
-                        "value": "ua",
+                        "value": "uk",
                         "label": "Українська",
                         "flag": "🇺🇦"
                     },
@@ -185,7 +192,7 @@
                 ],
                 "options": [
                     {
-                        "value": "ua",
+                        "value": "uk",
                         "label": "Українська 🇺🇦"
                     },
                     {
@@ -194,7 +201,7 @@
                     }
                 ],
                 "defaultValue": {
-                    "value": "ua",
+                    "value": "uk",
                     "label": "Українська 🇺🇦"
                 },
                 "placeholder": "Українська 🇺🇦"
@@ -314,6 +321,14 @@
             "contactUs": "Наші контакти",
             "email": "contact@dopomoga2022.com",
             "ukraine": "Україна"
+        },
+        "donateDialog": {
+            "title": "Пожертовувати",
+            "subtitle": "Оберіть сумму",
+            "donate": "Перейти до оплати",
+            "cancel": "Відмінити",
+            "otherAmount": "Інша сумма"
+
         }
     }
 }
