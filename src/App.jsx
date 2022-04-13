@@ -6,7 +6,7 @@ import { useTranslations } from './hooks';
 import { useNavigate } from 'react-router-dom';
 import DonationDialog from './DonationDialog.jsx';
 import { BallTriangle } from "react-loader-spinner";
-
+import ReactCountryFlag from "react-country-flag"
 
 import close from './images/close.png';
 import system from './images/system.jpg';
@@ -86,14 +86,22 @@ function Header() {
   const defaultOption = translate("header.languageSelector.defaultValue");
 
   const renderLanguageSelectorMobile = (options) => {
+
+
     return options.map(({ label, value, flag }) => {
+
+      const onClick = () => {
+        navigate(`/${value}`)
+        toggleShowHamburger(true);
+      };
+
       return (
-        <div className={`lang ${value}`} onClick={() => navigate(`/${value}`)}>
+        <div className={`lang ${value}`} onClick={onClick}>
           <span>
             {label}
           </span>
           <span>
-            🇺{flag}
+            <ReactCountryFlag countryCode={flag} />
           </span>
         </div>
       );
@@ -404,10 +412,9 @@ function Edelweiss() {
 
     toggleShowDialog(false);
     toggleLoader(true);
-    axios.get(url, {params})
+    axios.get(url, { params })
       .then(response => {
         window.location.href = response.data.url;
-        toggleLoader(false);
       })
       .catch((e) => {
         console.log(e)
@@ -418,7 +425,7 @@ function Edelweiss() {
   return (
     <div className="edelweiss">
       {showLoader && <Loader />}
-      {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)}/>}
+      {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)} />}
       <Header />
       <Welcome openDonationDialog={() => toggleShowDialog(true)} />
       <AboutWar />

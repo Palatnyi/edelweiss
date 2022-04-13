@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -10,18 +11,17 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
+
 import { useTranslations } from './hooks'
 import { useParams } from 'react-router-dom';
+import translations from './translations.json';
+
 
 export default function DonationDialog({ onDonate, onClose }) {
-    let { lang } = useParams();
+	let { lang } = useParams();
+	const { CURRENCIES } = translations;
 	const translate = useTranslations();
 	const [amount, setAmount] = useState(100);
-	
-	const currency = {
-		'uk': "UAH",
-		'en': "USD"
-	};
 
 	const handleInputChange = (e) => {
 		setAmount(e.target.value)
@@ -42,15 +42,14 @@ export default function DonationDialog({ onDonate, onClose }) {
 	}
 
 	const donate = () => {
-
 		console.log('LOG 2022:', {
 			amount,
-			currency: currency[lang],
+			currency: 'UAH',
 			customer_lang: lang.toUpperCase()
 		});
 		onDonate({
 			amount,
-			currency: currency[lang],
+			currency: 'UAH',
 			customer_lang: lang.toUpperCase()
 		});
 	};
@@ -61,7 +60,7 @@ export default function DonationDialog({ onDonate, onClose }) {
 				<DialogTitle>{translate("donateDialog.title")}</DialogTitle>
 				<DialogContent>
 					<DialogContentText>
-						{translate("donateDialog.subtitle")} {currency[lang]}
+						{translate("donateDialog.subtitle")} {CURRENCIES["uk"]}
 					</DialogContentText>
 					<Stack direction="row" spacing={1}>
 						<Box sx={{ margin: '10px 0 10px 0px' }}>

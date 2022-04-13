@@ -5,6 +5,10 @@
         "en": "en",
         "uk": "uk"
     },
+    "CURRENCIES": {
+		"uk": "UAH",
+		"en": "USD"
+    },
     "en": {
         "menu": {
             "aboutWar": "About the war",
@@ -19,12 +23,12 @@
                     {
                         "value": "uk",
                         "label": "Ukrainian",
-                        "flag": "🇺🇦"
+                        "flag": "UA"
                     },
                     {
                         "value": "en",
                         "label": "English",
-                        "flag": "🇬🇧"
+                        "flag": "US"
                     }
                 ],
                 "options": [
@@ -323,7 +327,7 @@
             "ukraine": "Україна"
         },
         "donateDialog": {
-            "title": "Пожертовувати",
+            "title": "Пожертвувати",
             "subtitle": "Оберіть сумму",
             "donate": "Перейти до оплати",
             "cancel": "Відмінити",
