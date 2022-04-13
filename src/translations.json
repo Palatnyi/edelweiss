@@ -28,7 +28,7 @@
                     {
                         "value": "en",
                         "label": "English",
-                        "flag": "US"
+                        "flag": "GB"
                     }
                 ],
                 "options": [
@@ -186,12 +186,12 @@
                     {
                         "value": "uk",
                         "label": "Українська",
-                        "flag": "🇺🇦"
+                        "flag": "UA"
                     },
                     {
                         "value": "en",
                         "label": "Англійська",
-                        "flag": "🇬🇧"
+                        "flag": "GB"
                     }
                 ],
                 "options": [
