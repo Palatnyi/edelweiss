@@ -79,6 +79,17 @@
                 display: none;
             }
         }
+
+        & .social {
+            display: flex;
+
+
+            & a > img {
+                width: 24px;
+                height: 24px;
+                margin-right: 12px;
+            }
+        }
     }
 
     & > .welcome {
@@ -536,7 +547,7 @@
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-start;
 
                 & > .top > div > a {
                     color: black;
@@ -549,7 +560,7 @@
                 }
 
                 & > .bottom {
-                    margin-bottom: 164px;
+                    margin-top: 120px;
 
                     & > .lang-title {
                         font-style: normal;
@@ -571,6 +582,13 @@
                         margin-right: 64px;
                         justify-content: space-between;
                         cursor: pointer;
+                    }
+                }
+
+                & > .social {
+                    margin-top: 20px;
+                    & img {
+                        margin-right: 20px;
                     }
                 }
             }

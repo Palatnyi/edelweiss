@@ -21,14 +21,14 @@ export default function DonationDialog({ onDonate, onClose }) {
 	let { lang } = useParams();
 	const { CURRENCIES } = translations;
 	const translate = useTranslations();
-	const [amount, setAmount] = useState(100);
+	const [amount, setAmount] = useState(500);
 
 	const handleInputChange = (e) => {
 		setAmount(e.target.value)
 	}
 
 	const renderAmounts = () => {
-		let amounts = [10, 20, 50, 100, 200];
+		let amounts = [100, 200, 500, 1000, 2000];
 		return amounts.map((value) => {
 			const variant = value === amount ? "filled" : "outlined"
 			return (

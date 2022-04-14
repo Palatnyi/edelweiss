@@ -11,8 +11,9 @@ import ReactCountryFlag from "react-country-flag"
 import close from './images/close.png';
 import system from './images/system.jpg';
 import linkedin from './images/linkedin.png';
-import instagram from './images/instagram.png';
+import fb from './images/facebook-social.png'
 import hamburger from './images/hamburger.png';
+import instagram from './images/instagram-social.png'
 
 import dima from './images/dima.jpg';
 import vlad from "./images/vlad.jpg";
@@ -135,6 +136,14 @@ function Header() {
               <div className="lang-title">{languages}</div>
               {renderLanguageSelectorMobile(mobileOptions)}
             </div>
+            <div className="social">
+              <a href="https://www.facebook.com/dopomoga2022">
+                <img src={fb} alt="" rel="preload" />
+              </a>
+              <a href="https://instagram.com/dopomoga2022ua?igshid=YmMyMTA2M2Y=">
+                <img src={instagram} alt="" rel="preload" />
+              </a>
+            </div>
           </div>
         </div>
       }
@@ -157,6 +166,14 @@ function Header() {
             placeholder={placeholder}
             controlClassName="langSelector"
           />
+        </div>
+        <div className="social">
+          <a href="https://www.facebook.com/dopomoga2022">
+            <img src={fb} alt="" rel="preload" />
+          </a>
+          <a href="https://instagram.com/dopomoga2022ua?igshid=YmMyMTA2M2Y=">
+            <img src={instagram} alt="" rel="preload" />
+          </a>
         </div>
       </div>
     </>
@@ -295,9 +312,6 @@ function Member({ member }) {
       <div className="social">
         {member.linkedin && <div className="linkedin">
           <img src={linkedin} onClick={() => { window.open(member.linkedin, "_blank") }} rel="preload" />
-        </div>}
-        {member.instagram && <div className="instagram">
-          <img src={instagram} rel="preload" />
         </div>}
       </div>
     </div>
