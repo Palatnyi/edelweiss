@@ -17,12 +17,12 @@ import hamburger from './images/hamburger.png';
 import dima from './images/dima.jpg';
 import vlad from "./images/vlad.jpg";
 import logo from './images/logo.png';
-import youra from './images/youra.JPG';
-import maksim from './images/maksim.png';
+import youra from './images/youra.jpg';
+import maksim from './images/maksim.jpg';
 import kostya from './images/kostya.jpeg';
 import andrey from './images/andrey.jpeg';
 import oleksii from './images/oleksii.jpeg';
-import shatilov from './images/shatilov.png';
+import shatilov from './images/shatilov.jpg';
 
 import './App.scss';
 import 'react-dropdown/style.css';
@@ -113,10 +113,10 @@ function Header() {
     <>
       <div className="header-mobile">
         <div className="name">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" rel="preload" />
         </div>
         <div className="icon" onClick={() => toggleShowHamburger(!showHamburger)}>
-          <img src={icon} />
+          <img src={icon} rel="preload" />
         </div>
       </div>
 
@@ -142,7 +142,7 @@ function Header() {
       <div className="header-desktop">
 
         <div className="name">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" rel="preload" />
         </div>
 
         <div className="menu">
@@ -225,7 +225,7 @@ function Equipment({ openDonationDialog }) {
       </div>
       <div className="image">
         <div>
-          <img src={system} />
+          <img src={system} rel="preload" />
         </div>
         <div className="donate" onClick={openDonationDialog}>{translate("equipment.donate")}</div>
       </div>
@@ -288,16 +288,16 @@ function Member({ member }) {
   return (
     <div className="member">
       <div className="imgHolder">
-        <img className="image" src={member.src} alt="" />
+        <img className="image" src={member.src} alt="" rel="preload" />
       </div>
       <div className="name">{member.name}</div>
       <div className="role">{member.role}</div>
       <div className="social">
         {member.linkedin && <div className="linkedin">
-          <img src={linkedin} onClick={() => { window.open(member.linkedin, "_blank") }} />
+          <img src={linkedin} onClick={() => { window.open(member.linkedin, "_blank") }} rel="preload" />
         </div>}
         {member.instagram && <div className="instagram">
-          <img src={instagram} />
+          <img src={instagram} rel="preload" />
         </div>}
       </div>
     </div>
@@ -386,7 +386,7 @@ function DonatePaypal() {
       <input type="hidden" name="no_recurring" value="0" />
       <input type="hidden" name="currency_code" value="USD" />
       <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-      <img alt="" border="0" src="https://www.paypal.com/en_UA/i/scr/pixel.gif" width="1" height="1" />
+      <img alt="" border="0" src="https://www.paypal.com/en_UA/i/scr/pixel.gif" width="1" height="1" rel="preload" />
     </form>
   );
 }
