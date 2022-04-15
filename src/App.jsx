@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Dropdown from 'react-dropdown';
 import { useTranslations } from './hooks';
+import logEdelweissEvent from './analytics.js';
 import { useNavigate } from 'react-router-dom';
 import DonationDialog from './DonationDialog.jsx';
 import { BallTriangle } from "react-loader-spinner";
@@ -27,7 +28,7 @@ import shatilov from './images/shatilov.jpg';
 
 import './App.scss';
 import 'react-dropdown/style.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Requisite(props) {
   const { data, title } = props;
@@ -436,16 +437,26 @@ function Edelweiss() {
       });
   }
 
+  const openDonationDialog = (page) => {
+    return  () => {
+      toggleShowDialog(true);
+      logEdelweissEvent({
+        page,
+      }, 'CLICK_DONATE_BUTTON');
+
+    };
+  }
+
   return (
     <div className="edelweiss">
       {showLoader && <Loader />}
       {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)} />}
       <Header />
-      <Welcome openDonationDialog={() => toggleShowDialog(true)} />
+      <Welcome openDonationDialog={openDonationDialog('Welcome')} />
       <AboutWar />
       <Team />
-      <Equipment openDonationDialog={() => toggleShowDialog(true)} />
-      <HelpMatters openDonationDialog={() => toggleShowDialog(true)} />
+      <Equipment openDonationDialog={openDonationDialog('Equipment')} />
+      <HelpMatters openDonationDialog={openDonationDialog('HelpMatters')} />
       <Footer />
     </div>
   );

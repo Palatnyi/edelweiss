@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -11,11 +10,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
-
 import { useTranslations } from './hooks'
 import { useParams } from 'react-router-dom';
+import logEdelweissEvent from './analytics.js';
 import translations from './translations.json';
-
 
 export default function DonationDialog({ onDonate, onClose }) {
 	let { lang } = useParams();
@@ -24,35 +22,56 @@ export default function DonationDialog({ onDonate, onClose }) {
 	const [amount, setAmount] = useState(500);
 
 	const handleInputChange = (e) => {
-		setAmount(e.target.value)
+		const value = e.target.value;
+		logEdelweissEvent({
+			page: 'DonationDialog',
+			amount: value,
+		}, 'DONATION-DIALOG_AMOUNT_CHANGE_INPUT')
+		setAmount(value);
 	}
 
 	const renderAmounts = () => {
 		let amounts = [100, 200, 500, 1000, 2000];
 		return amounts.map((value) => {
 			const variant = value === amount ? "filled" : "outlined"
+			const onClick = () => {
+				logEdelweissEvent({
+					page: 'DonationDialog',
+					amount: value
+				}, 'DONATION-DIALOG_AMOUNT_CHANGE_PREDEFINED_VALUE');
+				setAmount(value);
+			}
 			return (
 				<Box
 					key={value}
 					sx={{ margin: '10px 0 10px 10px', display: 'inline-block' }}
 				>
-					<Chip key={value} label={value} onClick={() => setAmount(value)} variant={variant} />
+					<Chip key={value} label={value} onClick={onClick} variant={variant} />
 				</Box>);
 		});
 	}
 
 	const donate = () => {
-		console.log('LOG 2022:', {
+		const data = {
 			amount,
 			currency: 'UAH',
 			customer_lang: lang.toUpperCase()
-		});
-		onDonate({
-			amount,
-			currency: 'UAH',
-			customer_lang: lang.toUpperCase()
-		});
+		};
+
+
+		console.log('LOG 2022:', data);
+		onDonate(data);
+
+		logEdelweissEvent({
+			data
+		}, 'DONATION-DIALOG_ON_PAY_CLICK');
 	};
+
+	const close = () => {
+		onClose();
+		logEdelweissEvent({
+		}, 'DONATION-DIALOG_ON_CANCEL_CLICK');
+	}
 
 	return (
 		<div>
@@ -82,7 +101,7 @@ export default function DonationDialog({ onDonate, onClose }) {
 					</Box>
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={onClose}>{translate("donateDialog.cancel")}</Button>
+					<Button onClick={close}>{translate("donateDialog.cancel")}</Button>
 					<Button variant="contained" disabled={!amount} onClick={donate}>{translate("donateDialog.donate")}</Button>
 				</DialogActions>
 			</Dialog>
