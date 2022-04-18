@@ -21,8 +21,8 @@ let app = initializeApp(firebaseConfig);
 let analytics = getAnalytics(app);
 
 export default function logEdelweissEvent(data, message) {
-    // if(process.env.NODE_ENV !== 'development') {
+    if(process.env.NODE_ENV !== 'development') {
         logEvent(analytics, message, data);
-    // }
+    }
 }
 

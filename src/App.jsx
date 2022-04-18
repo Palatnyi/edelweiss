@@ -30,6 +30,8 @@ import './App.scss';
 import 'react-dropdown/style.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+console.log('process.env', process.env.REACT_APP_SERVER_URL);
+
 function Requisite(props) {
   const { data, title } = props;
 
@@ -421,8 +423,7 @@ function Edelweiss() {
   const [showDialog, toggleShowDialog] = useState(false);
 
   function onDonate(params) {
-    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/payment' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/payment';
-
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/payment`
     console.log('LOG 2022:', url);
 
     toggleShowDialog(false);
@@ -438,7 +439,7 @@ function Edelweiss() {
   }
 
   const openDonationDialog = (page) => {
-    return  () => {
+    return () => {
       toggleShowDialog(true);
       logEdelweissEvent({
         page,

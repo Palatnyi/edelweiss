@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -17,9 +18,24 @@ import translations from './translations.json';
 
 export default function DonationDialog({ onDonate, onClose }) {
 	let { lang } = useParams();
-	const { CURRENCIES } = translations;
+	const { CURRENCIES, LANGUAGES } = translations;
 	const translate = useTranslations();
 	const [amount, setAmount] = useState(500);
+	const [currencies, setCurrencies] = useState([]);
+
+	useEffect(() => {
+		axios.get(`${process.env.REACT_APP_SERVER_URL}/api/currencies`)
+			.then(response => {
+				console.log('response', response);
+				if (response.data && response.data.data) {
+					setCurrencies(response.data.data);
+				}
+			})
+			.catch(error => {
+				console.log('error', error);
+			});
+	}, [])
+
 
 	const handleInputChange = (e) => {
 		const value = e.target.value;
@@ -51,6 +67,27 @@ export default function DonationDialog({ onDonate, onClose }) {
 		});
 	}
 
+	const renderCurrencyLabel = () => {
+		const usdCode = 840;
+		const isNotUA = lang !== LANGUAGES['uk'];
+
+		if (isNotUA && currencies) {
+			const currency = currencies.find(currency => currency.currencyCodeA === usdCode);
+			return (currency &&
+				<DialogContentText>
+					{translate("donateDialog.subtitle")} &asymp; {parseFloat(amount / currency.rateBuy).toFixed(2)} {CURRENCIES['en']}
+				</DialogContentText>
+			)
+
+		}
+
+		return (
+			<DialogContentText>
+				{translate("donateDialog.subtitle")} {CURRENCIES["uk"]}
+			</DialogContentText>
+		)
+	}
+
 	const donate = () => {
 		const data = {
 			amount,
@@ -73,14 +110,14 @@ export default function DonationDialog({ onDonate, onClose }) {
 		}, 'DONATION-DIALOG_ON_CANCEL_CLICK');
 	}
 
+
+
 	return (
 		<div>
 			<Dialog open>
 				<DialogTitle>{translate("donateDialog.title")}</DialogTitle>
 				<DialogContent>
-					<DialogContentText>
-						{translate("donateDialog.subtitle")} {CURRENCIES["uk"]}
-					</DialogContentText>
+					{renderCurrencyLabel()}
 					<Stack direction="row" spacing={1}>
 						<Box sx={{ margin: '10px 0 10px 0px' }}>
 							{renderAmounts()}
