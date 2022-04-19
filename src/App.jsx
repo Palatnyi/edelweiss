@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import axios from 'axios';
+import { Helmet } from "react-helmet";
 import Dropdown from 'react-dropdown';
 import { useTranslations } from './hooks';
 import logEdelweissEvent from './analytics.js';
@@ -20,6 +21,7 @@ import dima from './images/dima.jpg';
 import vlad from "./images/vlad.jpg";
 import logo from './images/logo.png';
 import youra from './images/youra.jpg';
+import anton from './images/anton.jpg';
 import maksim from './images/maksim.jpg';
 import kostya from './images/kostya.jpeg';
 import andrey from './images/andrey.jpeg';
@@ -28,9 +30,6 @@ import shatilov from './images/shatilov.jpg';
 
 import './App.scss';
 import 'react-dropdown/style.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-console.log('process.env', process.env.REACT_APP_SERVER_URL);
 
 function Requisite(props) {
   const { data, title } = props;
@@ -43,7 +42,7 @@ function Requisite(props) {
           return (
             <div className="requisite-value">
               <div className="title">{item.label}</div>
-              <div className="value">{item.customComponent ? <DonatePaypal /> : item.value}</div>
+              <div className="value">{item.value}</div>
             </div>
           );
         })}
@@ -61,6 +60,9 @@ function DonateRequisities() {
   const ibanUSD = translate("requisities.requisitiesTypes.ibanUSD");
   const ibanUsdTitle = translate("requisities.requisitiesTypes.ibanUsdTitle");
 
+  const ibanEUR = translate("requisities.requisitiesTypes.ibanEUR");
+  const ibanEurTitle = translate("requisities.requisitiesTypes.ibanEurTitle");
+
   const otherWays = translate("requisities.requisitiesTypes.otherWays");
   const otherWaysTitle = translate("requisities.requisitiesTypes.otherWaysTitle");
 
@@ -68,6 +70,7 @@ function DonateRequisities() {
     <div className="donate-requisities">
       <Requisite data={ibanUAH} title={ibanUahTitle} />
       <Requisite data={ibanUSD} title={ibanUsdTitle} />
+      <Requisite data={ibanEUR} title={ibanEurTitle} />
       <Requisite data={otherWays} title={otherWaysTitle} />
     </div>
   );
@@ -120,7 +123,7 @@ function Header() {
           <img src={logo} alt="logo" rel="preload" />
         </div>
         <div className="icon" onClick={() => toggleShowHamburger(!showHamburger)}>
-          <img src={icon} rel="preload" />
+          <img src={icon} rel="preload" alt="mobile-header-icon" />
         </div>
       </div>
 
@@ -141,10 +144,10 @@ function Header() {
             </div>
             <div className="social">
               <a href="https://www.facebook.com/dopomoga2022">
-                <img src={fb} alt="" rel="preload" />
+                <img src={fb} rel="preload" alt="fb" />
               </a>
               <a href="https://instagram.com/dopomoga2022ua?igshid=YmMyMTA2M2Y=">
-                <img src={instagram} alt="" rel="preload" />
+                <img src={instagram} rel="preload" alt="instagram" />
               </a>
             </div>
           </div>
@@ -380,6 +383,12 @@ function Team(props) {
       name: translate("teamMembers.dima.name"),
       role: translate("teamMembers.dima.role"),
       linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
+    },
+    {
+      src: anton,
+      name: translate("teamMembers.anton.name"),
+      role: translate("teamMembers.anton.role"),
+      linkedin: 'https://www.linkedin.com/in/anton-pluzhnikov-5491a1a5/'
     }];
 
   return (
@@ -421,9 +430,10 @@ function Loader() {
 function Edelweiss() {
   const [showLoader, toggleLoader] = useState(false);
   const [showDialog, toggleShowDialog] = useState(false);
+  const translate = useTranslations();
 
   function onDonate(params) {
-    const url = `${process.env.REACT_APP_SERVER_URL}/api/payment`
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/payment' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/payment'
     console.log('LOG 2022:', url);
 
     toggleShowDialog(false);
@@ -450,6 +460,10 @@ function Edelweiss() {
 
   return (
     <div className="edelweiss">
+      <Helmet>
+        <title>{translate("helmet.title")}</title>
+        <meta name={translate("helmet.meta.name")} content={translate("helmet.meta.content")} />
+      </Helmet>
       {showLoader && <Loader />}
       {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)} />}
       <Header />

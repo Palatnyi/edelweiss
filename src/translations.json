@@ -1,4 +1,3 @@
-
 {
     "DEFAULT_LANG": "en",
     "LANGUAGES": {
@@ -6,10 +5,17 @@
         "uk": "uk"
     },
     "CURRENCIES": {
-		"uk": "UAH",
-		"en": "USD"
+        "uk": "UAH",
+        "en": "USD"
     },
     "en": {
+        "helmet": {
+            "title": "«DOPOMOGA 2022» - Armed Forces of Ukraine Support Fund",
+            "meta": {
+                "name": "description",
+                "content": "«DOPOMOGA 2022» – Armed Forces of Ukraine Support Fund. We're providing technological assistance to the Armed Forces of Ukraine. Speeding along towards victory together!"
+            }
+        },
         "menu": {
             "aboutWar": "About the war",
             "ourTeam": "Our team",
@@ -112,6 +118,25 @@
                         "value": "44681509"
                     }
                 ],
+                "ibanEurTitle": "IBAN EUR",
+                "ibanEUR": [
+                    {
+                        "label": "Organisation: ",
+                        "value": "DOPOMOGA 2022"
+                    },
+                    {
+                        "label": "IBAN: ",
+                        "value": "UA623052990000026008025022585"
+                    },
+                    {
+                        "label": "Bank Code: ",
+                        "value": "305299"
+                    },
+                    {
+                        "label": "USREOU: ",
+                        "value": "44681509"
+                    }
+                ],
                 "otherWaysTitle": "Other ways",
                 "otherWays": [
                     {
@@ -157,6 +182,10 @@
             "youra": {
                 "name": "Yurii Shelmuk",
                 "role": "co-founder  DOPOMOGA2022"
+            },
+            "anton": {
+                "name" : "Anton Pluzhnikov",
+                "role": "General Manager of DataLink"
             }
         },
         "footer": {
@@ -173,6 +202,13 @@
         }
     },
     "uk": {
+        "helmet": {
+            "title": "«DOPOMOGA 2022» - Фонд Допомоги Збройним Силам України",
+            "meta": {
+                "name": "description",
+                "content": "«DOPOMOGA 2022» - Фонд Допомоги Збройним Силам України. Ми допомагаємо в пошуку та купівлі технологічного оснащення наших бійців. Мчимо до перемоги разом!"
+            }
+        },
         "menu": {
             "aboutWar": "Війна",
             "ourTeam": "Команда",
@@ -319,6 +355,10 @@
             "youra": {
                 "name": "Юрій Шельмук",
                 "role": "co-founder  DOPOMOGA2022"
+            },
+            "anton": {
+                "name" : "Антон Плужніков",
+                "role": "General Manager of DataLink"
             }
         },
         "footer": {
@@ -332,7 +372,6 @@
             "donate": "Перейти до оплати",
             "cancel": "Відмінити",
             "otherAmount": "Інша сумма"
-
         }
     }
 }

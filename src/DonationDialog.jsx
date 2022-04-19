@@ -24,7 +24,8 @@ export default function DonationDialog({ onDonate, onClose }) {
 	const [currencies, setCurrencies] = useState([]);
 
 	useEffect(() => {
-		axios.get(`${process.env.REACT_APP_SERVER_URL}/api/currencies`)
+		const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/currencies' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/currencies'
+		axios.get(url)
 			.then(response => {
 				console.log('response', response);
 				if (response.data && response.data.data) {
