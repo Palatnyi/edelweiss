@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
 import axios from 'axios';
+import urlJoin from 'url-join';
 import { Helmet } from "react-helmet";
 import Dropdown from 'react-dropdown';
 import { useTranslations } from './hooks';
 import logEdelweissEvent from './analytics.js';
-import { useNavigate } from 'react-router-dom';
-import DonationDialog from './DonationDialog.jsx';
+import ReactCountryFlag from "react-country-flag";
 import { BallTriangle } from "react-loader-spinner";
-import ReactCountryFlag from "react-country-flag"
+import { useNavigate, useLocation } from 'react-router-dom';
+import DonationDialog from './components/DonationDialog/DonationDialog.jsx';
 
 import close from './images/close.png';
 import system from './images/system.jpg';
@@ -40,7 +41,7 @@ function Requisite(props) {
       <div className="requisite">
         {data.map(item => {
           return (
-            <div className="requisite-value">
+            <div className="requisite-value" key={item.value}>
               <div className="title">{item.label}</div>
               <div className="value">{item.value}</div>
             </div>
@@ -327,7 +328,7 @@ function Member({ member }) {
 function TeamMembers({ members = [] }) {
   return (
     <div className="members">
-      {members.map(member => <Member member={member} />)}
+      {members.map(member => <Member key={member.name} member={member} />)}
     </div>
   );
 }
@@ -405,18 +406,6 @@ function Team(props) {
   );
 }
 
-function DonatePaypal() {
-  return (
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="business" value="N8N4N934LR5WN" />
-      <input type="hidden" name="no_recurring" value="0" />
-      <input type="hidden" name="currency_code" value="USD" />
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-      <img alt="" border="0" src="https://www.paypal.com/en_UA/i/scr/pixel.gif" width="1" height="1" rel="preload" />
-    </form>
-  );
-}
-
 function Loader() {
   return (
     <div className="loader">
@@ -435,9 +424,11 @@ function Edelweiss() {
   function onDonate(params) {
     const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/payment' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/payment'
     console.log('LOG 2022:', url);
-
+    
     toggleShowDialog(false);
     toggleLoader(true);
+    
+    params.result_url = urlJoin(window.location.href, 'confirmation');
     axios.get(url, { params })
       .then(response => {
         window.location.href = response.data.url;

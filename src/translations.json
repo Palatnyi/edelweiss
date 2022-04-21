@@ -198,7 +198,12 @@
             "donate": "Pay",
             "cancel": "Cancel",
             "subtitle": "Choose amount",
-            "otherAmount": "Other amount"
+            "otherAmount": "Other amount",
+            "email": "Email"
+        },
+        "confirmation": {
+            "text": "Thank you! Your donation has been confirmed",
+            "goback": "Back to the site"
         }
     },
     "uk": {
@@ -310,6 +315,25 @@
                         "value": "44681509"
                     }
                 ],
+                "ibanEurTitle": "IBAN EUR",
+                "ibanEUR": [
+                    {
+                        "label": "Організація: ",
+                        "value": "DOPOMOGA 2022"
+                    },
+                    {
+                        "label": "IBAN: ",
+                        "value": "UA623052990000026008025022585"
+                    },
+                    {
+                        "label": "МФО: ",
+                        "value": "305299"
+                    },
+                    {
+                        "label": "ЄДРПОУ: ",
+                        "value": "44681509"
+                    }
+                ],
                 "otherWaysTitle": "Інші способи",
                 "otherWays": [
                     {
@@ -371,7 +395,12 @@
             "subtitle": "Оберіть сумму",
             "donate": "Перейти до оплати",
             "cancel": "Відмінити",
-            "otherAmount": "Інша сумма"
+            "otherAmount": "Інша сумма",
+            "email": "Email"
+        },
+        "confirmation": {
+            "text": "Дякуємо! Ваше пожервування було зараховано!",
+            "goback": "Повернутись на сайт"
         }
     }
 }

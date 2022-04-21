@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import translations from './translations.json';
 
@@ -20,8 +20,12 @@ export function useBrowserLanguage() {
 }
 
 export function useTranslations() {
-    let { lang } = useParams();
-    lang = LANGUAGES[lang] || DEFAULT_LANG;
+    const { pathname } = useLocation();
+    const currentLang = pathname.split('/').find(path => {
+        return !!LANGUAGES[path];
+    });
+
+    const lang = currentLang || DEFAULT_LANG;
 
     return (key) => {
         const keyAsArray = key.split(".");
@@ -39,4 +43,16 @@ export function useTranslations() {
 
         return translation;;
     }
+}
+
+export function useCustomLang() {
+    const { pathname } = useLocation();
+
+    const currentLang = pathname.split('/').find(path => {
+        return !!LANGUAGES[path];
+    });
+
+    const lang = currentLang || DEFAULT_LANG;
+
+    return { lang }
 }

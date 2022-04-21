@@ -1,0 +1,58 @@
+.confirmation {
+    background: url(../../images/welcome.jpg);
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+
+    top:0;
+    bottom: 0;
+
+    & > .opacity {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        opacity: 0.33;
+    }
+
+    & > .text {
+        font-size: 64px;
+        color: #ffffff;
+        line-height: 96px;
+        text-align: center;
+        font-style: normal;
+        text-transform: uppercase;
+        margin: 0 150px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+
+        .goBack {
+            height: 58px;
+            color: #000;
+            font-size: 17px;
+            margin-top: 33px;
+            background-color: #fae526;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            min-width: 112px;
+            padding: 10px;
+            border: 0px;
+        }
+    }
+}

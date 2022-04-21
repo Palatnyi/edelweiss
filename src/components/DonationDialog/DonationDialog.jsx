@@ -5,29 +5,29 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
+import isEmail from 'validator/lib/isEmail';
+import logEdelweissEvent from '../../analytics.js';
 import TextField from '@mui/material/TextField';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import { useTranslations, useCustomLang } from '../../hooks'
 import DialogContentText from '@mui/material/DialogContentText';
 
-import { useTranslations } from './hooks'
-import { useParams } from 'react-router-dom';
-import logEdelweissEvent from './analytics.js';
-import translations from './translations.json';
+import translations from '../../translations.json';
 
 export default function DonationDialog({ onDonate, onClose }) {
-	let { lang } = useParams();
+	let { lang } = useCustomLang();
 	const { CURRENCIES, LANGUAGES } = translations;
 	const translate = useTranslations();
 	const [amount, setAmount] = useState(500);
+	const [customer_email, setEmail] = useState('');
 	const [currencies, setCurrencies] = useState([]);
 
 	useEffect(() => {
 		const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/currencies' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/currencies'
 		axios.get(url)
 			.then(response => {
-				console.log('response', response);
 				if (response.data && response.data.data) {
 					setCurrencies(response.data.data);
 				}
@@ -38,13 +38,18 @@ export default function DonationDialog({ onDonate, onClose }) {
 	}, [])
 
 
-	const handleInputChange = (e) => {
+	const handleInputChange = e => {
 		const value = e.target.value;
 		logEdelweissEvent({
 			page: 'DonationDialog',
 			amount: value,
 		}, 'DONATION-DIALOG_AMOUNT_CHANGE_INPUT')
 		setAmount(value);
+	}
+
+	const handleEmailChange = e => {
+		const value = e.target.value;
+		setEmail(value);
 	}
 
 	const renderAmounts = () => {
@@ -91,9 +96,10 @@ export default function DonationDialog({ onDonate, onClose }) {
 
 	const donate = () => {
 		const data = {
+			customer_email,
 			amount,
 			currency: 'UAH',
-			customer_lang: lang.toUpperCase()
+			customer_lang: lang.toUpperCase(),
 		};
 
 
@@ -127,8 +133,7 @@ export default function DonationDialog({ onDonate, onClose }) {
 					<Box sx={{ margin: '10px 0 10px 0px' }}>
 						<TextField
 							autoFocus
-							margin="dense"
-							id="name"
+							id="amount"
 							label={translate("donateDialog.otherAmount")}
 							type="number"
 							fullWidth
@@ -137,10 +142,21 @@ export default function DonationDialog({ onDonate, onClose }) {
 							onChange={handleInputChange}
 						/>
 					</Box>
+					<Box sx={{ margin: '10px 0 10px 0px' }}>
+						<TextField
+							id="email"
+							label={translate("donateDialog.email")}
+							type="email"
+							fullWidth
+							value={customer_email}
+							onChange={handleEmailChange}
+							required
+						/>
+					</Box>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={close}>{translate("donateDialog.cancel")}</Button>
-					<Button variant="contained" disabled={!amount} onClick={donate}>{translate("donateDialog.donate")}</Button>
+					<Button variant="contained" disabled={!amount || !isEmail(customer_email)} onClick={donate}>{translate("donateDialog.donate")}</Button>
 				</DialogActions>
 			</Dialog>
 		</div>
