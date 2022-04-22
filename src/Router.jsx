@@ -3,6 +3,8 @@ import App from './App.jsx';
 import translations from './translations.json';
 import { Routes, Route } from 'react-router-dom';
 import Confirmation from './components/Confirmation/Confirmation.jsx';
+import NotFound from './components/NotFound/NotFound.jsx';
+
 
 const { LANGUAGES } = translations;
 
@@ -14,7 +16,7 @@ function EdelweissRouter() {
     const confirmationRoutes = Object.values(LANGUAGES).map(lang => {
         return <Route path={`/${lang}/confirmation`} element={<Confirmation />} />
     });
-    
+
     return (
         <Routes>
             <Route path="/" exact element={<App />} />
@@ -22,7 +24,7 @@ function EdelweissRouter() {
 
             <Route path="/confirmation" element={<Confirmation />} />
             {confirmationRoutes}
-            <Route path="*" element={<div>not found</div>} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 }

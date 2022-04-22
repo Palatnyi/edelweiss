@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import urlJoin from 'url-join';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import isEmail from 'validator/lib/isEmail';
-import logEdelweissEvent from '../../analytics.js';
 import TextField from '@mui/material/TextField';
+import ReactCountryFlag from "react-country-flag";
+import logEdelweissEvent from '../../analytics.js';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -18,7 +20,7 @@ import translations from '../../translations.json';
 
 export default function DonationDialog({ onDonate, onClose }) {
 	let { lang } = useCustomLang();
-	const { CURRENCIES, LANGUAGES } = translations;
+	const { CURRENCIES, FLAG, DEFAULT_LANG } = translations;
 	const translate = useTranslations();
 	const [amount, setAmount] = useState(500);
 	const [customer_email, setEmail] = useState('');
@@ -74,32 +76,28 @@ export default function DonationDialog({ onDonate, onClose }) {
 	}
 
 	const renderCurrencyLabel = () => {
-		const usdCode = 840;
-		const isNotUA = lang !== LANGUAGES['uk'];
-
-		if (isNotUA && currencies) {
-			const currency = currencies.find(currency => currency.currencyCodeA === usdCode);
-			return (currency &&
-				<DialogContentText>
-					{translate("donateDialog.subtitle")} &asymp; {parseFloat(amount / currency.rateBuy).toFixed(2)} {CURRENCIES['en']}
-				</DialogContentText>
-			)
-
-		}
-
 		return (
 			<DialogContentText>
-				{translate("donateDialog.subtitle")} {CURRENCIES["uk"]}
+				{translate("donateDialog.subtitle")} {CURRENCIES[lang]}  <ReactCountryFlag countryCode={FLAG[lang]} />
 			</DialogContentText>
 		)
 	}
 
 	const donate = () => {
+		const usdCode = 840;
+		let _amount = amount;
+		const currency = currencies.find(currency => currency.currencyCodeA === usdCode);
+
+		if (lang === DEFAULT_LANG && currency) {
+			_amount = parseFloat(amount * currency.rateBuy).toFixed(0)
+		}
+
 		const data = {
 			customer_email,
-			amount,
+			amount: _amount,
 			currency: 'UAH',
 			customer_lang: lang.toUpperCase(),
+			result_url: urlJoin(window.location.href, 'confirmation')
 		};
 
 
@@ -156,7 +154,7 @@ export default function DonationDialog({ onDonate, onClose }) {
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={close}>{translate("donateDialog.cancel")}</Button>
-					<Button variant="contained" disabled={!amount || !isEmail(customer_email)} onClick={donate}>{translate("donateDialog.donate")}</Button>
+					<Button variant="contained" disabled={!amount || !isEmail(customer_email) || !currencies} onClick={donate}>{translate("donateDialog.donate")}</Button>
 				</DialogActions>
 			</Dialog>
 		</div>

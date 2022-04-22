@@ -8,7 +8,7 @@ import { useTranslations } from './hooks';
 import logEdelweissEvent from './analytics.js';
 import ReactCountryFlag from "react-country-flag";
 import { BallTriangle } from "react-loader-spinner";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DonationDialog from './components/DonationDialog/DonationDialog.jsx';
 
 import close from './images/close.png';
@@ -428,9 +428,9 @@ function Edelweiss() {
     toggleShowDialog(false);
     toggleLoader(true);
     
-    params.result_url = urlJoin(window.location.href, 'confirmation');
     axios.get(url, { params })
       .then(response => {
+        console.log(response.data.url);
         window.location.href = response.data.url;
       })
       .catch((e) => {

@@ -8,6 +8,10 @@
         "uk": "UAH",
         "en": "USD"
     },
+    "FLAG": {
+        "uk": "UA",
+        "en": "US"
+    },
     "en": {
         "helmet": {
             "title": "«DOPOMOGA 2022» - Armed Forces of Ukraine Support Fund",
@@ -204,6 +208,10 @@
         "confirmation": {
             "text": "Thank you! Your donation has been confirmed",
             "goback": "Back to the site"
+        },
+        "notFound": {
+            "text": "The page you are looking cannot be found",
+            "goHome": "Home"
         }
     },
     "uk": {
@@ -401,6 +409,10 @@
         "confirmation": {
             "text": "Дякуємо! Ваше пожервування було зараховано!",
             "goback": "Повернутись на сайт"
+        },
+        "notFound": {
+            "text": "Сторінка не існує",
+            "goHome": "На головну"
         }
     }
 }
