@@ -190,6 +190,10 @@
             "anton": {
                 "name" : "Anton Pluzhnikov",
                 "role": "General Manager of DataLink"
+            },
+            "liubov": {
+                "name": "Liubov Rudnieva",
+                "role": "Head of Marketing at Skelia"
             }
         },
         "footer": {
@@ -212,6 +216,9 @@
         "notFound": {
             "text": "The page you are looking cannot be found",
             "goHome": "Home"
+        },
+        "payment": {
+            "technicalIssue": "We are facing technical issues right now. Try again in 20 minutes, please."
         }
     },
     "uk": {
@@ -391,6 +398,10 @@
             "anton": {
                 "name" : "Антон Плужніков",
                 "role": "General Manager of DataLink"
+            },
+            "liubov": {
+                "name": "Любов Руднєва",
+                "role": "Head of Marketing at Skelia"
             }
         },
         "footer": {
@@ -413,6 +424,9 @@
         "notFound": {
             "text": "Сторінка не існує",
             "goHome": "На головну"
+        },
+        "payment": {
+            "technicalIssue": "Виникла помилка з платіжним сервісом. Будь-ласка спробуйте через 20 хв."
         }
     }
 }

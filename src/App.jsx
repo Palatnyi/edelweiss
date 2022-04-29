@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 
 import axios from 'axios';
-import urlJoin from 'url-join';
+import CONFIG from './config.js';
 import { Helmet } from "react-helmet";
 import Dropdown from 'react-dropdown';
 import { useTranslations } from './hooks';
+import MuiAlert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 import logEdelweissEvent from './analytics.js';
+import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
 import { BallTriangle } from "react-loader-spinner";
-import { useNavigate } from 'react-router-dom';
 import DonationDialog from './components/DonationDialog/DonationDialog.jsx';
 
 import close from './images/close.png';
@@ -26,6 +28,7 @@ import anton from './images/anton.jpg';
 import maksim from './images/maksim.jpg';
 import kostya from './images/kostya.jpeg';
 import andrey from './images/andrey.jpeg';
+import liubov from './images/liubov.jpeg';
 import oleksii from './images/oleksii.jpeg';
 import shatilov from './images/shatilov.jpg';
 
@@ -333,7 +336,7 @@ function TeamMembers({ members = [] }) {
   );
 }
 
-function Team(props) {
+function Team() {
   const translate = useTranslations();
 
   const teamMembers = [
@@ -355,7 +358,7 @@ function Team(props) {
       src: andrey,
       name: translate("teamMembers.andrii.name"),
       role: translate("teamMembers.andrii.role"),
-      linkedin: 'https://www.linkedin.com/in/andrey-palatnyi-9693b384/',
+      linkedin: 'https://www.linkedin.com/in/andrii-palatnyi-9693b384/',
       instagram: ''
     },
     {
@@ -390,6 +393,12 @@ function Team(props) {
       name: translate("teamMembers.anton.name"),
       role: translate("teamMembers.anton.role"),
       linkedin: 'https://www.linkedin.com/in/anton-pluzhnikov-5491a1a5/'
+    },
+    {
+      src: liubov,
+      name: translate("teamMembers.liubov.name"),
+      role: translate("teamMembers.liubov.role"),
+      linkedin: 'https://www.linkedin.com/in/liubovrudnieva'
     }];
 
   return (
@@ -416,26 +425,35 @@ function Loader() {
   );
 }
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 function Edelweiss() {
+  const translate = useTranslations();
   const [showLoader, toggleLoader] = useState(false);
   const [showDialog, toggleShowDialog] = useState(false);
-  const translate = useTranslations();
+  const [errorSnackbar, setErrorSnackbar] = useState(false);
 
   function onDonate(params) {
-    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/payment' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/payment'
-    console.log('LOG 2022:', url);
-    
+
+    console.log('LOG 2022:', CONFIG.PAYMENT_URL);
+
     toggleShowDialog(false);
     toggleLoader(true);
-    
-    axios.get(url, { params })
+
+    axios.get(CONFIG.PAYMENT_URL, { params })
       .then(response => {
-        console.log(response.data.url);
-        window.location.href = response.data.url;
+        if (response.data.url) {
+          window.location.href = response.data.url;
+        } else {
+          setErrorSnackbar(true);
+        }
       })
       .catch((e) => {
         console.log(e)
         toggleLoader(false);
+        setErrorSnackbar(true);
       });
   }
 
@@ -464,7 +482,12 @@ function Edelweiss() {
       <Equipment openDonationDialog={openDonationDialog('Equipment')} />
       <HelpMatters openDonationDialog={openDonationDialog('HelpMatters')} />
       <Footer />
-    </div>
+      <Snackbar open={errorSnackbar} onClose={() => setErrorSnackbar(false)} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
+        <Alert onClose={() => setErrorSnackbar(false)} severity="error">
+          {translate('payment.technicalIssue')}
+        </Alert>
+      </Snackbar>
+    </div >
   );
 }
 

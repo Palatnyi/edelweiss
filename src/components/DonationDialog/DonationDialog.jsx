@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import urlJoin from 'url-join';
+import CONFIG from '../../config.js';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -27,8 +28,8 @@ export default function DonationDialog({ onDonate, onClose }) {
 	const [currencies, setCurrencies] = useState([]);
 
 	useEffect(() => {
-		const url = process.env.NODE_ENV === 'development' ? 'http://localhost:4444/dopomoga2022/us-central1/app/api/currencies' : 'https://us-central1-dopomoga2022.cloudfunctions.net/app/api/currencies'
-		axios.get(url)
+		
+		axios.get(CONFIG.CURRENCIES_URL)
 			.then(response => {
 				if (response.data && response.data.data) {
 					setCurrencies(response.data.data);
