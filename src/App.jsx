@@ -25,7 +25,7 @@ import vlad from "./images/vlad.jpg";
 import logo from './images/logo.png';
 import youra from './images/youra.jpg';
 import anton from './images/anton.jpg';
-import maksim from './images/maksim.jpg';
+import oksana from './images/oksana.jpeg';
 import kostya from './images/kostya.jpeg';
 import andrey from './images/andrey.jpeg';
 import liubov from './images/liubov.jpeg';
@@ -341,6 +341,18 @@ function Team() {
 
   const teamMembers = [
     {
+      src: oksana,
+      name: translate("teamMembers.oksana.name"),
+      role: translate("teamMembers.oksana.role"),
+      linkedin: 'https://www.linkedin.com/in/oksanaperimova/'
+    },
+    {
+      src: liubov,
+      name: translate("teamMembers.liubov.name"),
+      role: translate("teamMembers.liubov.role"),
+      linkedin: 'https://www.linkedin.com/in/liubovrudnieva'
+    },
+    {
       src: shatilov,
       name: translate("teamMembers.shatilov.name"),
       role: translate("teamMembers.shatilov.role"),
@@ -353,6 +365,12 @@ function Team() {
       role: translate("teamMembers.youra.role"),
       linkedin: 'https://www.linkedin.com/in/yuriy-shelmuk-52080b70',
       instagram: ''
+    },
+    {
+      src: dima,
+      name: translate("teamMembers.dima.name"),
+      role: translate("teamMembers.dima.role"),
+      linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
     },
     {
       src: andrey,
@@ -377,28 +395,12 @@ function Team() {
       name: translate("teamMembers.kostya.name"),
       role: translate("teamMembers.kostya.role"),
       linkedin: "https://www.linkedin.com/in/%D0%B8%D0%BB%D1%8C%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD-konstantin-ilchenko-1715a05b"
-    }, {
-      src: maksim,
-      name: translate("teamMembers.maksim.name"),
-      role: translate("teamMembers.maksim.role"),
-      linkedin: 'https://www.linkedin.com/in/maksim-kolomiets/'
-    }, {
-      src: dima,
-      name: translate("teamMembers.dima.name"),
-      role: translate("teamMembers.dima.role"),
-      linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
     },
     {
       src: anton,
       name: translate("teamMembers.anton.name"),
       role: translate("teamMembers.anton.role"),
       linkedin: 'https://www.linkedin.com/in/anton-pluzhnikov-5491a1a5/'
-    },
-    {
-      src: liubov,
-      name: translate("teamMembers.liubov.name"),
-      role: translate("teamMembers.liubov.role"),
-      linkedin: 'https://www.linkedin.com/in/liubovrudnieva'
     }];
 
   return (

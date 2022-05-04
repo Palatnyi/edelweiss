@@ -155,9 +155,9 @@
             }
         },
         "teamMembers": {
-            "maksim": {
-                "name": "Maksym Kolomiiets",
-                "role": "Product Owner at Vchasno EDI"
+            "liubov": {
+                "name": "Liubov Rudnieva",
+                "role": "Head of Marketing at Skelia"
             },
             "kostya": {
                 "name": "Kostiatntyn Ilchenko",
@@ -191,9 +191,9 @@
                 "name" : "Anton Pluzhnikov",
                 "role": "General Manager of DataLink"
             },
-            "liubov": {
-                "name": "Liubov Rudnieva",
-                "role": "Head of Marketing at Skelia"
+            "oksana": {
+                "name" : "Oksana Perimova",
+                "role": "General Manager of DataLink"
             }
         },
         "footer": {
@@ -363,9 +363,9 @@
             }
         },
         "teamMembers": {
-            "maksim": {
-                "name": "Максим Коломїєць",
-                "role": "Product Owner at Vchasno EDI"
+            "liubov": {
+                "name": "Любов Руднєва",
+                "role": "Head of Marketing at Skelia"
             },
             "kostya": {
                 "name": "Костянтин Ільченко",
@@ -399,9 +399,9 @@
                 "name" : "Антон Плужніков",
                 "role": "General Manager of DataLink"
             },
-            "liubov": {
-                "name": "Любов Руднєва",
-                "role": "Head of Marketing at Skelia"
+            "oksana": {
+                "name" : "Oksana Perimova",
+                "role": "General Manager of DataLink"
             }
         },
         "footer": {

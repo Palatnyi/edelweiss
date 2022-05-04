@@ -215,14 +215,15 @@
             justify-content: space-around;
 
             & > .member {
-                width: 300px;
+                // width: 300px;
                 overflow: hidden;
-                margin-bottom: 16px;
+                margin-bottom: 24px;
 
                 & .imgHolder {
                     overflow: hidden;
-                    width: 300px;
-                    height: 300px;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
 
                     & img {
                         width: 100%;
