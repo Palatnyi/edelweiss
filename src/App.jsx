@@ -435,7 +435,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function Edelweiss() {
   const translate = useTranslations();
   const [showLoader, toggleLoader] = useState(false);
-  const [showDialog, toggleShowDialog] = useState(true);
+  const [showDialog, toggleShowDialog] = useState(false);
   const [errorSnackbar, setErrorSnackbar] = useState(false);
 
   function onDonate(params) {
