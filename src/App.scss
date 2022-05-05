@@ -1,4 +1,4 @@
-* {
+g* {
     box-sizing: border-box;
 }
 
@@ -651,11 +651,16 @@
                 justify-content: center;
 
                 & > .member {
+                    width: 200px;
                     display: flex;
                     margin-right: 0;
                     overflow: hidden;
                     margin-bottom: 20px;
                     flex-direction: column;
+                }
+
+                & > .member:not(:last-child) {
+                    margin-right: 0;
                 }
             }
         }

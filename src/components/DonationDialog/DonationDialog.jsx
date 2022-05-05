@@ -14,6 +14,10 @@ import logEdelweissEvent from '../../analytics.js';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { useTranslations, useCustomLang } from '../../hooks'
 import DialogContentText from '@mui/material/DialogContentText';
 
@@ -21,14 +25,15 @@ import translations from '../../translations.json';
 
 export default function DonationDialog({ onDonate, onClose }) {
 	let { lang } = useCustomLang();
-	const { CURRENCIES, FLAG, DEFAULT_LANG } = translations;
+	const { CURRENCIES, FLAG, DEFAULT_LANG, CURRENCY_TO_FLAG } = translations;
 	const translate = useTranslations();
 	const [amount, setAmount] = useState(500);
 	const [customer_email, setEmail] = useState('');
 	const [currencies, setCurrencies] = useState([]);
+	const [currency, setCurrency] = useState(CURRENCIES[lang]);
 
 	useEffect(() => {
-		
+
 		axios.get(CONFIG.CURRENCIES_URL)
 			.then(response => {
 				if (response.data && response.data.data) {
@@ -79,7 +84,7 @@ export default function DonationDialog({ onDonate, onClose }) {
 	const renderCurrencyLabel = () => {
 		return (
 			<DialogContentText>
-				{translate("donateDialog.subtitle")} {CURRENCIES[lang]}  <ReactCountryFlag countryCode={FLAG[lang]} />
+				{translate("donateDialog.subtitle")} {currency}
 			</DialogContentText>
 		)
 	}
@@ -87,10 +92,10 @@ export default function DonationDialog({ onDonate, onClose }) {
 	const donate = () => {
 		const usdCode = 840;
 		let _amount = amount;
-		const currency = currencies.find(currency => currency.currencyCodeA === usdCode);
+		const usdCurrency = currencies.find(currency => currency.currencyCodeA === usdCode);
 
-		if (lang === DEFAULT_LANG && currency) {
-			_amount = parseFloat(amount * currency.rateBuy).toFixed(0)
+		if (currency === "USD") {
+			_amount = parseFloat(amount * usdCurrency.rateBuy).toFixed(0)
 		}
 
 		const data = {
@@ -116,13 +121,31 @@ export default function DonationDialog({ onDonate, onClose }) {
 		}, 'DONATION-DIALOG_ON_CANCEL_CLICK');
 	}
 
-
-
 	return (
 		<div>
 			<Dialog open>
 				<DialogTitle>{translate("donateDialog.title")}</DialogTitle>
 				<DialogContent>
+					<DialogContentText>
+						{translate("donateDialog.selectCurrency")} {currency}  <ReactCountryFlag countryCode={CURRENCY_TO_FLAG[currency]} />
+					</DialogContentText>
+					<Box sx={{ margin: '15px 0 10px 0px' }}>
+						<FormControl fullWidth>
+							<InputLabel id="demo-simple-select-label">
+								{translate("donateDialog.currency")}
+							</InputLabel>
+							<Select
+								labelId="demo-simple-select-label"
+								id="demo-simple-select"
+								value={currency}
+								label="Age"
+								onChange={event => setCurrency(event.target.value)}
+							>
+								<MenuItem value={CURRENCIES["uk"]}>{translate("donateDialog.uah")}</MenuItem>
+								<MenuItem value={CURRENCIES["en"]}>{translate("donateDialog.usd")}</MenuItem>
+							</Select>
+						</FormControl>
+					</Box>
 					{renderCurrencyLabel()}
 					<Stack direction="row" spacing={1}>
 						<Box sx={{ margin: '10px 0 10px 0px' }}>

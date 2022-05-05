@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
 import { BallTriangle } from "react-loader-spinner";
 import DonationDialog from './components/DonationDialog/DonationDialog.jsx';
+import OtherFundraising from './components/OtherFundraising/OtherFundRaising.jsx';
 
 import close from './images/close.png';
 import system from './images/system.jpg';
@@ -434,7 +435,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function Edelweiss() {
   const translate = useTranslations();
   const [showLoader, toggleLoader] = useState(false);
-  const [showDialog, toggleShowDialog] = useState(false);
+  const [showDialog, toggleShowDialog] = useState(true);
   const [errorSnackbar, setErrorSnackbar] = useState(false);
 
   function onDonate(params) {
@@ -482,6 +483,7 @@ function Edelweiss() {
       <AboutWar />
       <Team />
       <Equipment openDonationDialog={openDonationDialog('Equipment')} />
+      <OtherFundraising openDonationDialog={openDonationDialog('OtherFundraising')} />
       <HelpMatters openDonationDialog={openDonationDialog('HelpMatters')} />
       <Footer />
       <Snackbar open={errorSnackbar} onClose={() => setErrorSnackbar(false)} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>

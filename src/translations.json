@@ -12,6 +12,10 @@
         "uk": "UA",
         "en": "US"
     },
+    "CURRENCY_TO_FLAG": {
+        "USD": "US",
+        "UAH": "UA"
+    },
     "en": {
         "helmet": {
             "title": "«DOPOMOGA 2022» - Armed Forces of Ukraine Support Fund",
@@ -176,7 +180,7 @@
                 "role": "Frontend engineer"
             },
             "dima": {
-                "name": "Дмитро Савченко",
+                "name": "Dmytro Savchenko",
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
@@ -193,7 +197,7 @@
             },
             "oksana": {
                 "name" : "Oksana Perimova",
-                "role": "General Manager of DataLink"
+                "role": "Assosiate Manager. Logistics"
             }
         },
         "footer": {
@@ -207,7 +211,11 @@
             "cancel": "Cancel",
             "subtitle": "Choose amount",
             "otherAmount": "Other amount",
-            "email": "Email"
+            "email": "Email",
+            "selectCurrency": "Select currency",
+            "currency": "Currency",
+            "usd": "United State Dollar (USD)",
+            "uah": "Ukrainian Hryvnya (UAH)"
         },
         "confirmation": {
             "text": "Thank you! Your donation has been confirmed",
@@ -219,6 +227,25 @@
         },
         "payment": {
             "technicalIssue": "We are facing technical issues right now. Try again in 20 minutes, please."
+        },
+        "otherFundraising": {
+            "title": "We also gather funds for smaller projects",
+            "description": "Our primary goal is the SKYctrl anti-drone system, but your donations will also help us to cover a number of smaller projects, that will swiftly bring help and value to our army forces. We keep track of every penny donated, and you can check this in our fund report.",
+            "subtitle": "Other fundraising",
+
+            "medicine": {
+                "title": "Wound therapy system",
+                "description": ""
+            },
+            "nvb": {
+                "title": "Night vision binoculars",
+                "description": ""
+            },
+            "mobileRadio": {
+                "title": "Motorola DM4600 VHF radio",
+                "description": ""
+            },
+            "donate": "Donate"
         }
     },
     "uk": {
@@ -401,7 +428,7 @@
             },
             "oksana": {
                 "name" : "Oksana Perimova",
-                "role": "General Manager of DataLink"
+                "role": "Assosiate Manager. Logistics."
             }
         },
         "footer": {
@@ -415,7 +442,11 @@
             "donate": "Перейти до оплати",
             "cancel": "Відмінити",
             "otherAmount": "Інша сумма",
-            "email": "Email"
+            "email": "Email",
+            "selectCurrency": "Оберіть валюту",
+            "currency": "Валюта",
+            "usd": "Американський доллар (USD)",
+            "uah": "Українська Гривня (UAH)"
         },
         "confirmation": {
             "text": "Дякуємо! Ваше пожервування було зараховано!",
@@ -427,6 +458,26 @@
         },
         "payment": {
             "technicalIssue": "Виникла помилка з платіжним сервісом. Будь-ласка спробуйте через 20 хв."
+        },
+        "otherFundraising": {
+            "title": "Також ми збираємо на інше екіпірування",
+            "description": "Нашою головною метою залишається збір коштів для придбання антидрон системи skyCTRL. Також ми збираємо кошти на обладнання яке потребують наші бійці на нульовій точці зіткнень з ворогом.",
+            "subtitle": "Інші потреби",
+
+            "medicine": {
+                "title": "Прилади для обробки поранень",
+                "description": ""
+            },
+            "nvb": {
+                "title": "Прилади нічного бачення",
+                "description": ""
+            },
+            "mobileRadio": {
+                "title": "Автомобільні рації",
+                "description": ""
+            },
+
+            "donate": "Пожертвувати"
         }
     }
 }
