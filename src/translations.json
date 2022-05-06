@@ -198,6 +198,10 @@
             "oksana": {
                 "name" : "Oksana Perimova",
                 "role": "Assosiate Manager. Logistics"
+            },
+            "dan": {
+                "name": "Dan Fioletov",
+                "role": "Volunteer at Dopomoga 2022»"
             }
         },
         "footer": {
@@ -392,23 +396,23 @@
         "teamMembers": {
             "liubov": {
                 "name": "Любов Руднєва",
-                "role": "Head of Marketing at Skelia"
+                "role": "Директор з маркетингу у Skelia"
             },
             "kostya": {
                 "name": "Костянтин Ільченко",
-                "role": "Presale manager at Luxoft"
+                "role": "Проектний менеджер у Люксофт"
             },
             "vlad": {
                 "name": "Владислав Касьяненко",
-                "role": "software entrepreneur"
+                "role": "Інженер з програмного забезпечення"
             },
             "oleksii": {
                 "name": "Олексій Палатний",
-                "role": "CEO at Grate Paper"
+                "role": "Директор у Грейт Пейпер"
             },
             "andrii": {
                 "name": "Андрій Палатний",
-                "role": "Frontend engineer"
+                "role": "Інженер з фронтенду у Плейтек"
             },
             "dima": {
                 "name": "Дмитро Савченко",
@@ -416,19 +420,23 @@
             },
             "shatilov": {
                 "name": "Вадим Шатілов",
-                "role": "founder  DOPOMOGA2022"
+                "role": "співзасновни к DOPOMOGA2022"
             },
             "youra": {
                 "name": "Юрій Шельмук",
-                "role": "co-founder  DOPOMOGA2022"
+                "role": "співзасновник DOPOMOGA2022"
             },
             "anton": {
                 "name" : "Антон Плужніков",
-                "role": "General Manager of DataLink"
+                "role": "Генеральний менеджер у DataLink"
             },
             "oksana": {
-                "name" : "Oksana Perimova",
+                "name" : "Оксана Перімова",
                 "role": "Assosiate Manager. Logistics."
+            },
+            "dan": {
+                "name": "Dan Fioletov",
+                "role": "Волонтер в «Допомога 2022»"
             }
         },
         "footer": {

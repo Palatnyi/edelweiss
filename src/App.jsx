@@ -32,6 +32,7 @@ import andrey from './images/andrey.jpeg';
 import liubov from './images/liubov.jpeg';
 import oleksii from './images/oleksii.jpeg';
 import shatilov from './images/shatilov.jpg';
+import dan from './images/dan.jpeg';
 
 import './App.scss';
 import 'react-dropdown/style.css';
@@ -379,6 +380,12 @@ function Team() {
       role: translate("teamMembers.andrii.role"),
       linkedin: 'https://www.linkedin.com/in/andrii-palatnyi-9693b384/',
       instagram: ''
+    },
+    {
+      src: dan,
+      name: translate("teamMembers.dan.name"),
+      role: translate("teamMembers.dan.role"),
+      linkedin: 'https://www.linkedin.com/in/dan-fioletov-5a2530116/'
     },
     {
       src: oleksii,
