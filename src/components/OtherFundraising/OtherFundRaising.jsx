@@ -1,4 +1,5 @@
 import React from 'react';
+import Donate from '../Donate/Donate.jsx';
 import { useTranslations } from '../../hooks';
 
 import nvb from '../../images/nvb.png';
@@ -8,8 +9,6 @@ import medicine from '../../images/medicine.png';
 import './OtherFundraising.scss';
 
 function Item({ src, title, description, donate }) {
-    const translate = useTranslations();
-
     return (
         <div className="item">
             <img src={src} alt={title} />
@@ -20,11 +19,7 @@ function Item({ src, title, description, donate }) {
                 {description}
             </div>}
             <div className="donateHolder" onClick={donate}>
-                <div className="donate" onClick={donate}>
-                    <div className="btn" >
-                        {translate('otherFundraising.donate')}
-                    </div>
-                </div>
+                <Donate onClick={donate}/>
             </div>
         </div>
     );

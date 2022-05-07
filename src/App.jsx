@@ -11,8 +11,10 @@ import logEdelweissEvent from './analytics.js';
 import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
 import { BallTriangle } from "react-loader-spinner";
+import Donate from './components/Donate/Donate.jsx';
 import DonationDialog from './components/DonationDialog/DonationDialog.jsx';
 import OtherFundraising from './components/OtherFundraising/OtherFundRaising.jsx';
+import DonateProgressBar from './components/DonateProgressBar/DonateProgressBar.jsx';
 
 import close from './images/close.png';
 import system from './images/system.jpg';
@@ -203,9 +205,7 @@ function Welcome({ openDonationDialog }) {
         <div className="text">
           {translate("welcome.description")}
         </div>
-        <div className="donate" onClick={openDonationDialog}>
-          {translate("welcome.donate")}
-        </div>
+        <Donate onClick={openDonationDialog} />
       </div>
     </div>
   );
@@ -256,13 +256,12 @@ function Equipment({ openDonationDialog }) {
         <div>
           <img src={system} rel="preload" />
         </div>
-        <div className="donate" onClick={openDonationDialog}>{translate("equipment.donate")}</div>
       </div>
-
-      <div className="donate donate-mobile" onClick={openDonationDialog}>{translate("equipment.donate")}</div>
     </div>
   );
 }
+
+
 
 function HelpMatters({ openDonationDialog }) {
   const translate = useTranslations();
@@ -282,9 +281,7 @@ function HelpMatters({ openDonationDialog }) {
       <DonateRequisities />
 
       <div className="donate-btn-holder">
-        <div className="donate" onClick={openDonationDialog}>
-          {translate("requisities.donateDirectly")}
-        </div>
+        <Donate onClick={openDonationDialog} />
       </div>
     </div>
   );
@@ -490,6 +487,9 @@ function Edelweiss() {
       <AboutWar />
       <Team />
       <Equipment openDonationDialog={openDonationDialog('Equipment')} />
+      <DonateProgressBar>
+        <Donate onClick={openDonationDialog('Equipment')} />
+      </DonateProgressBar>
       <OtherFundraising openDonationDialog={openDonationDialog('OtherFundraising')} />
       <HelpMatters openDonationDialog={openDonationDialog('HelpMatters')} />
       <Footer />
