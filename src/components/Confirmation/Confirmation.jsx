@@ -7,6 +7,12 @@ function Confirmation() {
     const navigate = useNavigate();
     const { lang } = useCustomLang();
     const translate = useTranslations();
+    let [searchParams, setSearchParams] = useSearchParams();
+
+    const currency = searchParams.get("currency");
+    const amount = searchParams.get("currency");
+
+    window.fbq('track', 'Purchase', {currency, value: amount}); 
 
     const goBack = () => {
         navigate(`/${lang}`);

@@ -37,10 +37,10 @@ function Edelweiss() {
   function onDonate(params) {
 
     console.log('LOG 2022:', CONFIG.PAYMENT_URL);
+    window.fbq('track', 'InitiateCheckout', {currency: params.currency, value: params.amount});
 
     toggleShowDialog(false);
     toggleLoader(true);
-
     axios.get(CONFIG.PAYMENT_URL, { params })
       .then(response => {
         if (response.data.url) {
