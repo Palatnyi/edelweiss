@@ -19,7 +19,8 @@
     },
     "en": {
         "common": {
-            "donate": "Donate"
+            "donate": "Donate",
+            "report": "Check report"
         },
         "helmet": {
             "title": "«DOPOMOGA 2022» - Armed Forces of Ukraine Support Fund",
@@ -164,47 +165,65 @@
         },
         "teamMembers": {
             "liubov": {
-                "name": "Liubov Rudnieva",
+                "name": "Liubov",
+                "surname": "Rudnieva",
                 "role": "Head of Marketing at Skelia"
             },
             "kostya": {
-                "name": "Kostiatntyn Ilchenko",
+                "name": "Kostiatntyn",
+                "surname": "Ilchenko",
                 "role": "Presale manager at Luxoft"
             },
             "vlad": {
-                "name": "Vladyslav Kasianenko",
+                "name": "Vladyslav",
+                "surname": "Kasianenko",
                 "role": "software entrepreneur"
             },
             "oleksii": {
-                "name": "Oleksii Palatnyi",
+                "name": "Oleksii",
+                "surname": "Palatnyi",
+
                 "role": "CEO at Grate Paper"
             },
             "andrii": {
-                "name": "Аndrii Palatnyi",
+                "name": "Аndrii",
+                "surname": "Palatnyi",
+
                 "role": "Frontend engineer"
             },
             "dima": {
-                "name": "Dmytro Savchenko",
+                "name": "Dmytro",
+                "surname": "Savchenko",
+
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
-                "name": "Vadym Shatilov",
+                "name": "Vadym",
+                "surname": "Shatilov",
+
                 "role": "founder  DOPOMOGA2022"
             },
             "youra": {
-                "name": "Yurii Shelmuk",
+                "name": "Yurii",
+                "surname": "Shelmuk",
+
                 "role": "co-founder  DOPOMOGA2022"
             },
             "anton": {
-                "name" : "Anton Pluzhnikov",
+                "name" : "Anton",
+                "surname": "Pluzhnikov",
+
                 "role": "General Manager of DataLink"
             },
             "oksana": {
-                "name" : "Oksana Perimova",
+                "name" : "Oksana",
+                "surname": "Perimova",
+
                 "role": "Assosiate Manager. Logistics"
             },
             "dan": {
-                "name": "Dan Fioletov",
+                "name": "Dan",
+                "surname": "Fioletov",
                 "role": "SEO at SIM-Networks"
             }
         },
@@ -257,13 +276,16 @@
         },
         "donateProgressBar": {
             "totalAmount": "Total amount raised",
-            "ourGoal": "Our goal"
+            "ourGoal": "Our goal",
+            "current": "17000 USD",
+            "goal": "250000 USD"
 
         }
     },
     "uk": {
         "common": {
-            "donate": "Пожертвувати"
+            "donate": "Пожертвувати",
+            "report": "Переглянути звіт"
         },
         "helmet": {
             "title": "«DOPOMOGA 2022» - Фонд Допомоги Збройним Силам України",
@@ -407,47 +429,67 @@
         },
         "teamMembers": {
             "liubov": {
-                "name": "Любов Руднєва",
+                "name": "Любов",
+                "surname": "Руднєва",
                 "role": "Директор з маркетингу у Skelia"
             },
             "kostya": {
-                "name": "Костянтин Ільченко",
+                "name": "Костянтин",
+                "surname": "Ільченко",
+
                 "role": "Проектний менеджер у Люксофт"
             },
             "vlad": {
-                "name": "Владислав Касьяненко",
+                "name": "Владислав",
+                "surname": "Касьяненко",
+
                 "role": "Інженер з програмного забезпечення"
             },
             "oleksii": {
-                "name": "Олексій Палатний",
+                "name": "Олексій",
+                "surname": "Палатний",
+
                 "role": "Директор у Грейт Пейпер"
             },
             "andrii": {
-                "name": "Андрій Палатний",
+                "name": "Андрій",
+                "surname": "Палатний",
+
                 "role": "Інженер з фронтенду у Плейтек"
             },
             "dima": {
-                "name": "Дмитро Савченко",
+                "name": "Дмитро",
+                "surname": "Савченко",
+
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
-                "name": "Вадим Шатілов",
+                "name": "Вадим",
+                "surname": "Шатілов",
+
                 "role": "співзасновни к DOPOMOGA2022"
             },
             "youra": {
-                "name": "Юрій Шельмук",
+                "name": "Юрій",
+                "surname": "Шельмук",
+                
                 "role": "співзасновник DOPOMOGA2022"
             },
             "anton": {
-                "name" : "Антон Плужніков",
+                "name" : "Антон",
+                "surname": "Плужніков",
+
                 "role": "Генеральний менеджер у DataLink"
             },
             "oksana": {
-                "name" : "Оксана Перімова",
+                "name" : "Оксана",
+                "surname": "Перімова",
+
                 "role": "Assosiate Manager. Logistics."
             },
             "dan": {
-                "name": "Dan Fioletov",
+                "name": "Дан",
+                "surname": "Фіолетов",
                 "role": "SEO at SIM-Networks"
             }
         },
@@ -501,13 +543,16 @@
         },
         "donateProgressBar": {
             "totalAmount": "Зібрано коштів",
-            "ourGoal": "Необхідна кількість"
+            "ourGoal": "Необхідна кількість",
+            "current": "500000 ГРН",
+            "goal": "8500000 ГРН"
         }
     },
 
     "ru": {
         "common": {
-            "donate": "Пожертвувати"
+            "donate": "Пожертвувати",
+            "report": "Переглянути звіт"
         },
         "helmet": {
             "title": "«DOPOMOGA 2022» - Фонд Допомоги Збройним Силам України",
@@ -651,47 +696,67 @@
         },
         "teamMembers": {
             "liubov": {
-                "name": "Любов Руднєва",
+                "name": "Любов",
+                "surname": "Руднєва",
                 "role": "Директор з маркетингу у Skelia"
             },
             "kostya": {
-                "name": "Костянтин Ільченко",
+                "name": "Костянтин",
+                "surname": "Ільченко",
+
                 "role": "Проектний менеджер у Люксофт"
             },
             "vlad": {
-                "name": "Владислав Касьяненко",
+                "name": "Владислав",
+                "surname": "Касьяненко",
+
                 "role": "Інженер з програмного забезпечення"
             },
             "oleksii": {
-                "name": "Олексій Палатний",
+                "name": "Олексій",
+                "surname": "Палатний",
+
                 "role": "Директор у Грейт Пейпер"
             },
             "andrii": {
-                "name": "Андрій Палатний",
+                "name": "Андрій",
+                "surname": "Палатний",
+
                 "role": "Інженер з фронтенду у Плейтек"
             },
             "dima": {
-                "name": "Дмитро Савченко",
+                "name": "Дмитро",
+                "surname": "Савченко",
+
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
-                "name": "Вадим Шатілов",
+                "name": "Вадим",
+                "surname": "Шатілов",
+
                 "role": "співзасновни к DOPOMOGA2022"
             },
             "youra": {
-                "name": "Юрій Шельмук",
+                "name": "Юрій",
+                "surname": "Шельмук",
+                
                 "role": "співзасновник DOPOMOGA2022"
             },
             "anton": {
-                "name" : "Антон Плужніков",
+                "name" : "Антон",
+                "surname": "Плужніков",
+
                 "role": "Генеральний менеджер у DataLink"
             },
             "oksana": {
-                "name" : "Оксана Перімова",
+                "name" : "Оксана",
+                "surname": "Перімова",
+
                 "role": "Assosiate Manager. Logistics."
             },
             "dan": {
-                "name": "Dan Fioletov",
+                "name": "Дан",
+                "surname": "Фіолетов",
                 "role": "SEO at SIM-Networks"
             }
         },
@@ -745,7 +810,9 @@
         },
         "donateProgressBar": {
             "totalAmount": "Зібрано коштів",
-            "ourGoal": "Необхідна кількість"
+            "ourGoal": "Необхідна кількість",
+            "current": "500000 ГРН",
+            "goal": "8500000 ГРН"
         }
     }
 }

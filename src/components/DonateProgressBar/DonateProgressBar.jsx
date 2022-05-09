@@ -11,10 +11,10 @@ function DonateProgressBar({ children }) {
                 <span>{translate("donateProgressBar.totalAmount")}</span>
                 <span>{translate("donateProgressBar.ourGoal")}</span>
             </div>
-            {/* <div className="amounts">
-                <span>500003</span>
-                <span>{translate("donateProgressBar.ourGoal")}</span>
-            </div> */}
+            <div className="amounts">
+                <span>{translate("donateProgressBar.current")}</span>
+                <span>{translate("donateProgressBar.goal")}</span>
+            </div>
             <div className="bar">
                 <div></div>
             </div>

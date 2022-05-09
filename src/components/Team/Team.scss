@@ -1,0 +1,117 @@
+.team {
+    background-color: #666564;
+    padding: 64px 72px 64px 72px;
+
+    & > .title {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 48px;
+        color: #ffffff;
+        margin-bottom: 16px;
+    }
+
+    & > .description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: #ffffff;
+    }
+
+    & > .members {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        justify-content: space-around;
+
+        & > .member {
+            overflow: hidden;
+            margin-bottom: 24px;
+
+            & .imgHolder {
+                overflow: hidden;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+
+                & img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            & > .name {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 36px;
+                color: #ffffff;
+                margin-top: 15px;
+            }
+
+            & > .surname {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 36px;
+                color: #ffffff;
+            }
+
+            & > .role {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 26px;
+
+                color: #ffffff;
+            }
+
+            & .social {
+                display: flex;
+            }
+
+            & .linkedin,
+            & .instagram {
+                margin-top:10px;
+                cursor: pointer;
+                & > img {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #fff;
+
+                }
+            }
+        }
+
+        & > .member:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .team {
+        padding: 24px 16px 16px 16px;
+
+        & > .members {
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            & > .member {
+                width: 200px;
+                display: flex;
+                margin-right: 0;
+                overflow: hidden;
+                margin-bottom: 20px;
+                flex-direction: column;
+            }
+
+            & > .member:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+}

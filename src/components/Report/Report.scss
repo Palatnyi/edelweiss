@@ -1,9 +1,10 @@
-.donateBtn {
+.reportBtn {
     height: 58px;
-    color: #000;
+    color: #fff;
     font-size: 17px;
     margin: 33px 10px 0 10px;
-    background-color: #fae526;
+    background-color: transparent;
+    border: 2px solid #FAE526;
     font-weight: 900;
     display: inline-block;
     text-align: center;
@@ -11,5 +12,4 @@
     cursor: pointer;
     min-width: 112px;
     padding: 10px;
-    border: 0px;
 }

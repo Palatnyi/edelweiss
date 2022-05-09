@@ -1,0 +1,117 @@
+.donate-requisities {
+    display: flex;
+    justify-content: space-between;
+
+    & .requisite-holder {
+        margin-right: 12px;
+        width: calc(100% / 3);
+        display: flex;
+        border: 4px solid #fae526;
+        margin-bottom: 5px;
+        flex-direction: column;
+        padding: 10px;
+        white-space: nowrap;
+        overflow: scroll;
+
+        & .title {
+            font-size: 24px;
+            color: #000000;
+            font-weight: 700;
+            line-height: 36px;
+            font-style: normal;
+            text-transform: capitalize;
+            // margin-bottom: 10px;
+        }
+
+        & .requisite {
+            display: flex;
+            overflow: scroll;
+            flex-direction: column;
+            align-items: flex-start;
+
+            & > .requisite-value {
+                display: flex;
+                align-items: center;
+                overflow: scroll;
+                margin-top: 20px;
+                overflow: scroll;
+
+                & > .title {
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 26px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-right: 10px;
+                    text-transform: uppercase;
+                }
+
+                & > .value {
+                    hyphens: auto;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    -webkit-hyphens: auto;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .donate-requisities {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        & .requisite-holder {
+            width: 100%;
+            display: flex;
+            padding: 5px;
+            overflow: scroll;
+            margin-bottom: 16px;
+            flex-direction: column;
+            border: 4px solid #fae526;
+
+            & .title {
+                font-size: 24px;
+                color: #000000;
+                font-weight: 700;
+                line-height: 36px;
+                font-style: normal;
+                text-transform: capitalize;
+                margin-bottom: 10px;
+            }
+
+            & .requisite {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+
+                & .requisite-value {
+                    align-items: baseline;
+                }
+
+                & .title {
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 26px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-right: 10px;
+                    text-transform: uppercase;
+                }
+
+                & .value {
+                    hyphens: auto;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    -webkit-hyphens: auto;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}

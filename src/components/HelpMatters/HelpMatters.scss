@@ -1,0 +1,76 @@
+.help-matters {
+    padding: 64px 72px;
+    & > .title {
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 48px;
+        font-style: normal;
+        color: #222222;
+    }
+
+    & > .description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: #222222;
+        margin-bottom: 24px;
+    }
+
+    & > .requisities {
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 48px;
+        font-style: normal;
+        color: #222222;
+        margin-bottom: 31px;
+    }
+
+
+    .donate-btn-holder {
+        display: flex;
+        justify-content: center;
+
+        & .donate {
+            width: auto;
+            padding: 16px 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .help-matters {
+        padding: 24px 16px 16px 16px;
+        & > .title {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 48px;
+            font-style: normal;
+            color: #222222;
+        }
+
+        & > .description {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 26px;
+            color: #222222;
+            margin-bottom: 24px;
+        }
+
+        & > .requisities {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 48px;
+            font-style: normal;
+            color: #222222;
+            margin-bottom: 31px;
+        }
+
+        .donate-btn-holder {
+            margin-bottom: 32px;
+        }
+    }
+}
+

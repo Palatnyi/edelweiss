@@ -1,0 +1,91 @@
+.equipment {
+    display: flex;
+    background-color: #343239;
+    justify-content: center;
+    align-items: center;
+
+    & > .text {
+        padding: 64px 72px;
+        width: 120%;
+
+        & > .title {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 48px;
+            font-style: normal;
+            color: #ffffff;
+        }
+
+        & > .subtitle {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            color: #ffffff;
+        }
+
+        & > .description {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 26px;
+            color: #ffffff;
+            margin-bottom: 64px;
+        }
+    }
+
+    & > .image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 64px 72px;
+        & img {
+            width: 100%;
+        }
+    }
+
+    & .donate {
+        display: flex;
+    }
+
+    & .donate-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .equipment {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-width: 100%;
+
+        & .image {
+            padding: 16px;
+            order: 1;
+        }
+
+        & .title {
+            width: auto;
+        }
+
+        & .text {
+            order: 2;
+            padding: 16px;
+            width: auto;
+            & .description {
+                margin-bottom: 24px;
+            }
+        }
+
+        & .donate {
+            display: none;
+        }
+
+        & .donate-mobile {
+            order: 3;
+            display: flex;
+            margin-bottom: 24px;
+        }
+    }
+}

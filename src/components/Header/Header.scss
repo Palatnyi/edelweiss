@@ -1,0 +1,184 @@
+.header-mobile,
+.mobile-menu {
+    display: none;
+}
+
+.header-desktop {
+    height: 64px;
+    padding: 0 36px 0 72px;
+    background: #343239;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > .name,
+    & > .menu {
+        width: 50%;
+    }
+
+    & > .name {
+        height: 100%;
+        padding: 7px;
+        color: #fff;
+        font-size: 24px;
+        & > img {
+            height: 100%;
+        }
+    }
+
+    & > .menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        & > div > a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 32px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+        }
+    }
+
+    & .langSelector {
+        display: flex;
+        color: #fff;
+        border-color: #343239;
+        background-color: #343239;
+        justify-content: space-between;
+
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 24px;
+        cursor: pointer;
+        text-decoration: none;
+
+        & .Dropdown-arrow {
+            display: none;
+        }
+    }
+
+    & .social {
+        display: flex;
+
+
+        & a > img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header-mobile,
+    .mobile-menu {
+        display: flex;
+        z-index: 10;
+    }
+
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile {
+        height: 64px;
+        padding: 0 16px;
+        position: fixed;
+        width: 100%;
+        background: #343239;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+
+        & > .name {
+            color: #fff;
+            font-size: 16px;
+            height: 100%;
+            & > img {
+                height: 100%;
+            }
+        }
+
+        & > .icon {
+            width: 30px;
+            height: 30px;
+            & > img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .mobile-menu {
+        top: 64px;
+        height: 100%;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        & > .empty {
+            width: 10%;
+            background-color: #000;
+            opacity: 0.7;
+        }
+        & > .menu-holder {
+            width: 90%;
+            background-color: #fff;
+            padding: 64px 0 0 64px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            & > .top > div > a {
+                color: black;
+                font-size: 24px;
+                margin-bottom: 24px;
+                font-weight: 600;
+                cursor: pointer;
+                text-decoration: none;
+                display: flex;
+            }
+
+            & > .bottom {
+                margin-top: 120px;
+
+                & > .lang-title {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: #000000;
+                    margin-bottom: 16px;
+                }
+
+                & > .lang {
+                    display: flex;
+                    color: #000000;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    font-style: normal;
+                    margin-bottom: 16px;
+                    margin-right: 64px;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
+            }
+
+            & > .social {
+                margin-top: 20px;
+                & img {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+}
