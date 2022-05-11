@@ -50,7 +50,7 @@ function Team() {
         {
             src: oksana,
             name: translate("teamMembers.oksana.name"),
-            surname: translate("teamMembers.shatilov.surname"),
+            surname: translate("teamMembers.oksana.surname"),
 
             role: translate("teamMembers.oksana.role"),
             linkedin: 'https://www.linkedin.com/in/oksanaperimova/'

@@ -4,6 +4,7 @@ import translations from './translations.json';
 import { Routes, Route } from 'react-router-dom';
 import Confirmation from './components/Confirmation/Confirmation.jsx';
 import NotFound from './components/NotFound/NotFound.jsx';
+import SecretPage from './components/SecretPage/SecretPage.jsx';
 
 
 const { LANGUAGES } = translations;
@@ -24,6 +25,8 @@ function EdelweissRouter() {
 
             <Route path="/confirmation" element={<Confirmation />} />
             {confirmationRoutes}
+
+            <Route path="/secretpage" element={<SecretPage />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     );
