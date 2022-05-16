@@ -9,8 +9,8 @@ function Confirmation() {
     const translate = useTranslations();
     let [searchParams, setSearchParams] = useSearchParams();
 
+    const amount = searchParams.get("amount");
     const currency = searchParams.get("currency");
-    const amount = searchParams.get("currency");
 
     window.fbq('track', 'Purchase', {currency, value: amount}); 
 

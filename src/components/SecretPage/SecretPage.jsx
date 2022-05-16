@@ -21,11 +21,12 @@ function SecretPage() {
 
     return (
         <>
-            <div className="secret">
+            {result && <div className="secret">
                 <Rings ariaLabel="loading-indicator" color={'#06ace6'} radius={180}/>
-                {result && <div className="amount">{result}</div>}
+                <div className="amount">{result}</div>
+                <div className="uah">uah</div>
                 <img className="logo" src={logo} alt="" />
-            </div>
+            </div>}
         </>
     );
 }
