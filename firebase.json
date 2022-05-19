@@ -4,8 +4,7 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "src/**"
+      "**/node_modules/**"
     ],
     "rewrites": [
       {
@@ -13,10 +12,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "emulators": {
-    "functions": {
-      "port": "4444"
-    }
   }
 }

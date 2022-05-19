@@ -7,7 +7,8 @@
     },
     "CURRENCIES": {
         "uk": "UAH",
-        "en": "USD"
+        "en": "USD",
+        "ru": "UAH"
     },
     "FLAG": {
         "uk": "UA",

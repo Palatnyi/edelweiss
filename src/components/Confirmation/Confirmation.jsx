@@ -1,19 +1,17 @@
 import React from 'react';
 import { useTranslations, useCustomLang } from '../../hooks';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Confirmation.scss';
 
 function Confirmation() {
     const navigate = useNavigate();
     const { lang } = useCustomLang();
     const translate = useTranslations();
-    let [searchParams, setSearchParams] = useSearchParams();
 
-    const amount = searchParams.get("amount");
-    const currency = searchParams.get("currency");
+    let { currency, amount } = useParams();
 
-    window.fbq('track', 'Purchase', {currency, value: amount}); 
-
+    window.fbq('track', 'Purchase', {currency, value: amount});
+    console.log(currency, amount);
     const goBack = () => {
         navigate(`/${lang}`);
     }

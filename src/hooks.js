@@ -56,3 +56,9 @@ export function useCustomLang() {
 
     return { lang }
 }
+
+
+export function getCurrencyMultiplier(currencies, code) {
+    const currency = currencies.find(currency => currency.currencyCodeA === code);
+    return currency;
+}

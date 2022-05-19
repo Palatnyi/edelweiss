@@ -15,7 +15,7 @@ function EdelweissRouter() {
     });
 
     const confirmationRoutes = Object.values(LANGUAGES).map(lang => {
-        return <Route path={`/${lang}/confirmation`} element={<Confirmation />} />
+        return <Route path={`/${lang}/confirmation/:currency/:amount`} element={<Confirmation />} />
     });
 
     return (
@@ -23,10 +23,12 @@ function EdelweissRouter() {
             <Route path="/" exact element={<App />} />
             {routes}
 
-            <Route path="/confirmation" element={<Confirmation />} />
+            <Route path="/confirmation/:currency/:amount" element={<Confirmation />} />
             {confirmationRoutes}
 
             <Route path="/secretpage" element={<SecretPage />} />
+            <Route path="/" element={<SecretPage />} />
+
             <Route path="*" element={<NotFound />} />
         </Routes>
     );

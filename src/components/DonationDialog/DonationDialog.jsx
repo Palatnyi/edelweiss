@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import urlJoin from 'url-join';
-import CONFIG from '../../config.js';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -18,32 +16,18 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useTranslations, useCustomLang } from '../../hooks'
+import { useTranslations, useCustomLang, getCurrencyMultiplier } from '../../hooks'
 import DialogContentText from '@mui/material/DialogContentText';
 
 import translations from '../../translations.json';
 
-export default function DonationDialog({ onDonate, onClose }) {
+export default function DonationDialog({ onDonate, onClose, currencies }) {
 	let { lang } = useCustomLang();
 	const { CURRENCIES, FLAG, DEFAULT_LANG, CURRENCY_TO_FLAG } = translations;
 	const translate = useTranslations();
 	const [amount, setAmount] = useState(500);
 	const [customer_email, setEmail] = useState('');
-	const [currencies, setCurrencies] = useState([]);
 	const [currency, setCurrency] = useState(CURRENCIES[lang]);
-
-	useEffect(() => {
-
-		axios.get(CONFIG.CURRENCIES_URL)
-			.then(response => {
-				if (response.data && response.data.data) {
-					setCurrencies(response.data.data);
-				}
-			})
-			.catch(error => {
-				console.log('error', error);
-			});
-	}, [])
 
 
 	const handleInputChange = e => {
@@ -90,20 +74,18 @@ export default function DonationDialog({ onDonate, onClose }) {
 	}
 
 	const donate = () => {
-		const usdCode = 840;
 		let _amount = amount;
-		const usdCurrency = currencies.find(currency => currency.currencyCodeA === usdCode);
-
+		const usdCurrency = getCurrencyMultiplier(currencies, 840);
 		if (currency === "USD") {
 			_amount = parseFloat(amount * usdCurrency.rateBuy).toFixed(0)
 		}
 
 		const data = {
 			customer_email,
-			amount: _amount,
 			currency: 'UAH',
+			amount: _amount,
 			customer_lang: lang.toUpperCase(),
-			result_url: urlJoin(window.location.href, 'confirmation')
+			result_url: urlJoin(window.location.href, 'confirmation', 'UAH', `${amount}`)
 		};
 
 

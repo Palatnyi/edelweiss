@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
 import CONFIG from './config.js';
-import { useTranslations } from './hooks';
+import { useTranslations, useCustomLang } from './hooks';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import logEdelweissEvent from './analytics.js';
@@ -27,12 +27,27 @@ import 'react-dropdown/style.css';
 
 function Edelweiss() {
   const translate = useTranslations();
+  const [currencies, setCurrencies] = useState([]);
   const [showLoader, toggleLoader] = useState(false);
   const [showDialog, toggleShowDialog] = useState(false);
   const [errorSnackbar, setErrorSnackbar] = useState(false);
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
+
+
+  useEffect(() => {
+
+		axios.get(CONFIG.CURRENCIES_URL)
+			.then(response => {
+				if (response.data && response.data.data) {
+					setCurrencies(response.data.data);
+				}
+			})
+			.catch(error => {
+				console.log('error', error);
+			});
+	}, [])
 
   function onDonate(params) {
 
@@ -69,13 +84,13 @@ function Edelweiss() {
   return (
     <div className="edelweiss">
       {showLoader && <Loader />}
-      {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)} />}
+      {showDialog && <DonationDialog onDonate={onDonate} onClose={() => toggleShowDialog(false)} currencies={currencies} />}
       <Header />
       <Welcome openDonationDialog={openDonationDialog('Welcome')} />
       <AboutWar />
       <Team />
       <Equipment />
-      <DonateProgressBar>
+      <DonateProgressBar currencies={currencies}>
         <Donate onClick={openDonationDialog('Equipment')} />
         <Report />
       </DonateProgressBar>
