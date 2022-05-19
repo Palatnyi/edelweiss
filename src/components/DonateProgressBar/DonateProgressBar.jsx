@@ -15,7 +15,7 @@ function DonateProgressBar({ children, currencies = [] }) {
 
 
     const fetchResult = async () => {
-        const resp = await axios.get(CONFIG.SECRET_URL);
+        const resp = await axios.get(CONFIG.TOTAL);
         const res = resp && resp.data && resp.data.result;
         width = (parseInt(res) * 100) / 8500000
         setWidth(width);
@@ -47,7 +47,7 @@ function DonateProgressBar({ children, currencies = [] }) {
                 <span>{translate("donateProgressBar.totalAmount")}</span>
                 <span>{translate("donateProgressBar.ourGoal")}</span>
             </div>
-            {hasCurrencies() && <div className="amounts">
+            {hasCurrencies() && result && <div className="amounts">
                 <span>{renderAmountLabel()}</span>
                 <span>{translate("donateProgressBar.goal")}</span>
             </div>}
