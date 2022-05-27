@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
 import CONFIG from './config.js';
-import { useTranslations, useCustomLang } from './hooks';
+import { useTranslations } from './hooks';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
-import logEdelweissEvent from './analytics.js';
 import Team from './components/Team/Team.jsx';
+import logEdelweissEvent from './analytics.js';
+import { useSearchParams } from 'react-router-dom';
 import Donate from './components/Donate/Donate.jsx';
 import Report from './components/Report/Report.jsx';
 import Footer from './components/Footer/Footer.jsx';
@@ -29,7 +30,9 @@ function Edelweiss() {
   const translate = useTranslations();
   const [currencies, setCurrencies] = useState([]);
   const [showLoader, toggleLoader] = useState(false);
-  const [showDialog, toggleShowDialog] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const externallyOpenDialog = searchParams.get("donation-dialog");
+  const [showDialog, toggleShowDialog] = useState(!!externallyOpenDialog || false);
   const [errorSnackbar, setErrorSnackbar] = useState(false);
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;

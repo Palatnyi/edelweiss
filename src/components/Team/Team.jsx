@@ -6,6 +6,7 @@ import dima from '../../images/dima.jpg';
 import vlad from "../../images/vlad.jpg";
 import youra from '../../images/youra.jpg';
 import anton from '../../images/anton.jpg';
+import piven from '../../images/piven.jpeg';
 import oksana from '../../images/oksana.jpeg';
 import kostya from '../../images/kostya.jpeg';
 import andrey from '../../images/andrey.jpeg';
@@ -136,6 +137,13 @@ function Team() {
 
             role: translate("teamMembers.anton.role"),
             linkedin: 'https://www.linkedin.com/in/anton-pluzhnikov-5491a1a5/'
+        }, {
+            src: piven,
+            name: translate("teamMembers.piven.name"),
+            surname: translate("teamMembers.piven.surname"),
+
+            role: translate("teamMembers.piven.role"),
+            linkedin: 'https://www.linkedin.com/in/dmitry-piven-12263a95/'
         }];
 
     return (

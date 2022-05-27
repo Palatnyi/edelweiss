@@ -183,49 +183,47 @@
             "oleksii": {
                 "name": "Oleksii",
                 "surname": "Palatnyi",
-
                 "role": "CEO at Grate Paper"
             },
             "andrii": {
                 "name": "Аndrii",
                 "surname": "Palatnyi",
-
                 "role": "Frontend engineer"
             },
             "dima": {
                 "name": "Dmytro",
                 "surname": "Savchenko",
-
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
                 "name": "Vadym",
                 "surname": "Shatilov",
-
                 "role": "founder  DOPOMOGA2022"
             },
             "youra": {
                 "name": "Yurii",
                 "surname": "Shelmuk",
-
                 "role": "co-founder  DOPOMOGA2022"
             },
             "anton": {
-                "name" : "Anton",
+                "name": "Anton",
                 "surname": "Pluzhnikov",
-
                 "role": "General Manager of DataLink"
             },
             "oksana": {
-                "name" : "Oksana",
+                "name": "Oksana",
                 "surname": "Perimova",
-
                 "role": "Assosiate Manager. Logistics"
             },
             "dan": {
                 "name": "Dan",
                 "surname": "Fioletov",
                 "role": "SEO at SIM-Networks"
+            },
+            "piven": {
+                "name": "Dmytro",
+                "surname": "Piven",
+                "role": "Developer at Datalink UK"
             }
         },
         "footer": {
@@ -260,7 +258,6 @@
             "title": "We also gather funds for smaller projects",
             "description": "Our primary goal is the SKYctrl anti-drone system, but your donations will also help us to cover a number of smaller projects, that will swiftly bring help and value to our army forces. We keep track of every penny donated, and you can check this in our fund report.",
             "subtitle": "Other fundraising",
-
             "medicine": {
                 "title": "Wound therapy system",
                 "description": ""
@@ -280,7 +277,6 @@
             "ourGoal": "Our goal",
             "current": "17000 USD",
             "goal": "250000 USD"
-
         }
     },
     "uk": {
@@ -437,61 +433,57 @@
             "kostya": {
                 "name": "Костянтин",
                 "surname": "Ільченко",
-
                 "role": "Проектний менеджер у Люксофт"
             },
             "vlad": {
                 "name": "Владислав",
                 "surname": "Касьяненко",
-
                 "role": "Інженер з програмного забезпечення"
             },
             "oleksii": {
                 "name": "Олексій",
                 "surname": "Палатний",
-
                 "role": "Директор у Грейт Пейпер"
             },
             "andrii": {
                 "name": "Андрій",
                 "surname": "Палатний",
-
                 "role": "Інженер з фронтенду у Плейтек"
             },
             "dima": {
                 "name": "Дмитро",
                 "surname": "Савченко",
-
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
                 "name": "Вадим",
                 "surname": "Шатілов",
-
                 "role": "Cпівзасновник DOPOMOGA2022"
             },
             "youra": {
                 "name": "Юрій",
                 "surname": "Шельмук",
-                
                 "role": "співзасновник DOPOMOGA2022"
             },
             "anton": {
-                "name" : "Антон",
+                "name": "Антон",
                 "surname": "Плужніков",
-
                 "role": "Генеральний менеджер у DataLink"
             },
             "oksana": {
-                "name" : "Оксана",
+                "name": "Оксана",
                 "surname": "Перімова",
-
                 "role": "Assosiate Manager. Logistics."
             },
             "dan": {
                 "name": "Дан",
                 "surname": "Фіолетов",
                 "role": "SEO at SIM-Networks"
+            },
+            "piven": {
+                "name": "Дмитро",
+                "surname": "Півень",
+                "role": "Розробник у Datalink UK"
             }
         },
         "footer": {
@@ -526,7 +518,6 @@
             "title": "Також ми збираємо на інше екіпірування",
             "description": "Нашою головною метою залишається збір коштів для придбання антидрон системи skyCTRL. Також ми збираємо кошти на обладнання яке потребують наші бійці на нульовій точці зіткнень з ворогом.",
             "subtitle": "Інші потреби",
-
             "medicine": {
                 "title": "Прилади для обробки поранень",
                 "description": ""
@@ -539,7 +530,6 @@
                 "title": "Автомобільні рації",
                 "description": ""
             },
-
             "donate": "Пожертвувати"
         },
         "donateProgressBar": {
@@ -549,7 +539,6 @@
             "goal": "8500000 ГРН"
         }
     },
-
     "ru": {
         "common": {
             "donate": "Пожертвувати",
@@ -704,61 +693,57 @@
             "kostya": {
                 "name": "Костянтин",
                 "surname": "Ільченко",
-
                 "role": "Проектний менеджер у Люксофт"
             },
             "vlad": {
                 "name": "Владислав",
                 "surname": "Касьяненко",
-
                 "role": "Інженер з програмного забезпечення"
             },
             "oleksii": {
                 "name": "Олексій",
                 "surname": "Палатний",
-
                 "role": "Директор у Грейт Пейпер"
             },
             "andrii": {
                 "name": "Андрій",
                 "surname": "Палатний",
-
                 "role": "Інженер з фронтенду у Плейтек"
             },
             "dima": {
                 "name": "Дмитро",
                 "surname": "Савченко",
-
                 "role": "Associate director at SoftServe"
             },
             "shatilov": {
                 "name": "Вадим",
                 "surname": "Шатілов",
-
                 "role": "співзасновни к DOPOMOGA2022"
             },
             "youra": {
                 "name": "Юрій",
                 "surname": "Шельмук",
-                
                 "role": "співзасновник DOPOMOGA2022"
             },
             "anton": {
-                "name" : "Антон",
+                "name": "Антон",
                 "surname": "Плужніков",
-
                 "role": "Генеральний менеджер у DataLink"
             },
             "oksana": {
-                "name" : "Оксана",
+                "name": "Оксана",
                 "surname": "Перімова",
-
                 "role": "Assosiate Manager. Logistics."
             },
             "dan": {
                 "name": "Дан",
                 "surname": "Фіолетов",
                 "role": "SEO at SIM-Networks"
+            },
+            "piven": {
+                "name": "Дмитро",
+                "surname": "Півень",
+                "role": "Розробник у Datalink UK"
             }
         },
         "footer": {
@@ -793,7 +778,6 @@
             "title": "Також ми збираємо на інше екіпірування",
             "description": "Нашою головною метою залишається збір коштів для придбання антидрон системи skyCTRL. Також ми збираємо кошти на обладнання яке потребують наші бійці на нульовій точці зіткнень з ворогом.",
             "subtitle": "Інші потреби",
-
             "medicine": {
                 "title": "Прилади для обробки поранень",
                 "description": ""
@@ -806,7 +790,6 @@
                 "title": "Автомобільні рації",
                 "description": ""
             },
-
             "donate": "Пожертвувати"
         },
         "donateProgressBar": {
