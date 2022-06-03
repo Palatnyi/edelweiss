@@ -15,24 +15,27 @@ import './Header.scss';
 function Header() {
     const [showHamburger, toggleShowHamburger] = useState(true);
     const icon = showHamburger ? hamburger : close;
-
     const navigate = useNavigate();
     const translate = useTranslations();
     const onChange = ({ value }) => {
-        navigate(`/${value}`);
+        if(isDonatePage) {
+            navigate(`/${value}/donate`)
+        } else {
+            navigate(`/${value}`)
+        }
     };
-
+    
     const options = translate("header.languageSelector.options");
     const languages = translate("header.languageSelector.languages");
     const mobileOptions = translate("header.languageSelector.mobileOptions");
     const placeholder = translate("header.languageSelector.placeholder");
     const defaultOption = translate("header.languageSelector.defaultValue");
-
+    
     const location = useLocation();
-    const highlightDonate = location.pathname.split('/').includes('donate');
+    const isDonatePage = location.pathname.split('/').includes('donate');
 
-    const hightlightAboutUs = highlightDonate ? '' : 'aboutus'
-    const hightlightDonate = highlightDonate ? 'donateus' : ''
+    const hightlightAboutUs = isDonatePage ? '' : 'aboutus';
+    const hightlightDonate = isDonatePage ? 'donateus' : '';
     const { lang } = useCustomLang();
 
     const goAboutUs = () => {
@@ -47,11 +50,16 @@ function Header() {
 
     const renderLanguageSelectorMobile = (options) => {
 
-
         return options.map(({ label, value, flag }) => {
 
             const onClick = () => {
-                navigate(`/${value}`)
+
+                if(isDonatePage) {
+                    navigate(`/${value}/donate`)
+                } else {
+                    navigate(`/${value}`)
+                }
+
                 toggleShowHamburger(true);
             };
 
