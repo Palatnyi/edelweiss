@@ -1,0 +1,9 @@
+.externalDonationDialog {
+    background-color: #FBF9FB;
+}
+
+@media screen and (max-width: 700px) {
+    .externalDonationDialog {
+        padding: 24px 16px 16px 16px;
+    }
+}

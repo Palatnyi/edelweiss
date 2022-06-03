@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from 'react-dropdown';
-import { useTranslations } from '../../hooks';
-import { useNavigate } from 'react-router-dom';
+import { useTranslations, useCustomLang } from '../../hooks';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
 
 import logo from '../../images/logo.png';
@@ -28,6 +28,23 @@ function Header() {
     const placeholder = translate("header.languageSelector.placeholder");
     const defaultOption = translate("header.languageSelector.defaultValue");
 
+    const location = useLocation();
+    const highlightDonate = location.pathname.split('/').includes('donate');
+
+    const hightlightAboutUs = highlightDonate ? '' : 'aboutus'
+    const hightlightDonate = highlightDonate ? 'donateus' : ''
+    const { lang } = useCustomLang();
+
+    const goAboutUs = () => {
+        const link = !!lang ? `/${lang}` : '/'
+        navigate(link);
+    };
+
+    const goDonate = () => {
+        const link = !!lang ? `/${lang}/donate` : '/donate';
+        navigate(link);
+    };
+
     const renderLanguageSelectorMobile = (options) => {
 
 
@@ -51,7 +68,6 @@ function Header() {
         });
     }
 
-
     return (
         <>
             <div className="header-mobile">
@@ -68,10 +84,8 @@ function Header() {
                     <div className="empty"></div>
                     <div className="menu-holder">
                         <div className="top">
-                            <div onClick={() => toggleShowHamburger(true)}><a href="#about">{translate("menu.aboutWar")}</a></div>
-                            <div onClick={() => toggleShowHamburger(true)}><a href="#team">{translate("menu.ourTeam")}</a></div>
-                            <div onClick={() => toggleShowHamburger(true)}><a href="#needs">{translate("menu.ourNeeds")}</a></div>
-                            <div onClick={() => toggleShowHamburger(true)}><a href="#donate">{translate("menu.donate")}</a></div>
+                            <div onClick={goAboutUs}><a>{translate("menu.aboutWar")}</a></div>
+                            <div onClick={goDonate}><a>{translate("menu.donate")}</a></div>
                         </div>
 
                         <div className="bottom">
@@ -97,10 +111,10 @@ function Header() {
                 </div>
 
                 <div className="menu">
-                    <div><a href="#about">{translate("menu.aboutWar")}</a></div>
-                    <div><a href="#team">{translate("menu.ourTeam")}</a></div>
-                    <div><a href="#needs">{translate("menu.ourNeeds")}</a></div>
-                    <div><a href="#donate">{translate("menu.donate")}</a></div>
+                    <div className={hightlightAboutUs} onClick={goAboutUs}><a>{translate("menu.aboutWar")}</a></div>
+                    <div className={hightlightDonate} onClick={goDonate}><a>{translate("menu.donate")}</a></div>
+                </div>
+                <div className="social">
                     <Dropdown
                         options={options}
                         onChange={onChange}
@@ -108,8 +122,6 @@ function Header() {
                         placeholder={placeholder}
                         controlClassName="langSelector"
                     />
-                </div>
-                <div className="social">
                     <a href="https://www.facebook.com/dopomoga2022">
                         <img src={fb} alt="" rel="preload" />
                     </a>

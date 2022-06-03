@@ -4,7 +4,8 @@ import system from '../../images/system.jpg';
 import './Equipment.scss';
 
 function Equipment() {
-    const translate = useTranslations();
+    const translate = useTranslations();    
+    const args = translate("equipment.args");
 
     return (
         <div className="equipment" id="needs">
@@ -22,8 +23,13 @@ function Equipment() {
                     {translate("equipment.howMuchMoneyTitle")}
                 </div>
                 <div className="description">
-                    {translate("equipment.howMuchMoneyDescription")}
+                    <ul>
+                        {args.map(arg => <li>{arg}</li>)}
+                    </ul>
                 </div>
+                {/*<div className="description">
+                    {translate("equipment.howMuchMoneyDescription")}
+                </div>*/}
             </div>
             <div className="image">
                 <div>

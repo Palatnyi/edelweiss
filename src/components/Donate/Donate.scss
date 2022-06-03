@@ -13,3 +13,9 @@
     padding: 10px;
     border: 0px;
 }
+
+.disabled {
+    background-color: #888888;
+    color: rgb(47, 47, 47);
+    cursor:not-allowed;
+}

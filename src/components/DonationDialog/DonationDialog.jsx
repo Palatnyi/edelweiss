@@ -85,7 +85,7 @@ export default function DonationDialog({ onDonate, onClose, currencies }) {
 			currency: 'UAH',
 			amount: _amount,
 			customer_lang: lang.toUpperCase(),
-			result_url: urlJoin(window.location.href, 'confirmation', 'UAH', `${_amount}`)
+			result_url: urlJoin(window.location.href, 'confirmation', 'UAH', `${amount}`)
 		};
 
 

@@ -1,5 +1,7 @@
 import React from 'react';
-import App from './App.jsx';
+import Main from './pages/Main/Main.jsx';
+import ExternalDonationDialog from './pages/ExternalDonationDialog/ExternalDonationDialog.jsx';
+
 import translations from './translations.json';
 import { Routes, Route } from 'react-router-dom';
 import Confirmation from './components/Confirmation/Confirmation.jsx';
@@ -10,21 +12,30 @@ import SecretPage from './components/SecretPage/SecretPage.jsx';
 const { LANGUAGES } = translations;
 
 function EdelweissRouter() {
-    const routes = Object.values(LANGUAGES).map(lang => {
-        return <Route path={`/${lang}`} element={<App />} />
+    const langs = Object.values(LANGUAGES);
+
+    const routes = langs.map(lang => {
+        return <Route path={`/${lang}`} element={<Main />} />
     });
 
-    const confirmationRoutes = Object.values(LANGUAGES).map(lang => {
+    const confirmationRoutes = langs.map(lang => {
         return <Route path={`/${lang}/confirmation/:currency/:amount`} element={<Confirmation />} />
     });
 
+    const donateRoutes = langs.map(lang => {
+        return <Route path={`/${lang}/donate`} element={<ExternalDonationDialog />} />
+    })
+
     return (
         <Routes>
-            <Route path="/" exact element={<App />} />
+            <Route path="/" exact element={<Main />} />
             {routes}
 
             <Route path="/confirmation/:currency/:amount" element={<Confirmation />} />
             {confirmationRoutes}
+
+            <Route path="/donate" exact element={<ExternalDonationDialog />} />
+            {donateRoutes}
 
             <Route path="/secretpage" element={<SecretPage />} />
             <Route path="/" element={<SecretPage />} />

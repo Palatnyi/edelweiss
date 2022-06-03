@@ -31,9 +31,7 @@
             }
         },
         "menu": {
-            "aboutWar": "About the war",
-            "ourTeam": "Our team",
-            "ourNeeds": "Our needs",
+            "aboutWar": "About Us",
             "donate": "Donate"
         },
         "header": {
@@ -69,13 +67,13 @@
             }
         },
         "welcome": {
-            "communication": "Protect our land. We stand!",
-            "description": "Help to save Ukrainians lives. Let’s stop the  shellings!",
+            "communication": "We help Ukrainians!",
+            "description": "We, the charity fund DOPOMOGA 2022. We provide anti-drone systems and implement their use within a separate assault unit. We share our own experience with the military in countering drones.",
             "donate": "Donate"
         },
         "aboutWar": {
-            "title": "About the war",
-            "description": "Wouldn’t you want to protect your land? On February 24, 2022, at 5 am, Russia shamelessly attacked Ukraine. Cynically calling it a “special operation,” Russian Federation has been committing acts of genocide against the Ukrainian people ever since. Hundreds of thousands of civilians are under fire without access to essential survival means. But Ukraine stands, and its warriors bravely fight for democracy, freedom, and life against the greatest tyranny since The Third Reich."
+            "title": "Help Ukrainian armed forces!",
+            "description": "The war on the territory of Ukraine is very often an artillery duel. The enemy uses civilian micro aviation to inspect the positions of the Ukrainian military. Then, to defeat our army, the Russians fire guided missiles such as Krasnopol. With the help of anti-drone systems, the Ukrainian army stays hidden from the Russians."
         },
         "ourTeam": {
             "title": "Our team",
@@ -83,16 +81,23 @@
         },
         "equipment": {
             "title": "We need your help to buy a specific equipment",
-            "whatIsScyCTRL": "Help us buy SKYctrl",
-            "descriptionSkyCTRL": "Closing the sky is vital for Ukraine. We need to stop enemies from shooting from the sky. This is essential for protecting civilians and shielding our troops while they’re freeing the country from the invaders. This is why we need to buy the SKYctrl anti-drone system from APS. It automatically detects small to medium drones and disrupts them with the help of electromagnetic interference. But we can’t do this without your help",
-            "howMuchMoneyTitle": "How much money do we need?",
-            "howMuchMoneyDescription": "The SKYctrl system by APS costs 250,000 USD. The sum is significant, and we need your help collecting it. Our public organization collects funds and guarantees they will go toward purchasing the system. SKYctrl is an inventory item that will bring results instantly, without delays. Moreover, the manufacturer supports its soonest delivery, so your contribution will have immediate results.",
-            "donate": "Donate"
+            "descriptionSkyCTRL": "We are raising funds to purchase the SKYctrl system from APS, which automatically identifies small and tactical drones and counteracts them at different frequencies using electromagnetic radiation.",
+            "howMuchMoneyTitle": "Benefits",
+            "donate": "Donate",
+            "args": [
+                "Maximum range - 10 km.",
+                "SkyCtrl can detect multiple drones at once.",
+                "The maximum altitude for detecting enemy micro aviation is 30 km.",
+                "The system can be disguised in the bushes and installed on the car.",
+                "Radar and artificial intelligence provide drone detection mechanism.",
+                "It has an operator notification system. The control point is at a safe distance from the SkyCtrl positions."
+            ]
         },
         "requisities": {
             "title": "Your help matters",
             "ourRequisites": "Our requisites",
             "donateDirectly": "Donate directly",
+            "copied": "copied",
             "requisitiesTypes": {
                 "ibanUahTitle": "IBAN UAH",
                 "ibanUAH": [
@@ -277,6 +282,33 @@
             "ourGoal": "Our goal",
             "current": "17000 USD",
             "goal": "250000 USD"
+        },
+        "donationForm": {
+            "dialogTitle": "Donation",
+            "selectCurrencyTitle": "Select currency",
+            "currencies": [
+                {
+                    "countryCode": "US",
+                    "currency": "USD",
+                    "value": "USD"
+                },
+                {
+                    "countryCode": "UA",
+                    "currency": "UAH",
+                    "value": "UAH"
+                }
+            ],
+            "amountsTitle": "Select amount",
+            "amounts": [
+                100,
+                200,
+                500,
+                1000,
+                2000,
+                "Other"
+            ],
+            "emailTitle": "Email",
+            "customAmountTitle": "Type in your amount"
         }
     },
     "uk": {
@@ -293,8 +325,6 @@
         },
         "menu": {
             "aboutWar": "Війна",
-            "ourTeam": "Команда",
-            "ourNeeds": "Потреба",
             "donate": "Допомогти"
         },
         "header": {
@@ -330,13 +360,13 @@
             }
         },
         "welcome": {
-            "communication": "Зупинимо обстріли - збережемо життя!",
-            "description": "Щодня українці гинуть від обстрілів з боку росії, зокрема  - внаслідок атак з неба. Наша мета - придбати систему протидії дронам, яка зменшить кількість російських повітряних атак і збереже тисячі життів. Долуйчатесь - кожен внесок важливий!",
+            "communication": "Протистоїмо ворожим безпілотникам",
+            "description": "Ми, благодійний фонд “Допомога 2022”. Забезпечуємо засобами протидії дронам та впроваджуємо їх використання в рамках окремого штурмового підрозділу. Ділимося власним досвідом з військовими у протидії дронам.",
             "donate": "Допомогти"
         },
         "aboutWar": {
             "title": "ДОПОМОГТИ",
-            "description": "24 лютого 2022 року о 5 ранку росія цинічно напала на Україну і відтоді провадить геноцид проти українського народу. Сотні тисяч мирних жителів перебувають під обстрілами без доступу до засобів виживання. Але Україна стоїть, і її воїни мужньо борються за житті, демократію і незалежність проти найбільшої тиранії з часів Третього Рейха."
+            "description": "Війна на території України - це дуже часто артилерійська дуель. Ворог використовує цивільну мікроавіацію для розвідки позицій українських військових. Далі, для ураження наших військових, росіяни вистрілюють керованим боєприпасом типу “Краснополь”. Використовуючи системи протидії дронам, українські військові, залишатимуться непоміченими."
         },
         "ourTeam": {
             "title": "Команда",
@@ -344,15 +374,24 @@
         },
         "equipment": {
             "title": "Що ми робимо",
-            "whatIsScyCTRL": "Допоможіть захистити небо України",
-            "descriptionSkyCTRL": "Наша ціль - придбати систему SKYctrl виробництва APS, яка автоматично ідентифікує малі і тактичні дрони та протидіє їм на різних частотах за допомогою електромагнітного випромінювання.",
-            "howMuchMoneyTitle": "Система SKYctrl виробництва APS коштує 250,000 USD.",
-            "howMuchMoneyDescription": "Вартість системи SKYctrl - 250 тис. доларів. Система є на складі і виробник готовий передати нам її, як тільки надійдуть кошти. Кожна хвилина зволікання коштує нам багатьох життів. Ваш внесок - важливий. Долучайтесь!",
+            "whatIsScyCTRL": "",
+            "descriptionSkyCTRL": "Збираємо кошти для придбання системи SKYctrl виробництва APS, яка автоматично ідентифікує малі і тактичні дрони та протидіє їм на різних частотах за допомогою електромагнітного випромінювання.",
+            "howMuchMoneyTitle": "Переваги системи skyCTRL",
+            "args": [
+                "Максимальний радіус дії - 10км.",
+                "SkyCtrl здатний виявляти декілька дронів одночасно.",
+                "Максимальна висота виявлення ворожої мікроавіації - 30 км.",
+                "Систему можна замаскувати в кущах та встановити на автомобіль.",
+                "Виявлення дронів забезпечую радар та камера відеоспостереження яка керується штучним інтелектом.",
+                "Має систему сповіщення оператора. Пункт управління знаходиться на безпечній відстані від позицій SkyCtrl."
+            ],
             "donate": "Допомогти"
         },
         "requisities": {
             "title": "Реквізити для переказів",
             "donateDirectly": "Допомогти",
+            "ourRequisites": "Реквізити",
+            "copied": "скопійовано",
             "requisitiesTypes": {
                 "ibanUahTitle": "IBAN UAH",
                 "ibanUAH": [
@@ -504,7 +543,7 @@
             "uah": "Українська Гривня (UAH)"
         },
         "confirmation": {
-            "text": "Дякуємо! Ваше пожервування було зараховано!",
+            "text": "Дякуємо! Ваше пожертвування було зараховано!",
             "goback": "Повернутись на сайт"
         },
         "notFound": {
@@ -537,6 +576,33 @@
             "ourGoal": "Необхідна кількість",
             "current": "500000 ГРН",
             "goal": "8500000 ГРН"
+        },
+        "donationForm": {
+            "dialogTitle": "Пожертвувати",
+            "selectCurrencyTitle": "Оберіть валюту",
+            "currencies": [
+                {
+                    "countryCode": "US",
+                    "currency": "USD",
+                    "value": "USD"
+                },
+                {
+                    "countryCode": "UA",
+                    "currency": "UAH",
+                    "value": "UAH"
+                }
+            ],
+            "amountsTitle": "Оберіть сумму",
+            "amounts": [
+                100,
+                200,
+                500,
+                1000,
+                2000,
+                "Інше"
+            ],
+            "emailTitle": "Імейл",
+            "customAmountTitle": "Введіть сумму"
         }
     },
     "ru": {
@@ -553,8 +619,6 @@
         },
         "menu": {
             "aboutWar": "Війна",
-            "ourTeam": "Команда",
-            "ourNeeds": "Потреба",
             "donate": "Допомогти"
         },
         "header": {
@@ -590,13 +654,13 @@
             }
         },
         "welcome": {
-            "communication": "Зупинимо обстріли - збережемо життя!",
-            "description": "Щодня українці гинуть від обстрілів з боку росії, зокрема  - внаслідок атак з неба. Наша мета - придбати систему протидії дронам, яка зменшить кількість російських повітряних атак і збереже тисячі життів. Долуйчатесь - кожен внесок важливий!",
+            "communication": "Протистоїмо ворожим безпілотникам",
+            "description": "Ми, благодійний фонд “Допомога 2022”. Забезпечуємо засобами протидії дронам та впроваджуємо їх використання в рамках окремого штурмового підрозділу. Ділимося власним досвідом з військовими у протидії дронам.",
             "donate": "Допомогти"
         },
         "aboutWar": {
             "title": "ДОПОМОГТИ",
-            "description": "24 лютого 2022 року о 5 ранку росія цинічно напала на Україну і відтоді провадить геноцид проти українського народу. Сотні тисяч мирних жителів перебувають під обстрілами без доступу до засобів виживання. Але Україна стоїть, і її воїни мужньо борються за житті, демократію і незалежність проти найбільшої тиранії з часів Третього Рейха."
+            "description": "Війна на території України - це дуже часто артилерійська дуель. Ворог використовує цивільну мікроавіацію для розвідки позицій українських військових. Далі, для ураження наших військових, росіяни вистрілюють керованим боєприпасом типу “Краснополь”. Використовуючи системи протидії дронам, українські військові, залишатимуться непоміченими."
         },
         "ourTeam": {
             "title": "Команда",
@@ -604,15 +668,23 @@
         },
         "equipment": {
             "title": "Що ми робимо",
-            "whatIsScyCTRL": "Допоможіть захистити небо України",
-            "descriptionSkyCTRL": "Наша ціль - придбати систему SKYctrl виробництва APS, яка автоматично ідентифікує малі і тактичні дрони та протидіє їм на різних частотах за допомогою електромагнітного випромінювання.",
-            "howMuchMoneyTitle": "Система SKYctrl виробництва APS коштує 250,000 USD.",
-            "howMuchMoneyDescription": "Вартість системи SKYctrl - 250 тис. доларів. Система є на складі і виробник готовий передати нам її, як тільки надійдуть кошти. Кожна хвилина зволікання коштує нам багатьох життів. Ваш внесок - важливий. Долучайтесь!",
+            "whatIsScyCTRL": "",
+            "descriptionSkyCTRL": "Збираємо кошти для придбання системи SKYctrl виробництва APS, яка автоматично ідентифікує малі і тактичні дрони та протидіє їм на різних частотах за допомогою електромагнітного випромінювання.",
+            "howMuchMoneyTitle": "Переваги системи skyCTRL",
+            "args": [
+                "Максимальний радіус дії - 10км.",
+                "SkyCtrl здатний виявляти декілька дронів одночасно.",
+                "Максимальна висота виявлення ворожої мікроавіації - 30 км.",
+                "Систему можна замаскувати в кущах та встановити на автомобіль.",
+                "Виявлення дронів забезпечую радар та камера відеоспостереження яка керується штучним інтелектом.",
+                "Має систему сповіщення оператора. Пункт управління знаходиться на безпечній відстані від позицій SkyCtrl."
+            ],
             "donate": "Допомогти"
         },
         "requisities": {
             "title": "Реквізити для переказів",
             "donateDirectly": "Допомогти",
+            "copied": "скопійовано",
             "requisitiesTypes": {
                 "ibanUahTitle": "IBAN UAH",
                 "ibanUAH": [
@@ -797,6 +869,33 @@
             "ourGoal": "Необхідна кількість",
             "current": "500000 ГРН",
             "goal": "8500000 ГРН"
+        },
+        "donationForm": {
+            "dialogTitle": "Пожертвувати",
+            "selectCurrencyTitle": "Оберіть валюту",
+            "currencies": [
+                {
+                    "countryCode": "US",
+                    "currency": "USD",
+                    "value": "USD"
+                },
+                {
+                    "countryCode": "UA",
+                    "currency": "UAH",
+                    "value": "UAH"
+                }
+            ],
+            "amountsTitle": "Оберіть сумму",
+            "amounts": [
+                100,
+                200,
+                500,
+                1000,
+                2000,
+                "Інше"
+            ],
+            "emailTitle": "Імейл",
+            "customAmountTitle": "Введіть сумму"
         }
     }
 }

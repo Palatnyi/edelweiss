@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
-import CONFIG from './config.js';
-import { useTranslations } from './hooks';
+import CONFIG from '../../config.js';
+import { useTranslations } from '../../hooks';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
-import Team from './components/Team/Team.jsx';
-import logEdelweissEvent from './analytics.js';
+import Team from '../../components/Team/Team.jsx';
+import logEdelweissEvent from '../../analytics.js';
 import { useSearchParams } from 'react-router-dom';
-import Donate from './components/Donate/Donate.jsx';
-import Report from './components/Report/Report.jsx';
-import Footer from './components/Footer/Footer.jsx';
-import Loader from './components/Loader/Loader.jsx';
-import Header from './components/Header/Header.jsx';
-import Welcome from './components/Welcome/Welcome.jsx';
-import AboutWar from './components/AboutWar/AboutWar.jsx';
-import Equipment from './components/Equipment/Equipment.jsx';
+import Donate from '../../components/Donate/Donate.jsx';
+import Report from '../../components/Report/Report.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import Loader from '../../components/Loader/Loader.jsx';
+import Header from '../../components/Header/Header.jsx';
+import Welcome from '../../components/Welcome/Welcome.jsx';
+import AboutWar from '../../components/AboutWar/AboutWar.jsx';
+import Equipment from '../../components/Equipment/Equipment.jsx';
 
-import HelpMatters from './components/HelpMatters/HelpMatters.jsx';
-import DonationDialog from './components/DonationDialog/DonationDialog.jsx';
-import OtherFundraising from './components/OtherFundraising/OtherFundRaising.jsx';
-import DonateProgressBar from './components/DonateProgressBar/DonateProgressBar.jsx';
+import HelpMatters from '../../components/HelpMatters/HelpMatters.jsx';
+import DonationDialog from '../../components/DonationDialog/DonationDialog.jsx';
+import OtherFundraising from '../../components/OtherFundraising/OtherFundRaising.jsx';
+import DonateProgressBar from '../../components/DonateProgressBar/DonateProgressBar.jsx';
 
-import './App.scss';
+import './Main.scss';
 import 'react-dropdown/style.css';
 
 

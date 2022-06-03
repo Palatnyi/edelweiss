@@ -1,17 +1,18 @@
 .donate-requisities {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     & .requisite-holder {
         margin-right: 12px;
-        width: calc(100% / 3);
+        width: 100%;
         display: flex;
         border: 4px solid #fae526;
         margin-bottom: 5px;
         flex-direction: column;
         padding: 10px;
         white-space: nowrap;
-        overflow: scroll;
+        overflow: hidden;
 
         & .title {
             font-size: 24px;
@@ -20,21 +21,19 @@
             line-height: 36px;
             font-style: normal;
             text-transform: capitalize;
-            // margin-bottom: 10px;
         }
 
         & .requisite {
             display: flex;
-            overflow: scroll;
             flex-direction: column;
             align-items: flex-start;
 
             & > .requisite-value {
                 display: flex;
+                cursor: pointer;
                 align-items: center;
-                overflow: scroll;
                 margin-top: 20px;
-                overflow: scroll;
+                overflow: hidden;
 
                 & > .title {
                     font-size: 17px;
@@ -54,6 +53,19 @@
                     -webkit-hyphens: auto;
                     overflow-wrap: break-word;
                 }
+
+                .copyIcon {
+                    display: flex;
+                    justify-content: flex-end;
+                    visibility: hidden;
+                    margin-left: 20px;
+                }
+            }
+
+            & > .requisite-value:hover {
+                .copyIcon {
+                    visibility: visible;
+                }
             }
         }
     }
@@ -69,7 +81,7 @@
             width: 100%;
             display: flex;
             padding: 5px;
-            overflow: scroll;
+            overflow: hidden;
             margin-bottom: 16px;
             flex-direction: column;
             border: 4px solid #fae526;
@@ -110,6 +122,7 @@
                     word-wrap: break-word;
                     -webkit-hyphens: auto;
                     overflow-wrap: break-word;
+                    font-size: 13px;
                 }
             }
         }

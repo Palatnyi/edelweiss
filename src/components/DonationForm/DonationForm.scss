@@ -1,0 +1,109 @@
+.donationFormBlock {
+    border: 2px solid black;
+    padding: 8px 16px;
+    display: flex;
+    margin-right: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+    align-items: center;
+    color: #000000;
+    & > * {
+        margin-right: 8px;
+    }
+    cursor: pointer;
+}
+
+.highLightBlock {
+    background-color: #FAE526;
+    font-weight: bold;
+
+}
+
+.donationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .dialogTitle {
+        display: flex;
+        margin-top: 32px;
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 48px;
+        font-style: normal;
+        margin-bottom: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dialog {
+        width: 70%;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+        .emailTitle,
+        .amountTitle,
+        .amountsTitle,
+        .customAmountTitle,
+        .selectCurrencyTitle {
+            margin-left: 0;
+            font-size: 24px;
+            color: #222222;
+            font-weight: 700;
+            line-height: 36px;
+            font-style: normal;
+            margin-bottom: 16px;
+        }
+
+        .emailTitle {
+            margin-top: 16px;
+        }
+
+        .currencies,
+        .amounts {
+            display: flex;
+            margin-bottom: 24px;
+        }
+
+        .customAmountInput,
+        .customEmailInput {
+            border: none;
+            width: 100%;
+        }
+        .customAmountInput:focus,
+        .customEmailInput:focus {
+            outline: none;
+        }
+
+        .donateHolder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .donationForm {
+        .dialog {
+            width: 95%;
+        }
+    }
+
+    .currencies,
+    .amounts {
+        display: flex;
+        margin-bottom: 24px;
+        flex-direction: column;
+        width: 100%;
+        & > * {
+            margin-bottom: 16px;
+            margin-right:0px;
+        }
+    }
+    
+}

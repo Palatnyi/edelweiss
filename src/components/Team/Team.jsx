@@ -3,17 +3,17 @@ import { useTranslations } from '../../hooks';
 
 import dan from '../../images/dan.jpeg';
 import dima from '../../images/dima.jpg';
-import vlad from "../../images/vlad.jpg";
 import youra from '../../images/youra.jpg';
 import anton from '../../images/anton.jpg';
 import piven from '../../images/piven.jpeg';
 import oksana from '../../images/oksana.jpeg';
 import kostya from '../../images/kostya.jpeg';
-import andrey from '../../images/andrey.jpeg';
 import liubov from '../../images/liubov.jpeg';
 import oleksii from '../../images/oleksii.jpeg';
 import linkedin from '../../images/linkedin.png';
 import shatilov from '../../images/shatilov.jpg';
+/*import vlad from "../../images/vlad.jpg";
+import andrey from '../../images/andrey.jpeg';*/
 
 import './Team.scss';
 
@@ -90,7 +90,7 @@ function Team() {
             role: translate("teamMembers.dima.role"),
             linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
         },
-        {
+        /* {
             src: andrey,
             name: translate("teamMembers.andrii.name"),
             surname: translate("teamMembers.andrii.surname"),
@@ -98,7 +98,7 @@ function Team() {
             role: translate("teamMembers.andrii.role"),
             linkedin: 'https://www.linkedin.com/in/andrii-palatnyi-9693b384/',
             instagram: ''
-        },
+        },*/
         {
             src: dan,
             name: translate("teamMembers.dan.name"),
@@ -115,14 +115,14 @@ function Team() {
             role: translate("teamMembers.oleksii.role"),
             linkedin: 'https://www.linkedin.com/in/oleksii-palatnyi/',
             instagram: ''
-        }, {
+        }, /*{
             src: vlad,
             name: translate("teamMembers.vlad.name"),
             surname: translate("teamMembers.vlad.surname"),
 
             role: translate("teamMembers.vlad.role"),
             linkedin: 'https://www.linkedin.com/in/vladkasianenko/'
-        }, {
+        },*/ {
             src: kostya,
             name: translate("teamMembers.kostya.name"),
             surname: translate("teamMembers.kostya.surname"),

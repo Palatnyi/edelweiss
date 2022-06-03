@@ -12,11 +12,6 @@
     align-items: center;
     justify-content: space-between;
 
-    & > .name,
-    & > .menu {
-        width: 50%;
-    }
-
     & > .name {
         height: 100%;
         padding: 7px;
@@ -40,6 +35,17 @@
             text-decoration: none;
             display: flex;
         }
+        
+        & > div {
+            border-bottom: 1px solid transparent;
+        }
+
+        .aboutus,
+        .donateus {
+            & > a {
+                border-bottom: 1px solid #fae526;
+            }
+        }
     }
 
     & .langSelector {
@@ -62,7 +68,7 @@
 
     & .social {
         display: flex;
-
+        align-items: center;
 
         & a > img {
             width: 24px;

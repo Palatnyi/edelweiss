@@ -1,18 +1,23 @@
 import React from 'react';
-import { useTranslations } from '../../hooks';
+import { useTranslations, useCustomLang } from '../../hooks';
+import { useNavigate } from 'react-router-dom';
 import './Footer.scss';
 
 
 function Footer() {
+    const navigate = useNavigate();
+    const { lang } = useCustomLang();
     const translate = useTranslations();
+
+    const goToSection = () => {
+        const link = !!lang ? `/${lang}` : '/'
+        navigate(link);
+    }
 
     return (
         <div className="footer">
             <div className="left">
-                <div><a href="#about">{translate("menu.aboutWar")}</a></div>
-                <div><a href="#team">{translate("menu.ourTeam")}</a></div>
-                <div><a href="#needs">{translate("menu.ourNeeds")}</a></div>
-                <div><a href="#donate">{translate("menu.donate")}</a></div>
+                <div onClick={goToSection}><a>{translate("menu.aboutWar")}</a></div>
             </div>
             <div className="right">
                 <div>{translate("footer.contactUs")}</div>
