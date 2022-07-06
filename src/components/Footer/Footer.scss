@@ -1,16 +1,22 @@
 .footer {
     display: flex;
     color: #fff;
-    padding: 64px 72px;
+    padding: 46px 72px;
     background-color: #343239;
     justify-content: space-between;
+
+    & > .left,
+    & > .middle,
+    & > .right {
+        display: flex;
+        align-items: center;
+    }
 
     & .left {
         & > div > a {
             font-style: normal;
             font-weight: 600;
             font-size: 16px;
-            line-height: 24px;
             color: #ffffff;
             text-decoration: none;
         }
@@ -20,20 +26,25 @@
         }
     }
 
-    & .right {
+    & .middle {
+        flex-direction: column;
+        align-items: flex-start;
         & > div {
-            margin-bottom: 16px;
             font-style: normal;
             font-weight: 600;
             font-size: 16px;
-            line-height: 24px;
             color: #ffffff;
-            display: flex;
-            justify-content: flex-end;
         }
 
         & > .skip-style {
             font-weight: normal;
+        }
+    }
+
+    & .right {
+        & img {
+            width: 30px;
+            height: 30px;
         }
     }
 }

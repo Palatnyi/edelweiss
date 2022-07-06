@@ -1,57 +1,73 @@
 .welcome {
-    height: 900px;
-    background: url(../../images/welcome.jpg);
-    background-size: cover; /* <------ */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    color: black;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     position: relative;
 
-    & > .opacity {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #000;
-        opacity: 0.33;
-    }
-
-    & > .communication {
+    &>.communication {
         font-size: 64px;
-        color: #ffffff;
         line-height: 96px;
         text-align: center;
         font-style: normal;
         text-transform: uppercase;
         margin: 0 150px;
+        padding-top:124px;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 5;
+        margin-bottom:74px;
 
-        & > .text {
+        &>.text {
             font-size: 17px;
-            color: #ffffff;
             font-weight: 400;
             line-height: 26px;
             font-style: normal;
             text-align: center;
             text-transform: none;
+            width: 70%;
+            color: #BFC2D1;
+            margin-top: 24px;
+            margin-bottom: 24px;
+
+        }
+
+        &>.collected {
+            color: #BFC2D1;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 30px;
+            font-style: normal;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        &>.money {
+            font-weight: 800;
+            font-size: 42px;
+            line-height: 57px;
+            text-align: center;
+            color: #000000;
+            margin-top: 16px;
+            margin-bottom: 74px;
         }
     }
+
+
 }
 
 @media screen and (max-width: 700px) {
     .welcome {
-        & > .communication {
+        &>.communication {
             font-style: normal;
             font-weight: 900;
             font-size: 32px;

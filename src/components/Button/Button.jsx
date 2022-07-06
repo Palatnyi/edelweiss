@@ -1,16 +1,16 @@
 import React from 'react';
 import { useTranslations } from '../../hooks';
-import './Donate.scss';
+import './Button.scss';
 
-function Donate({ onClick, disabled }) {
+function Button({ onClick, disabled, label }) {
     const translate = useTranslations();
 
     const disabledClass = disabled ? 'disabled' : ''
     const click = disabled ? () => {} : onClick;
 
     return (
-        <span className={`donateBtn donate-mobile ${disabledClass}`} onClick={click} >{translate("common.donate")}</span>
+        <span className={`dopomogaBtn donate-mobile ${disabledClass}`} onClick={click} >{label}</span>
     );
 }
 
-export default Donate;
+export default Button;

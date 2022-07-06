@@ -1,70 +1,71 @@
 .team {
-    background-color: #666564;
-    padding: 64px 72px 64px 72px;
+    padding: 0 72px 64px 72px;
 
-    & > .title {
+    &>.title {
         font-style: normal;
-        font-weight: 900;
-        font-size: 32px;
-        line-height: 48px;
-        color: #ffffff;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 65px;
+        text-align: center;
+        color: #000000;
         margin-bottom: 16px;
     }
 
-    & > .description {
+    &>.description {
         font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 26px;
-        color: #ffffff;
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 38px;
+        text-align: center;
+        color: #ACACAC;
     }
 
-    & > .members {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        justify-content: space-around;
+    & .membersMobile {
+        display: none;
+    }
 
-        & > .member {
-            overflow: hidden;
+    &>.members,
+    &>.membersMobile {
+        margin-top: 40px;
+
+
+        & .member {
             margin-bottom: 24px;
 
             & .imgHolder {
                 overflow: hidden;
                 width: 200px;
                 height: 200px;
-                border-radius: 50%;
 
                 & img {
                     width: 100%;
                     object-fit: contain;
                 }
+                margin-bottom:10px;
             }
 
-            & > .name {
+            & .name,
+            & .surname {
                 font-style: normal;
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 36px;
-                color: #ffffff;
-                margin-top: 15px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22px;
+                color: #000000;
+                text-align: center;
+                width: 200px;
             }
 
-            & > .surname {
-                font-style: normal;
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 36px;
-                color: #ffffff;
-            }
-
-            & > .role {
+            & .role {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 17px;
-                line-height: 26px;
-
-                color: #ffffff;
+                font-size: 13px;
+                line-height: 18px;
+                color: #666564;
+                text-align: center;
+                width: 200px;
+                align-items: center;
+                display: flex;
+                justify-content: space-around;
             }
 
             & .social {
@@ -73,18 +74,19 @@
 
             & .linkedin,
             & .instagram {
-                margin-top:10px;
+                margin-top: 10px;
                 cursor: pointer;
-                & > img {
-                    width: 30px;
-                    height: 30px;
+
+                &>img {
+                    width: 16px;
+                    height: 16px;
                     background-color: #fff;
 
                 }
             }
         }
 
-        & > .member:not(:last-child) {
+        &>.member:not(:last-child) {
             margin-right: 15px;
         }
     }
@@ -95,12 +97,17 @@
     .team {
         padding: 24px 16px 16px 16px;
 
-        & > .members {
+        & .members {
+            display:none;
+        }
+
+        & .membersMobile {
+            display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
 
-            & > .member {
+            &>.member {
                 width: 200px;
                 display: flex;
                 margin-right: 0;
@@ -109,7 +116,7 @@
                 flex-direction: column;
             }
 
-            & > .member:not(:last-child) {
+            &>.member:not(:last-child) {
                 margin-right: 0;
             }
         }

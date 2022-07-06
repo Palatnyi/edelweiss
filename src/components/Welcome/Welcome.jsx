@@ -1,20 +1,32 @@
 import React from 'react';
-import Donate from '../Donate/Donate.jsx';
 import { useTranslations } from '../../hooks';
+import Button from '../Button/Button.jsx';
+import Separator from '../Separator/Separator.jsx';
 import './Welcome.scss';
 
-function Welcome({ openDonationDialog }) {
+function Welcome() {
     const translate = useTranslations();
+    const label = translate("welcome.donate");
+    const collected = translate("welcome.collected");
+    const description = translate("welcome.description");
+    const communication = translate("welcome.communication");
+    const onClick = () => { }
 
     return (
         <div className="welcome">
-            <div className="opacity"></div>
             <div className="communication">
-                {translate("welcome.communication")}
+                {communication}
                 <div className="text">
-                    {translate("welcome.description")}
+                    {description}
                 </div>
-                <Donate onClick={openDonationDialog} />
+                <Button onClick={onClick} label={label} />
+                <div className="collected">
+                    {collected}
+                </div>
+                <div className="money">
+                    400000 USD
+                </div>
+                <Separator />
             </div>
         </div>
     );
