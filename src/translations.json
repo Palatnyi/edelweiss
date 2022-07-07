@@ -27,6 +27,50 @@
         "media": {
             "label": "What does the media say about us?"
         },
+        "whatwedo": {
+            "label": "What we do?",
+            "report": "Check Report",
+            "nodrone": {
+                "items": [
+                    {
+                        "amount": "2",
+                        "label": "anti-drone systems"
+                    }
+                ]
+            },
+            "walkie": {
+                "items": [
+                    {
+                        "amount": "450",
+                        "label": "walkie-talkie"
+                    },
+                    {
+                        "amount": "150",
+                        "label": "radio-repeaters"
+                    },
+                    {
+                        "amount": "65",
+                        "label": "Starlinks"
+                    }
+                ]
+            },
+            "equipment": {
+                "items": [
+                    {
+                        "amount": "> 400",
+                        "label": "body armor"
+                    },
+                    {
+                        "amount": "> 700",
+                        "label": "NATO-style first aid kits"
+                    },
+                    {
+                        "amount": "3",
+                        "label": "Cars"
+                    }
+                ]
+            }
+        },
         "helmet": {
             "title": "«DOPOMOGA 2022» - Armed Forces of Ukraine Support Fund",
             "meta": {
@@ -42,7 +86,7 @@
         },
         "header": {
             "languages": "Languages:",
-            "subscribe": "subscribe donation",
+            "subscribe": "Monthly donation",
             "languageSelector": {
                 "mobileOptions": [
                     {
@@ -327,6 +371,50 @@
         "media": {
             "label": "Що ЗМІ говорять про нас?"
         },
+        "whatwedo": {
+            "label": "Що ми робимо?",
+            "report": "Переглянути звіт",
+            "nodrone": {
+                "items": [
+                    {
+                        "amount": "2",
+                        "label": "системи протидії дронам"
+                    }
+                ]
+            },
+            "walkie": {
+                "items": [
+                    {
+                        "amount": "450",
+                        "label": "портативних рацій"
+                    },
+                    {
+                        "amount": "150",
+                        "label": "ретрансляторів"
+                    },
+                    {
+                        "amount": "65",
+                        "label": "інтернет зв'язку Старлінк"
+                    }
+                ]
+            },
+            "equipment": {
+                "items": [
+                    {
+                        "amount": "> 400",
+                        "label": "бронежилетів"
+                    },
+                    {
+                        "amount": "> 700",
+                        "label": "Аптечок стандарту НАТО"
+                    },
+                    {
+                        "amount": "3",
+                        "label": "Авто"
+                    }
+                ]
+            }
+        },
         "helmet": {
             "title": "«DOPOMOGA 2022» - Фонд Допомоги Збройним Силам України",
             "meta": {
@@ -342,7 +430,7 @@
         },
         "header": {
             "languages": "Обрати мову:",
-            "subscribe": "Оформити підписку",
+            "subscribe": "Щомісячний донат",
             "languageSelector": {
                 "mobileOptions": [
                     {

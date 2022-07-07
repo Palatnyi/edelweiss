@@ -1,8 +1,11 @@
 .media {
   margin-top: 64px;
-  padding: 0 144px;
-  margin-bottom: 64px;
+  padding: 0 144px 72px 144px;
 
+  & .separator {
+    margin-top: 72px;
+    width: calc(100% - 72px)
+  }
 
   &>.label {
     font-style: normal;
@@ -55,11 +58,23 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position:relative;
+
+      &>.opacity {
+        position:absolute;
+        top:0;
+        bottom:0;
+        left: 0;
+        right:0;
+        background-color: black;
+        opacity: 0.31
+      }
 
       &>.logo {
         width: 50%;
         background-color: white;
         padding: 5px;
+        z-index: 1;
 
         &>img {
           width: 100%;
@@ -68,8 +83,13 @@
       }
 
       &>.buttonHolder {
+        display: none;
+      }
+
+      &:hover>.buttonHolder {
         display: flex;
         justify-content: center;
+        z-index: 1;
       }
     }
   }

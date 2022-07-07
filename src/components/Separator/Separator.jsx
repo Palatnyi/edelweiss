@@ -1,9 +1,10 @@
 import React from 'react';
 import './Separator.scss';
 
-function Separator() {
+function Separator(props) {
+	const className = `separator ${props.className}`
 	return (
-		<div className="separator" ></div>
+		<div className={className} ></div>
 	)
 }
 

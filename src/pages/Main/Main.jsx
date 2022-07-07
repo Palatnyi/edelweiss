@@ -9,6 +9,8 @@ import Header from '../../components/Header/Header.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import Button from '../../components/Button/Button.jsx';
 import Welcome from '../../components/Welcome/Welcome.jsx';
+import WhatWeDo from '../../components/WhatWeDo/WhatWeDo.jsx';
+import HelpMatters from '../../components/HelpMatters/HelpMatters.jsx';
 
 import './Main.scss';
 import 'react-dropdown/style.css';
@@ -36,7 +38,9 @@ function Edelweiss() {
           placeholder={placeholder}
           controlClassName="langSelector"
         />
-        <Button label={label} />
+        <Button label={label} onClick={() => {
+          window.open('https://secure.wayforpay.com/button/bfe5bb20e1f26');
+        }} />
       </React.Fragment>
     );
 
@@ -51,7 +55,8 @@ function Edelweiss() {
       <Welcome />
       <Team />
       <Media />
-
+      <WhatWeDo />
+      <HelpMatters />
       <Footer />
     </div>
   );

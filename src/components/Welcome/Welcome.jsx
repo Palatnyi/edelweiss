@@ -10,7 +10,9 @@ function Welcome() {
     const collected = translate("welcome.collected");
     const description = translate("welcome.description");
     const communication = translate("welcome.communication");
-    const onClick = () => { }
+    const onClick = () => {
+        window.open('https://secure.wayforpay.com/button/bea5364142d4e');
+    }
 
     return (
         <div className="welcome">

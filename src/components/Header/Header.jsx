@@ -106,10 +106,10 @@ function Header(props) {
                 </div>
 
                 <div className="menu">
-                    <div><a>{translate("menu.aboutUs")}</a></div>
-                    <div><a>{translate("menu.media")}</a></div>
-                    <div><a>{translate("menu.help")}</a></div>
-                    <div><a>{translate("menu.donate")}</a></div>
+                    <div><a href="#team">{translate("menu.aboutUs")}</a></div>
+                    <div><a href="#media">{translate("menu.media")}</a></div>
+                    <div><a href="#help">{translate("menu.help")}</a></div>
+                    <div><a href="#donate">{translate("menu.donate")}</a></div>
                 </div>
                 <div className="actions">
                     {props.desktopActions}

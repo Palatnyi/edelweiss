@@ -15,12 +15,11 @@ function Media() {
   const readLabel = translate('common.read');
 
   return (
-    <div className="media">
-      <Separator />
-
+    <div className="media" id="media">
       <div className="label">{translate("media.label")}</div>
       <div className="articles">
         <div className="fortune">
+          <div className="opacity"></div>
           <div className="logo">
             <img src={fortune_logo} alt="" />
           </div>
@@ -32,6 +31,7 @@ function Media() {
 
         </div>
         <div className="dou">
+          <div className="opacity"></div>
           <div className="logo">
             <img src={dou_logo} alt="" />
           </div>
@@ -44,6 +44,7 @@ function Media() {
 
         </div>
         <div className="mc">
+          <div className="opacity"></div>
           <div className="logo">
             <img src={mc_logo} alt="" />
           </div>
@@ -56,6 +57,7 @@ function Media() {
 
         </div>
       </div>
+      <Separator />
     </div>
   );
 }
