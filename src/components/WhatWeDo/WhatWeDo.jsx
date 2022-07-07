@@ -64,7 +64,7 @@ function WhatWeDo() {
 					</div>
 				</div>
 				<Button label={checkReport} onClick={() => {
-					window.open('https://drive.google.com/drive/u/0/folders/1nVt8TDxGeinwGxWBRUTLhziMpq2TrLlT', '_blank');
+					window.open('https://docs.google.com/spreadsheets/d/1lLYAd7KDdl_56nqTtMKjNp3PQ7DSdQndoEWXPP8M7aA/edit?usp=sharing', '_blank');
 				}} />
 			</div>
 			<Separator className={'whatSeparator'} />

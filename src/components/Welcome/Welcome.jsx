@@ -26,7 +26,7 @@ function Welcome() {
                     {collected}
                 </div>
                 <div className="money">
-                    400000 USD
+                    > 400000 USD
                 </div>
                 <Separator />
             </div>

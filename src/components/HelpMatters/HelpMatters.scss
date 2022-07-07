@@ -1,5 +1,5 @@
 .help-matters {
-    padding: 64px 144px;
+    padding: 32px 144px;
     & > .title {
         font-size: 32px;
         font-weight: 900;
@@ -24,6 +24,12 @@
         font-style: normal;
         color: #222222;
         margin-bottom: 31px;
+        text-align: center;
+
+        font-style: normal;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 65px;
         text-align: center;
     }
 
