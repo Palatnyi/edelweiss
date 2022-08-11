@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     color: black;
-    height:900px;
+    height: 900px;
 
     display: flex;
     flex-direction: column;
@@ -12,6 +12,18 @@
 
     position: relative;
 
+    &>.welcome_logo {
+        background-image: url('../../images/welcome_logo.png');
+        min-width: 200px;
+        min-height: 200px;
+        background-size: contain;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+
     &>.communication {
         font-size: 64px;
         line-height: 96px;
@@ -19,14 +31,13 @@
         font-style: normal;
         text-transform: uppercase;
         margin: 0 150px;
-        padding-top:124px;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 5;
-        margin-bottom:74px;
+        margin-bottom: 74px;
 
         &>.text {
             font-size: 17px;

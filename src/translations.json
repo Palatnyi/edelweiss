@@ -19,6 +19,9 @@
         "UAH": "UA"
     },
     "en": {
+        "partners": {
+            "label": "Partners"
+        },
         "common": {
             "donate": "Donate",
             "report": "Check report",
@@ -45,7 +48,7 @@
                         "label": "walkie-talkie"
                     },
                     {
-                        "amount": "150",
+                        "amount": "15",
                         "label": "radio-repeaters"
                     },
                     {
@@ -82,11 +85,13 @@
             "aboutUs": "About Us",
             "media": "Media",
             "help": "What we do",
-            "donate": "Donate"
+            "donate": "Donate",
+            "monthlyDonate": "Monthly donate 6000 uah"
         },
         "header": {
             "languages": "Languages:",
             "subscribe": "Monthly donation",
+            "mobileSubscribe": "Monthly donation",
             "languageSelector": {
                 "mobileOptions": [
                     {
@@ -120,7 +125,7 @@
             "communication": "We help Ukrainians!",
             "description": "We, the charity fund DOPOMOGA 2022. We provide anti-drone systems and implement their use within a separate assault unit. We share our own experience with the military in countering drones.",
             "donate": "Donate",
-            "collected": "MONEY COLLECTED"
+            "collected": "money spent on the equipment"
         },
         "aboutWar": {
             "title": "Help Ukrainian armed forces!",
@@ -176,12 +181,12 @@
                         "value": "DOPOMOGA 2022"
                     },
                     {
-                        "label": "IBAN: ",
-                        "value": "UA973052990000026009035021166"
+                        "label": "SWIFT",
+                        "value": "PBANUA2X"
                     },
                     {
-                        "label": "Bank Code: ",
-                        "value": "305299"
+                        "label": "IBAN: ",
+                        "value": "UA973052990000026009035021166"
                     },
                     {
                         "label": "USREOU: ",
@@ -195,12 +200,31 @@
                         "value": "DOPOMOGA 2022"
                     },
                     {
+                        "label": "SWIFT",
+                        "value": "PBANUA2X"
+                    },
+                    {
                         "label": "IBAN: ",
                         "value": "UA623052990000026008025022585"
                     },
                     {
-                        "label": "Bank Code: ",
-                        "value": "305299"
+                        "label": "USREOU: ",
+                        "value": "44681509"
+                    }
+                ],
+                "ibanGBPTitle": "IBAN GBP",
+                "ibanGBP": [
+                    {
+                        "label": "Organisation: ",
+                        "value": "DOPOMOGA 2022"
+                    },
+                    {
+                        "label": "SWIFT",
+                        "value": "PBANUA2X"
+                    },
+                    {
+                        "label": "IBAN: ",
+                        "value": "UA703052990000026000015034138"
                     },
                     {
                         "label": "USREOU: ",
@@ -363,6 +387,9 @@
         }
     },
     "uk": {
+        "partners": {
+            "label": "Наші партнери"
+        },
         "common": {
             "donate": "Пожертвувати",
             "report": "Переглянути звіт",
@@ -389,7 +416,7 @@
                         "label": "портативних рацій"
                     },
                     {
-                        "amount": "150",
+                        "amount": "15",
                         "label": "ретрансляторів"
                     },
                     {
@@ -426,11 +453,13 @@
             "aboutUs": "Хто ми",
             "media": "Ми у ЗМІ",
             "help": "Допомога",
-            "donate": "Пожертвувати"
+            "donate": "Єдиноразовий донат",
+            "monthlyDonate": "Щомісячний донат у 6000грн"
         },
         "header": {
             "languages": "Обрати мову:",
             "subscribe": "Щомісячний донат",
+            "mobileSubscribe": "Щомісячний донат",
             "languageSelector": {
                 "mobileOptions": [
                     {
@@ -464,7 +493,7 @@
             "communication": "Ми протистоїмо ворогу!",
             "description": "Ми, благодійний фонд “Допомога 2022”. Забезпечуємо засобами протидії дронам та впроваджуємо їх використання в рамках окремого штурмового підрозділу. Ділимося власним досвідом з військовими у протидії дронам.",
             "donate": "Допомогти",
-            "collected": "ВСЬОГО ЗІБРАНО"
+            "collected": "Витрачено коштів на обладнання"
         },
         "aboutWar": {
             "title": "ДОПОМОГТИ",
@@ -521,12 +550,12 @@
                         "value": "“ДОПОМОГА 2022”"
                     },
                     {
-                        "label": "IBAN: ",
-                        "value": "USD413052990000026003005029202"
+                        "label": "SWIFT",
+                        "value": "PBANUA2X"
                     },
                     {
-                        "label": "МФО: ",
-                        "value": "305299"
+                        "label": "IBAN: ",
+                        "value": "USD413052990000026003005029202"
                     },
                     {
                         "label": "ЄДРПОУ: ",
@@ -540,12 +569,31 @@
                         "value": "DOPOMOGA 2022"
                     },
                     {
+                        "label": "SWIFT",
+                        "value": "PBANUA2X"
+                    },
+                    {
                         "label": "IBAN: ",
                         "value": "UA623052990000026008025022585"
                     },
                     {
-                        "label": "МФО: ",
-                        "value": "305299"
+                        "label": "ЄДРПОУ: ",
+                        "value": "44681509"
+                    }
+                ],
+                "ibanGBPTitle": "IBAN GBP",
+                "ibanGBP": [
+                    {
+                        "label": "Організація: ",
+                        "value": "DOPOMOGA 2022"
+                    },
+                    {
+                        "label": "SWIFT",
+                        "value": "PBANUA2X"
+                    },
+                    {
+                        "label": "IBAN: ",
+                        "value": "UA703052990000026000015034138"
                     },
                     {
                         "label": "ЄДРПОУ: ",

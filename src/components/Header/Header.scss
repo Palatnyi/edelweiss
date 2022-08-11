@@ -67,6 +67,16 @@
     .mobile-menu {
         display: flex;
         z-index: 10;
+
+        & .top {
+            margin-left: -43px;
+        }
+
+        & .donate-mobile{
+            width: 320px;
+            display:block;
+            box-shadow: rgba(71, 66, 66, 0.22) 3px 2px 8px;
+        }
     }
 
     .header-desktop {

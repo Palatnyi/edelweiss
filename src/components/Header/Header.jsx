@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslations, useCustomLang } from '../../hooks';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
+import Button from '../Button/Button';
 
 import logo from '../../images/logo.png';
 import close from '../../images/close.png';
@@ -23,16 +24,9 @@ function Header(props) {
     const location = useLocation();
     const isDonatePage = location.pathname.split('/').includes('donate');
 
-    const { lang } = useCustomLang();
-
-    const goAboutUs = () => {
-        const link = !!lang ? `/${lang}` : '/'
-        navigate(link);
-    };
 
     const goDonate = () => {
-        const link = !!lang ? `/${lang}/donate` : '/donate';
-        navigate(link);
+        window.open('https://secure.wayforpay.com/donate/d27ead814ba59');
     };
 
     const renderLanguageSelectorMobile = (options) => {
@@ -79,8 +73,11 @@ function Header(props) {
                     <div className="empty"></div>
                     <div className="menu-holder">
                         <div className="top">
-                            <div onClick={goAboutUs}><a>{translate("menu.aboutWar")}</a></div>
-                            <div onClick={goDonate}><a>{translate("menu.donate")}</a></div>
+                            <div dangerouslySetInnerHTML={{ __html: `<a href="https://secure.wayforpay.com/button/bfe5bb20e1f26" style="display:inline-block!important;background:#2B3160 url('https://s3.eu-central-1.amazonaws.com/w4p-merch/button/bg1x2.png') no-repeat center right;background-size:cover;width: 320px!important;height:54px!important;border:none!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:left!important;box-sizing:border-box!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"><div style="font-family:Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:!important;vertical-align:middle!important;">${translate('header.mobileSubscribe')}</div></a>`}}>
+                            </div>
+                            <Button onClick={goDonate}>
+                                {translate("menu.donate")}
+                            </Button>
                         </div>
 
                         <div className="bottom">

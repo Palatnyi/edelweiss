@@ -11,11 +11,13 @@ function Welcome() {
     const description = translate("welcome.description");
     const communication = translate("welcome.communication");
     const onClick = () => {
-        window.open('https://secure.wayforpay.com/button/bea5364142d4e');
+        window.open('https://secure.wayforpay.com/donate/d27ead814ba59');
     }
 
     return (
         <div className="welcome">
+            <div className="welcome_logo">
+            </div>
             <div className="communication">
                 {communication}
                 <div className="text">

@@ -10,8 +10,8 @@ import Footer from '../../components/Footer/Footer.jsx';
 import Button from '../../components/Button/Button.jsx';
 import Welcome from '../../components/Welcome/Welcome.jsx';
 import WhatWeDo from '../../components/WhatWeDo/WhatWeDo.jsx';
+import Partners from '../../components/Partners/Partners.jsx';
 import HelpMatters from '../../components/HelpMatters/HelpMatters.jsx';
-
 import './Main.scss';
 import 'react-dropdown/style.css';
 
@@ -54,6 +54,7 @@ function Edelweiss() {
       />
       <Welcome />
       <Team />
+      <Partners />
       <Media />
       <WhatWeDo />
       <HelpMatters />
