@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from "react-multi-carousel";
 import { useTranslations } from '../../hooks';
 
 import dan from '../../images/dan.jpeg';
@@ -12,9 +13,8 @@ import liubov from '../../images/liubov.jpeg';
 import oleksii from '../../images/oleksii.jpeg';
 import linkedin from '../../images/linkedin.png';
 import shatilov from '../../images/shatilov.jpg';
-/*import vlad from "../../images/vlad.jpg";
-import andrey from '../../images/andrey.jpeg';*/
 
+import "react-multi-carousel/lib/styles.css";
 import './Team.scss';
 
 function Member({ member }) {
@@ -23,24 +23,52 @@ function Member({ member }) {
             <div className="imgHolder">
                 <img className="image" src={member.src} alt="" rel="preload" />
             </div>
-            <div className="name">{member.name}</div>
-            <div className="surname">{member.surname}</div>
+            <div className="name">{member.name} {member.surname}</div>
 
-            <div className="role">{member.role}</div>
-            <div className="social">
-                {member.linkedin && <div className="linkedin">
-                    <img src={linkedin} onClick={() => { window.open(member.linkedin, "_blank") }} rel="preload" />
-                </div>}
+            <div className="role">
+                {member.role}
+                <div className="social">
+                    {member.linkedin && <div className="linkedin">
+                        <img src={linkedin} onClick={() => { window.open(member.linkedin, "_blank") }} rel="preload" />
+                    </div>}
+                </div>
             </div>
         </div>
     );
 }
 
 function TeamMembers({ members = [] }) {
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 2
+        }
+    };
+    const team = members.map(member => <Member key={member.name} member={member} />);
+                    
     return (
-        <div className="members">
-            {members.map(member => <Member key={member.name} member={member} />)}
-        </div>
+        <React.Fragment>
+            <div className="members">
+                <Carousel responsive={responsive} autoPlay infinite>
+                    {team}
+                </Carousel>
+            </div>
+            <div className="membersMobile">
+                {team}
+            </div>
+        </React.Fragment>
     );
 }
 

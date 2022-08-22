@@ -1,0 +1,122 @@
+.whatSeparator {
+  margin: auto;
+  width: calc(100% - 144px);
+  margin-bottom: 72px;
+}
+
+.whatWeDo {
+  margin: 64px auto;
+  padding: 64px;
+  width: calc(100% - 144px);
+  background: #343239;
+  display: flex;
+  flex-direction: column;
+
+  &>.label {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 65px;
+    text-align: center;
+    color: white;
+    margin-bottom: 72px;
+    margin-top: 30px;
+  }
+
+  &>.actions {
+    display: flex;
+    justify-content: space-between;
+
+    &>.nodrone,
+    &>.walkitalkie,
+    &>.equipment {
+      margin-bottom: 36px;
+
+      &>.image {
+        width: 100%;
+        min-height: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 36px;
+      }
+
+      &>.list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 36px;
+
+        & .amount {
+          font-weight: 800;
+          font-size: 27px;
+          line-height: 37px;
+
+          color: #FAE426;
+        }
+
+        & .label {
+          font-weight: 800;
+          font-size: 27px;
+          line-height: 37px;
+          color: white
+        }
+      }
+
+      &>.separatorMobile {
+        display: none;
+      }
+    }
+
+    &>.nodrone {
+      &>.image {
+        background-image: url('../../images/nodrone.png');
+      }
+    }
+
+    &>.walkitalkie {
+      &>.image {
+        background-image: url('../../images/walkie.png');
+      }
+    }
+
+    &>.equipment {
+      &>.image {
+        background-image: url('../../images/kevlar.png');
+      }
+    }
+  }
+
+  & .dopomogaBtn {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .whatWeDo {
+    width: 100%;
+    padding: 24px;
+
+    &>.actions {
+      display: flex;
+      flex-direction: column;
+
+      & .list {
+        align-items: center;
+        margin-top: 36px;
+      }
+
+      &>.nodrone,
+      &>.walkitalkie,
+      &>.equipment {
+
+        &>.separatorDesktop {
+          display: none;
+        }
+
+        &>.separatorMobile {
+          display: block;
+        }
+      }
+    }
+  }
+}

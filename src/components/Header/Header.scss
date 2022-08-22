@@ -5,7 +5,7 @@
 
 .header-desktop {
     height: 64px;
-    padding: 0 36px 0 72px;
+    padding: 0 72px;
     background: #343239;
 
     display: flex;
@@ -34,6 +34,7 @@
             cursor: pointer;
             text-decoration: none;
             display: flex;
+        
         }
         
         & > div {
@@ -48,25 +49,8 @@
         }
     }
 
-    & .langSelector {
-        display: flex;
-        color: #fff;
-        border-color: #343239;
-        background-color: #343239;
-        justify-content: space-between;
 
-        font-size: 16px;
-        font-weight: 600;
-        margin-left: 24px;
-        cursor: pointer;
-        text-decoration: none;
-
-        & .Dropdown-arrow {
-            display: none;
-        }
-    }
-
-    & .social {
+    & .actions {
         display: flex;
         align-items: center;
 
@@ -83,6 +67,16 @@
     .mobile-menu {
         display: flex;
         z-index: 10;
+
+        & .top {
+            margin-left: -43px;
+        }
+
+        & .donate-mobile{
+            width: 320px;
+            display:block;
+            box-shadow: rgba(71, 66, 66, 0.22) 3px 2px 8px;
+        }
     }
 
     .header-desktop {

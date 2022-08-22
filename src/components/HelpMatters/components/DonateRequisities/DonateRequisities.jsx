@@ -56,6 +56,9 @@ function DonateRequisities() {
     const ibanEUR = translate("requisities.requisitiesTypes.ibanEUR");
     const ibanEurTitle = translate("requisities.requisitiesTypes.ibanEurTitle");
 
+    const ibanGBP = translate("requisities.requisitiesTypes.ibanGBP");
+    const ibanGBPTitle = translate("requisities.requisitiesTypes.ibanGBPTitle");
+
     const otherWays = translate("requisities.requisitiesTypes.otherWays");
     const otherWaysTitle = translate("requisities.requisitiesTypes.otherWaysTitle");
 
@@ -65,6 +68,7 @@ function DonateRequisities() {
                 <Requisite data={ibanUAH} title={ibanUahTitle} />
                 <Requisite data={ibanUSD} title={ibanUsdTitle} />
                 <Requisite data={ibanEUR} title={ibanEurTitle} />
+                <Requisite data={ibanGBP} title={ibanGBPTitle} />
                 <Requisite data={otherWays} title={otherWaysTitle} />
             </div>
         </>

@@ -1,0 +1,26 @@
+.partners {
+  margin: 0 72px 64px 72px;
+  padding: 60px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+  &>.label {
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    color: #ACACAC;
+  }
+
+  &>.partners_holder {
+    display: flex;
+    justify-content: space-evenly;
+
+    &>.partner {
+      &>img {
+        width: 200px;
+      }
+    }
+  }
+
+}

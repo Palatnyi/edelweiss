@@ -1,0 +1,118 @@
+.media {
+  margin-top: 64px;
+  padding: 0 144px 72px 144px;
+
+  & .separator {
+    margin-top: 72px;
+    width: calc(100% - 72px)
+  }
+
+  &>.label {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 65px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 24px;
+    margin-top: 42px;
+  }
+
+  & .articles {
+    display: flex;
+    justify-content: space-between;
+
+    &>div {
+      width: calc(90% / 3);
+      height: 500px;
+
+      &>.overlay {
+        display: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.4
+      }
+    }
+
+    & .fortune {
+      background-image: url('../../images/fortune.png');
+    }
+
+    & .dou {
+      background-image: url('../../images/dou.png');
+    }
+
+    & .mc {
+      background-image: url('../../images/mc.png');
+    }
+
+    & .fortune,
+    & .dou,
+    & .mc {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+
+      &>.opacity {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+        opacity: 0.31
+      }
+
+      &>.logo {
+        width: 50%;
+        background-color: white;
+        padding: 5px;
+        z-index: 1;
+
+        &>img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &>.buttonHolder {
+        display: none;
+      }
+
+      &:hover>.buttonHolder {
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .media {
+    margin-top: 0;
+    padding: 24px;
+
+    &>.label {
+      margin-top: 0;
+    }
+
+    .articles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &>div {
+        width: 90%;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
