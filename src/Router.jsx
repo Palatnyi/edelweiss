@@ -1,4 +1,5 @@
 import React from 'react';
+import fireabseapp from './firebase-app';
 import Main from './pages/Main/Main.jsx';
 
 import translations from './translations.json';

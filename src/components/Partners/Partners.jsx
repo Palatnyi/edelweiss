@@ -20,6 +20,9 @@ function Partners() {
         <div className='partner partner_bejet'>
           <img src={united_help_ukraine} alt="" className="" />
         </div>
+        <div className='partner partner_kolo'>
+          <img src={"https://uploads-ssl.webflow.com/622a2d6e1e19abb3e5f09c0f/623de4e9f6b11c028b2d1f5c_logo.svg"} alt="" />
+        </div>
       </div>
     </div>
   )

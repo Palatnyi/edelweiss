@@ -12,6 +12,7 @@ import Welcome from '../../components/Welcome/Welcome.jsx';
 import WhatWeDo from '../../components/WhatWeDo/WhatWeDo.jsx';
 import Partners from '../../components/Partners/Partners.jsx';
 import HelpMatters from '../../components/HelpMatters/HelpMatters.jsx';
+import AccomplishedProjects from '../../components/AccomplishedProjects/AccomplishedProjects.jsx'
 import './Main.scss';
 import 'react-dropdown/style.css';
 
@@ -47,6 +48,7 @@ function Edelweiss() {
   }
 
 
+  // <AccomplishedProjects />
   return (
     <div className="edelweiss">
       <Header

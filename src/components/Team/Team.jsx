@@ -2,17 +2,17 @@ import React from 'react';
 import Carousel from "react-multi-carousel";
 import { useTranslations } from '../../hooks';
 
-import dan from '../../images/dan.jpeg';
 import dima from '../../images/dima.jpg';
 import youra from '../../images/youra.jpg';
 import anton from '../../images/anton.jpg';
 import piven from '../../images/piven.jpeg';
+import andrii from '../../images/andrii.jpg';
 import oksana from '../../images/oksana.jpeg';
 import kostya from '../../images/kostya.jpeg';
-import liubov from '../../images/liubov.jpeg';
 import oleksii from '../../images/oleksii.jpeg';
 import linkedin from '../../images/linkedin.png';
 import shatilov from '../../images/shatilov.jpg';
+
 
 import "react-multi-carousel/lib/styles.css";
 import './Team.scss';
@@ -85,14 +85,6 @@ function Team() {
             linkedin: 'https://www.linkedin.com/in/oksanaperimova/'
         },
         {
-            src: liubov,
-            name: translate("teamMembers.liubov.name"),
-            surname: translate("teamMembers.liubov.surname"),
-
-            role: translate("teamMembers.liubov.role"),
-            linkedin: 'https://www.linkedin.com/in/liubovrudnieva'
-        },
-        {
             src: shatilov,
             name: translate("teamMembers.shatilov.name"),
             surname: translate("teamMembers.shatilov.surname"),
@@ -118,22 +110,14 @@ function Team() {
             role: translate("teamMembers.dima.role"),
             linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
         },
-        /* {
-            src: andrey,
+        {
+            src: andrii,
             name: translate("teamMembers.andrii.name"),
             surname: translate("teamMembers.andrii.surname"),
 
             role: translate("teamMembers.andrii.role"),
             linkedin: 'https://www.linkedin.com/in/andrii-palatnyi-9693b384/',
             instagram: ''
-        },*/
-        {
-            src: dan,
-            name: translate("teamMembers.dan.name"),
-            surname: translate("teamMembers.dan.surname"),
-
-            role: translate("teamMembers.dan.role"),
-            linkedin: 'https://www.linkedin.com/in/dan-fioletov-5a2530116/'
         },
         {
             src: oleksii,
@@ -143,14 +127,8 @@ function Team() {
             role: translate("teamMembers.oleksii.role"),
             linkedin: 'https://www.linkedin.com/in/oleksii-palatnyi/',
             instagram: ''
-        }, /*{
-            src: vlad,
-            name: translate("teamMembers.vlad.name"),
-            surname: translate("teamMembers.vlad.surname"),
-
-            role: translate("teamMembers.vlad.role"),
-            linkedin: 'https://www.linkedin.com/in/vladkasianenko/'
-        },*/ {
+        },
+        {
             src: kostya,
             name: translate("teamMembers.kostya.name"),
             surname: translate("teamMembers.kostya.surname"),

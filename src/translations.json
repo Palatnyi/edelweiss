@@ -19,6 +19,10 @@
         "UAH": "UA"
     },
     "en": {
+        "accomplishedProjects": {
+            "label": "Accomplished projects",
+            "description": ""
+        },
         "partners": {
             "label": "Partners"
         },
@@ -387,6 +391,10 @@
         }
     },
     "uk": {
+        "accomplishedProjects": {
+            "label": "Виконані проекти",
+            "description": ""
+        },
         "partners": {
             "label": "Наші партнери"
         },
