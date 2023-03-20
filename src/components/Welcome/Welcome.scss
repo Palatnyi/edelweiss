@@ -79,6 +79,9 @@
 
 @media screen and (max-width: 700px) {
     .welcome {
+        &>.welcome_logo {
+            margin-top: 180px;
+        }
         &>.communication {
             font-style: normal;
             font-weight: 900;

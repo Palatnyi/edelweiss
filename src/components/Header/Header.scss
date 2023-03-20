@@ -17,6 +17,7 @@
         padding: 7px;
         color: #fff;
         font-size: 24px;
+        cursor: pointer;
         & > img {
             height: 100%;
         }
@@ -58,6 +59,25 @@
             width: 24px;
             height: 24px;
             margin-right: 12px;
+        }
+
+        & .langSelector {
+            display: flex;
+            color: #fff;
+            border-color: #343239;
+            background-color: #343239;
+            justify-content: space-between;
+    
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px 20px 10px 10px; 
+    
+            & .Dropdown-arrow {
+                display: none;
+            }
         }
     }
 }

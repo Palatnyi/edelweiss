@@ -1,34 +1,78 @@
-import React, { useEffect } from 'react';
-import { useTranslations } from '../../hooks';
-import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
+import React, { useEffect, useState } from 'react';
+import Button from '../Button/Button.jsx';
+import { useNavigate } from 'react-router-dom';
+import { Hearts } from 'react-loader-spinner';
+import { useTranslations, getDownloadableUrls } from '../../hooks';
 import './AccomplishedProjects.scss';
 
-const storage = getStorage();
+function SingleProject({ src, date, label, onClick }) {
+  const translate = useTranslations();
+
+  return (
+    <div className="single_project">
+      <div className="img">
+        <img src={src} alt="" />
+      </div>
+      <div className="date">
+        {date}
+      </div>
+      <div className="description">
+        {label}
+      </div>
+      <div className="button-holder" >
+        <Button onClick={onClick}>
+          {translate('accomplishedProjects.checkSingleReportLabel')}
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 function AccomplishedProjects() {
-	const translate = useTranslations();
-  const getUrls = async () => {
-    const listRef = ref(storage, 'ololo');
-    const res = await listAll(listRef)
+  const navigate = useNavigate();
+  const translate = useTranslations();
+  const [urls, setUrls] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const projects = translate('accomplishedProjects.projects');
 
-    res.items.forEach(async (item) => {
-      const imgRef = ref(storage, `${item.fullPath}`);
-      const url = await getDownloadURL(imgRef);
-      console.log(url);
-    });
+  useEffect(() => (async () => {
+    const urls = await getDownloadableUrls('cover_photos');
+    console.log(urls);
+    setUrls(urls);
+    setLoading(false);
+  })(), []);
+
+  if (loading) {
+    return (
+      <div className="projects-loading">
+        <Hearts
+          height="80"
+          width="80"
+          color="#00b0ed"
+        />
+      </div>
+    )
   }
 
-  useEffect(() => {
-    getUrls()
-  }, []);
-
-  // const gsReference = ref(storage, 'https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/andrii.jpg');
-
-  const label = translate('accomplishedProjects.label');
   return (
     <div className="projects">
       <div className="projects-label">
-        {label}
+        {translate('accomplishedProjects.label')}
+      </div>
+      <div className="projects-holder">
+        {projects.map(proj => {
+          const src = urls.find(url => url.includes(proj.id))
+          return (
+            <SingleProject
+              src={src}
+              date={proj.date}
+              label={proj.label}
+              onClick={() => { 
+                navigate(`project/${proj.id}`)
+              }}
+            />
+          )
+        })}
       </div>
     </div>
   );

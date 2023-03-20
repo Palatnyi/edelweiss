@@ -23,5 +23,22 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 700px) {
+  .partners {
+    padding: 24px;
+  margin: 24px;
+
+    &_holder {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &>.partner {
+        margin-bottom: 48px;
+      }
+    }
+  }
 
 }

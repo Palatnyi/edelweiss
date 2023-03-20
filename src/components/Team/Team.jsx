@@ -6,14 +6,11 @@ import dima from '../../images/dima.jpg';
 import youra from '../../images/youra.jpg';
 import anton from '../../images/anton.jpg';
 import piven from '../../images/piven.jpeg';
-import andrii from '../../images/andrii.jpg';
 import oksana from '../../images/oksana.jpeg';
-import kostya from '../../images/kostya.jpeg';
 import oleksii from '../../images/oleksii.jpeg';
 import linkedin from '../../images/linkedin.png';
 import shatilov from '../../images/shatilov.jpg';
-
-
+import andrey from '../../images/andrii.jpg';
 import "react-multi-carousel/lib/styles.css";
 import './Team.scss';
 
@@ -57,7 +54,7 @@ function TeamMembers({ members = [] }) {
         }
     };
     const team = members.map(member => <Member key={member.name} member={member} />);
-                    
+
     return (
         <React.Fragment>
             <div className="members">
@@ -111,15 +108,14 @@ function Team() {
             linkedin: 'https://www.linkedin.com/in/dmytro-savchenko-aa55691a/'
         },
         {
-            src: andrii,
+            src: andrey,
             name: translate("teamMembers.andrii.name"),
             surname: translate("teamMembers.andrii.surname"),
 
             role: translate("teamMembers.andrii.role"),
             linkedin: 'https://www.linkedin.com/in/andrii-palatnyi-9693b384/',
             instagram: ''
-        },
-        {
+        }, {
             src: oleksii,
             name: translate("teamMembers.oleksii.name"),
             surname: translate("teamMembers.oleksii.surname"),
@@ -127,14 +123,6 @@ function Team() {
             role: translate("teamMembers.oleksii.role"),
             linkedin: 'https://www.linkedin.com/in/oleksii-palatnyi/',
             instagram: ''
-        },
-        {
-            src: kostya,
-            name: translate("teamMembers.kostya.name"),
-            surname: translate("teamMembers.kostya.surname"),
-
-            role: translate("teamMembers.kostya.role"),
-            linkedin: "https://www.linkedin.com/in/%D0%B8%D0%BB%D1%8C%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD-konstantin-ilchenko-1715a05b"
         },
         {
             src: anton,

@@ -21,7 +21,45 @@
     "en": {
         "accomplishedProjects": {
             "label": "Accomplished projects",
-            "description": ""
+            "checkSingleReportLabel": "Check",
+            "description": "",
+            "next": "Check next project",
+            "main": "Go to the main page",
+            "projects": [
+                {
+                    "id": "toyots_hayes",
+                    "label": "A car for one of the 128th brigate unit",
+                    "date": "1 september 2022",
+                    "description": " descriptin for toyota hayes",
+                    "nextProject": "dedrone",
+                    "images": [
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/cover_photos%2Ftoyots_hayes.jpg?alt=media&token=9e2ab720-97fb-4d28-928e-c10e5c07472e"
+                    ]
+                },
+                {
+                    "id": "dedrone",
+                    "label": "anti-drone system",
+                    "date": "15 july 2022",
+                    "description": " descriptin for dedrone",
+                    "nextProject": "walkie_talkie_1",
+                    "images": [
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/cover_photos%2Fdedrone.jpg?alt=media&token=8d46c9d5-2693-486d-90a5-02717d298c3c"
+                    ]
+                },
+                {
+                    "id": "walkie_talkie_1",
+                    "label": "handheld portable radios",
+                    "date": "4 july 2022", 
+                    "description": " descriptin for HYTEARS",
+                    "nextProject": "toyots_hayes",
+                    "images": [
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/walkie_talkie_1%2Fhytera30.jpeg?alt=media&token=4efb24f8-da93-4f03-90e1-b0b6102a3fe2",
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/walkie_talkie_1%2Fwalkie_talkie_1.jpg?alt=media&token=01c60038-88f9-411b-a64b-4af871f75d0a",
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/walkie_talkie_1%2F284718800_129076989767238_7562178853490706515_n.jpeg?alt=media&token=8139d118-6e91-46de-8026-bea3100820c9"
+                    ]
+
+                }
+            ]
         },
         "partners": {
             "label": "Partners"
@@ -393,7 +431,45 @@
     "uk": {
         "accomplishedProjects": {
             "label": "Виконані проекти",
-            "description": ""
+            "description": "",
+            "checkSingleReportLabel": "Переглянути",
+            "next": "Перпеглянути наступний проект",
+            "main": "Повернутись на головну",
+            "projects": [
+                {
+                    "id": "toyots_hayes",
+                    "label": "Машина для підрозділу зв'язку",
+                    "date": "1 вересня 2022",
+                    "description": " descriptin for toyota hayes",
+                    "nextProject": "dedrone",
+                    "images": [
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/cover_photos%2Ftoyots_hayes.jpg?alt=media&token=9e2ab720-97fb-4d28-928e-c10e5c07472e"
+                    ]
+
+                },
+                {
+                    "id": "dedrone",
+                    "label": "система протидії дронам",
+                    "date": "15 липня 2022",
+                    "description": " descriptin for dedrone",
+                    "nextProject": "walkie_talkie_1",
+                    "images": [
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/cover_photos%2Fdedrone.jpg?alt=media&token=8d46c9d5-2693-486d-90a5-02717d298c3c"
+                    ]
+                },
+                {
+                    "id": "walkie_talkie_1",
+                    "label": "Обладнання зв'язку",
+                    "date": "4 липня 2022",
+                    "description": "Завдяки",
+                    "nextProject": "toyots_hayes",
+                    "images": [
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/walkie_talkie_1%2Fhytera30.jpeg?alt=media&token=4efb24f8-da93-4f03-90e1-b0b6102a3fe2",
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/walkie_talkie_1%2Fwalkie_talkie_1.jpg?alt=media&token=01c60038-88f9-411b-a64b-4af871f75d0a",
+                        "https://firebasestorage.googleapis.com/v0/b/dopomoga2022.appspot.com/o/walkie_talkie_1%2F284718800_129076989767238_7562178853490706515_n.jpeg?alt=media&token=8139d118-6e91-46de-8026-bea3100820c9"
+                    ]
+                }
+            ]
         },
         "partners": {
             "label": "Наші партнери"

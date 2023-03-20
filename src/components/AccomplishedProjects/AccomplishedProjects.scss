@@ -1,4 +1,6 @@
 .projects {
+  margin: 0 72px 64px 72px;
+
   &-label {
     text-align: center;
     font-style: normal;
@@ -6,5 +8,80 @@
     font-size: 48px;
     line-height: 65px;
     color: #000000;
+    margin-bottom: 70px;
   }
+
+  &-loading {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-holder {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+.single_project {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+
+  &>div>img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  &>.date,
+  &>.button-holder,
+  &>.description {
+    padding: 0 32px 0 32px;
+    margin-top: 12px;
+  }
+
+  &>.date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #BFC2D1;
+  }
+
+  &>.description {
+    color: #000000;
+    font-size: 27px;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 37px;
+    font-style: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &>.button-holder {
+    display: flex;
+    padding-left: 0;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .projects {
+    margin: 16px;
+
+    &-holder {
+      flex-direction: column;
+    }
+
+  }
+
+  .single_project {
+    width: 100%;
+    margin-bottom:24px;
+  }
+
 }

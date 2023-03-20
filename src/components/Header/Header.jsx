@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useTranslations, useCustomLang } from '../../hooks';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslations, useCustomLang, getNewLangPathname } from '../../hooks';
+import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
 import Button from '../Button/Button';
+import Dropdown from 'react-dropdown';
 
 import logo from '../../images/logo.png';
 import close from '../../images/close.png';
@@ -11,23 +12,48 @@ import instagram from '../../images/instagram-social.png';
 import hamburger from '../../images/hamburger.png';
 
 import './Header.scss';
+import 'react-dropdown/style.css';
 
-function Header(props) {
+function Header() {
     const [showHamburger, toggleShowHamburger] = useState(true);
     const icon = showHamburger ? hamburger : close;
     const navigate = useNavigate();
     const translate = useTranslations();
-
     const languages = translate("header.languageSelector.languages");
     const mobileOptions = translate("header.languageSelector.mobileOptions");
-
-    const location = useLocation();
-    const isDonatePage = location.pathname.split('/').includes('donate');
-
+    const options = translate("header.languageSelector.options");
+    const placeholder = translate("header.languageSelector.placeholder");
+    const defaultOption = translate("header.languageSelector.defaultValue");
+    const label = translate("header.subscribe");
 
     const goDonate = () => {
-        window.open('https://secure.wayforpay.com/donate/d27ead814ba59');
+        window.open("https://secure.wayforpay.com/donate/d27ead814ba59");
     };
+
+    const desktopActions = () => {
+        const onChange = ({ value }) => {
+          const lang = `/${value}`;
+          const url = getNewLangPathname(lang);
+          navigate(url);
+          localStorage.setItem('lang', lang);
+        };
+    
+        return (
+          <React.Fragment>
+            <Dropdown
+              options={options}
+              onChange={onChange}
+              value={defaultOption}
+              placeholder={placeholder}
+              controlClassName="langSelector"
+            />
+            <Button label={label} onClick={() => {
+              window.open("https://secure.wayforpay.com/button/bfe5bb20e1f26");
+            }} />
+          </React.Fragment>
+        );
+    
+      }
 
     const renderLanguageSelectorMobile = (options) => {
 
@@ -35,12 +61,10 @@ function Header(props) {
 
             const onClick = () => {
 
-                if (isDonatePage) {
-                    navigate(`/${value}/donate`)
-                } else {
-                    navigate(`/${value}`)
-                }
-
+                const lang = `/${value}`;
+                const url = getNewLangPathname(lang);
+                navigate(url);
+                localStorage.setItem('lang', lang);
                 toggleShowHamburger(true);
             };
 
@@ -73,7 +97,7 @@ function Header(props) {
                     <div className="empty"></div>
                     <div className="menu-holder">
                         <div className="top">
-                            <div dangerouslySetInnerHTML={{ __html: `<a href="https://secure.wayforpay.com/button/bfe5bb20e1f26" style="display:inline-block!important;background:#2B3160 url('https://s3.eu-central-1.amazonaws.com/w4p-merch/button/bg1x2.png') no-repeat center right;background-size:cover;width: 320px!important;height:54px!important;border:none!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:left!important;box-sizing:border-box!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"><div style="font-family:Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:!important;vertical-align:middle!important;">${translate('header.mobileSubscribe')}</div></a>`}}>
+                            <div dangerouslySetInnerHTML={{ __html: `<a href="https://secure.wayforpay.com/button/bfe5bb20e1f26" style="display:inline-block!important;background:#2B3160 url('https://s3.eu-central-1.amazonaws.com/w4p-merch/button/bg1x2.png') no-repeat center right;background-size:cover;width: 320px!important;height:54px!important;border:none!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:left!important;box-sizing:border-box!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"><div style="font-family:Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:!important;vertical-align:middle!important;">${translate('header.mobileSubscribe')}</div></a>` }}>
                             </div>
                             <Button onClick={goDonate}>
                                 {translate("menu.donate")}
@@ -97,8 +121,7 @@ function Header(props) {
             }
 
             <div className="header-desktop">
-
-                <div className="name">
+                <div className="name" onClick={ () => navigate('..') }>
                     <img src={logo} alt="logo" />
                 </div>
 
@@ -109,7 +132,7 @@ function Header(props) {
                     <div><a href="#donate">{translate("menu.donate")}</a></div>
                 </div>
                 <div className="actions">
-                    {props.desktopActions}
+                    {desktopActions()}
                 </div>
             </div>
         </>

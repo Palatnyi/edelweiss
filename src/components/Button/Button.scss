@@ -5,15 +5,22 @@
     font-weight: 700;
     display: inline-block;
     text-align: center;
-    line-height:35px;
+    line-height: 35px;
     cursor: pointer;
     padding: 8px 16px;
     border: 0px;
-    box-shadow: rgba(71, 66, 66, 0.22) 3px 2px 8px;
+
+
+    &-outlined {
+        background-color: white;
+        border: 2px solid #fae526;
+        box-shadow: 0;
+
+    }
 }
 
 .disabled {
     background-color: #888888;
     color: rgb(47, 47, 47);
-    cursor:not-allowed;
+    cursor: not-allowed;
 }

@@ -1,24 +1,3 @@
 * {
     box-sizing: border-box;
 }
-
-.edelweiss {
-    & .langSelector {
-        display: flex;
-        color: #fff;
-        border-color: #343239;
-        background-color: #343239;
-        justify-content: space-between;
-
-        font-size: 16px;
-        font-weight: 600;
-        margin-left: 24px;
-        cursor: pointer;
-        text-decoration: none;
-        padding: 10px 20px 10px 10px; 
-
-        & .Dropdown-arrow {
-            display: none;
-        }
-    }
-}
