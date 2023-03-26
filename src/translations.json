@@ -6,8 +6,7 @@
     },
     "CURRENCIES": {
         "uk": "UAH",
-        "en": "USD",
-        "ru": "UAH"
+        "en": "USD"
     },
     "FLAG": {
         "uk": "UA",
@@ -48,7 +47,7 @@
                 {
                     "id": "walkie_talkie_1",
                     "label": "handheld portable radios",
-                    "date": "4 july 2022", 
+                    "date": "4 july 2022",
                     "description": " descriptin for HYTEARS",
                     "nextProject": "toyots_hayes",
                     "images": [
@@ -425,9 +424,21 @@
             ],
             "emailTitle": "Email",
             "customAmountTitle": "Type in your amount"
+        },
+        "uavDonationBlock": {
+            "donate": "Donate",
+            "seePTT": "Read more",
+            "title": "UAV-DEAD TR3",
+            "description": "We are fundraising for an essential piece of equipment - the <b>UAV-DEAD TR3</b>, a portable compact specialized EW installation that allows the Ukrainian Armed Forces of defense to protect civilians, personnel, positions, and equipment from enemy drones. Glory to Ukraine!"
         }
     },
     "uk": {
+        "uavDonationBlock": {
+            "donate": "Зробити внесок",
+            "seePTT": "Читати детальніше",
+            "title": "Збір на UAV-DEAD TR3",
+            "description": "Ми організовуємо збір коштів на важливе обладнання - <b>UAV-DEAD TR3</b>, це портативна компактна спеціалізована установка РЕБ, яка дозволяє захистити особовий склад, позиції та навіть техніку від ворожих дронів, а також зменшити кількість френдліфаєру завдяки можливості інтеграції з актуальним програмним забезпеченням ЗСУ."
+        },
         "accomplishedProjects": {
             "label": "Виконані проекти",
             "description": "",

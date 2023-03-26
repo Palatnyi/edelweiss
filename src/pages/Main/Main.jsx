@@ -7,7 +7,9 @@ import Welcome from '../../components/Welcome/Welcome.jsx';
 import WhatWeDo from '../../components/WhatWeDo/WhatWeDo.jsx';
 import Partners from '../../components/Partners/Partners.jsx';
 import HelpMatters from '../../components/HelpMatters/HelpMatters.jsx';
+import UAVDonationBlock from '../../components/UAVDonationBlock/UAVDonationBlock.jsx'
 import AccomplishedProjects from '../../components/AccomplishedProjects/AccomplishedProjects.jsx'
+
 import './Main.scss';
 import 'react-dropdown/style.css';
 
@@ -17,11 +19,12 @@ function Edelweiss() {
     <div className="edelweiss">
       <Header />
       <Welcome />
+      <UAVDonationBlock />
       <Team />
       <Partners />
       <Media />
       <WhatWeDo />
-      <AccomplishedProjects />
+      {/*<AccomplishedProjects />*/}
       <HelpMatters />
 
       <Footer />

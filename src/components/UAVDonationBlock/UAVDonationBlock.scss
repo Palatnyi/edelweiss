@@ -1,0 +1,68 @@
+.uav_donation_block {
+  display: flex;
+  padding: 72px;
+  flex: 1;
+  margin-bottom: 72px;
+
+  & > .left, & > .right {
+    max-width: 47%;
+    padding: 0 20px;
+  }
+
+  & > .left {
+    & > img {
+      width: 100%;
+      height:auto
+    }
+  }
+
+  & > .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+      font-size: 48px;
+      margin: 0;
+      margin-bottom: 32px;
+    }
+
+    & > .description {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 40px;
+      padding-bottom: 24px;
+    }
+
+    & > .buttons {
+      & > * {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .uav_donation_block {
+    flex-direction: column;
+    padding: 24px;
+    padding-top:48px;
+
+    & > .left, & > .right {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+
+    & >.right {
+      & > .buttons {
+        display: flex;
+        flex-direction: column;
+        & > * {
+          width: 100%;
+          margin-right: 0;
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}

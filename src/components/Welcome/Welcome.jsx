@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslations } from '../../hooks';
+import { getDonationUrl } from '../../utils'
 import Button from '../Button/Button.jsx';
 import Separator from '../Separator/Separator.jsx';
 import './Welcome.scss';
@@ -10,9 +11,7 @@ function Welcome() {
     const collected = translate("welcome.collected");
     const description = translate("welcome.description");
     const communication = translate("welcome.communication");
-    const onClick = () => {
-        window.open('https://secure.wayforpay.com/donate/d27ead814ba59');
-    }
+    const onClick = () => getDonationUrl();
 
     return (
         <div className="welcome">
