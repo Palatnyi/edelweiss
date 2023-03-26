@@ -11,7 +11,6 @@ function Welcome() {
     const collected = translate("welcome.collected");
     const description = translate("welcome.description");
     const communication = translate("welcome.communication");
-    const onClick = () => getDonationUrl();
 
     return (
         <div className="welcome">
@@ -22,7 +21,7 @@ function Welcome() {
                 <div className="text">
                     {description}
                 </div>
-                <Button onClick={onClick} label={label} />
+                <Button onClick={getDonationUrl()} label={label} />
                 <div className="collected">
                     {collected}
                 </div>
