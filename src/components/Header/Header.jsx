@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslations, useCustomLang, getNewLangPathname } from '../../hooks';
+import { useTranslations } from '../../hooks';
 import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
 import Button from '../Button/Button';
@@ -33,8 +33,7 @@ function Header() {
     const desktopActions = () => {
         const onChange = ({ value }) => {
           const lang = `/${value}`;
-          const url = getNewLangPathname(lang);
-          navigate(url);
+          navigate(lang);
           localStorage.setItem('lang', lang);
         };
     
@@ -62,8 +61,7 @@ function Header() {
             const onClick = () => {
 
                 const lang = `/${value}`;
-                const url = getNewLangPathname(lang);
-                navigate(url);
+                navigate(lang);
                 localStorage.setItem('lang', lang);
                 toggleShowHamburger(true);
             };

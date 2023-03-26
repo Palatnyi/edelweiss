@@ -1,9 +1,8 @@
 import React from 'react';
-import fireabseapp from './firebase-app';
 import Main from './pages/Main/Main.jsx';
 import { useBrowserLanguage } from './hooks';
 import translations from './translations.json';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFound/NotFound.jsx';
 import ProjectDetails from './pages/ProjectDetails/ProjectDetails';
 

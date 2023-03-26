@@ -1,9 +1,8 @@
 {
-    "DEFAULT_LANG": "en",
+    "DEFAULT_LANG": "uk",
     "LANGUAGES": {
         "en": "en",
-        "uk": "uk",
-        "ru": "ru"
+        "uk": "uk"
     },
     "CURRENCIES": {
         "uk": "UAH",

@@ -11,17 +11,24 @@ const { LANGUAGES, DEFAULT_LANG } = translations;
 export function useBrowserLanguage() {
 
     const navigate = useNavigate();
-    const getLang = (languages) => {
-        const lng = navigator.languages[0].split("-")[0]
+    const getLang = () => {
+        let lng = `/${DEFAULT_LANG}`;
+        const browserLang = (navigator.languages[0].split("-")[0] || '').toLowerCase();
+        const hasLang = Object.values(LANGUAGES).includes(browserLang);
+
+        if(hasLang) {
+            lng = `/${browserLang}`;
+        }
+
         const localStorageLang = localStorage.getItem('lang');
 
-        return localStorageLang || languages[lng] || "/en";
+        return localStorageLang || lng;
     }
 
     useEffect(() => {
         let lang = getLang(LANGUAGES);
         const url = getNewLangPathname(lang);
-        url && navigate(url);
+        url && navigate(lang);
     }, []);
 }
 
