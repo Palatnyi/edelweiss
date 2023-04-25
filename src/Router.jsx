@@ -16,7 +16,6 @@ function EdelweissRouter() {
                 <Route path="" exact element={<Main />} />
                 <Route path="project/:id" element={<ProjectDetails />} />
             </Route>
-            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 }
